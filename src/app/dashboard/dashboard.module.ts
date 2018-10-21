@@ -22,7 +22,7 @@ import { MatchMemberModule } from '../match-member/match-member.module';
           loadChildren: () => HomeModule,
         },
         {
-          path: ':id',
+          path: 'participation',
           loadChildren: () => ParticipationHappeningModule
         },
         {

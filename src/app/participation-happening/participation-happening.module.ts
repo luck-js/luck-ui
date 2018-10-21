@@ -10,11 +10,14 @@ import { ParticipationHappeningGuardService } from './participation-happening/pa
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild([{
-      path: '',
-      component: ParticipationHappeningPageComponent,
-      canActivate: [ParticipationHappeningGuardService]
-    }]),
+    RouterModule.forChild([
+      {path: '', redirectTo: '/:id', pathMatch: 'full'},
+      {
+        path: ':id',
+        component: ParticipationHappeningPageComponent,
+        canActivate: [ParticipationHappeningGuardService]
+      }
+    ]),
   ],
   declarations: [ParticipationHappeningPageComponent],
   providers: [
