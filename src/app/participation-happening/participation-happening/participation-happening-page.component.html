@@ -1,6 +1,4 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }} from participation happening page!
-  </h1>
-</div>
+<p>title: {{participationHappening.happening.name}}</p>
+<!--<p>description: {{participationHappening.happening.description}}</p>-->
+<h1>Welcome {{participationHappening.member.name}} !</h1>
+<a [routerLink]="['/match', participationHappening.member.id]"><button>Luck !</button></a>
