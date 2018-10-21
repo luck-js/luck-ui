@@ -16,7 +16,6 @@ import { FooterComponent } from './dashboard-page/footer/footer.component';
       path: '',
       component: DashboardPageComponent,
       children: [
-        // {path: '', redirectTo: '', pathMatch: 'full'},
         {
           path: '',
           loadChildren: () => HomeModule,
