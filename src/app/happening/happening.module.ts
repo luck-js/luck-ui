@@ -5,13 +5,17 @@ import { RouterModule } from '@angular/router';
 import { HappeningPageComponent } from './happening-page/happening-page.component';
 import { NewHappeningPageComponent } from './new-happening-page/new-happening-page.component';
 
+import { NewHappeningPageService } from './new-happening-page/new-happening-page.service';
+import { NewHappeningPageGuardService } from './new-happening-page/new-happening-page-guard.service';
+
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild([
       {
         path: '',
-        component: NewHappeningPageComponent
+        component: NewHappeningPageComponent,
+        canActivate: [NewHappeningPageGuardService]
       },
       {
         path: ':id',
@@ -22,7 +26,10 @@ import { NewHappeningPageComponent } from './new-happening-page/new-happening-pa
     HappeningPageComponent,
     NewHappeningPageComponent
   ],
-  providers: []
+  providers: [
+    NewHappeningPageService,
+    NewHappeningPageGuardService
+  ]
 })
 export class HappeningModule {
 }
