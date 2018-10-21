@@ -6,7 +6,7 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
 
 import { HappeningModule } from '../happening/happening.module';
 import { ParticipationHappeningModule } from '../participation-happening/participation-happening.module';
-import { MatchMemberPageModule } from '../match-member/match-member-page.module';
+import { MatchMemberModule } from '../match-member/match-member.module';
 
 @NgModule({
   imports: [
@@ -21,7 +21,7 @@ import { MatchMemberPageModule } from '../match-member/match-member-page.module'
         },
         {
           path: 'match',
-          loadChildren: () => MatchMemberPageModule
+          loadChildren: () => MatchMemberModule
         },
         {
           path: 'happening',
