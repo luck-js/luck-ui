@@ -1,0 +1,18 @@
+@import 'base';
+
+.app-icon {
+  @include icon;
+}
+
+body {
+  background: color-base('white');
+}
+
+.card.card-no-shadow{
+  box-shadow: unset;
+  -webkit-box-shadow: unset;
+}
+
+li {
+  list-style: none;
+}

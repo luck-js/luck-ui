@@ -1,0 +1,7 @@
+@include font-face(icomoon, 'assets/fonts/icomoon');
+
+@mixin example {
+  &:before{
+    content: '\e942';
+  }
+}
