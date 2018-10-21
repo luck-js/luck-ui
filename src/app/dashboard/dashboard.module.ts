@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 
+import { HomeModule } from '../core/home/home.module';
 import { HappeningModule } from '../happening/happening.module';
 import { ParticipationHappeningModule } from '../participation-happening/participation-happening.module';
 import { MatchMemberModule } from '../match-member/match-member.module';
@@ -15,6 +16,11 @@ import { MatchMemberModule } from '../match-member/match-member.module';
       path: '',
       component: DashboardPageComponent,
       children: [
+        // {path: '', redirectTo: '', pathMatch: 'full'},
+        {
+          path: '',
+          loadChildren: () => HomeModule,
+        },
         {
           path: ':id',
           loadChildren: () => ParticipationHappeningModule
