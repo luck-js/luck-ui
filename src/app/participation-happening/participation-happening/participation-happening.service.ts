@@ -15,7 +15,7 @@ export class ParticipationHappeningService {
 
     return this.httpClient.get<IParticipationHappening>(`participation-happening/${id}`).pipe(
       tap((data) => this.participationHappeningSubject.next(data)),
-      tap((data) => console.log('getData: ', data)
+      tap((data) => console.log('ParticipationHappeningService.getData -> IParticipationHappening: ', data)
       )
     );
   }

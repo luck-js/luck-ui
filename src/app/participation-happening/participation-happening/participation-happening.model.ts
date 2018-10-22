@@ -19,3 +19,16 @@ export interface IParticipationHappening {
   member: IMemberView;
   happening: IHappeningView;
 }
+
+export const PARTICIPATION_HAPPENING_MOCK: IParticipationHappening = {
+  happening: {
+    id: '',
+    name: '',
+    description: '',
+    isPublish: false,
+  },
+  member: {
+    id: '',
+    name: ''
+  }
+};
