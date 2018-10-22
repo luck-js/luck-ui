@@ -1,6 +1,38 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }} from happening page!
-  </h1>
+<div *ngIf="!participantUniqueLinkData.length">
+
+  <form>
+    <section [formGroup]="form" class="form-block">
+
+      <div class="form-group name">
+        <label for="gForm_1">Name:</label>
+        <input type="text" id="gForm_1" placeholder="Np. name" formControlName="name">
+      </div>
+
+      <div class="form-group description">
+        <label for="gForm_2">Description:</label>
+        <input type="text" id="gForm_2" placeholder="Np. description" formControlName="description">
+      </div>
+      <div formArrayName="participantList"
+           *ngFor="let participant of forParticipantList.controls; let i = index;">
+        <div [formGroupName]="i">
+          <label for="'gForm_3' + i">{{i + 1}}. </label>
+          <input type="text" id="'gForm_3' + i" placeholder="participant name" formControlName="name"
+                 (keyup)="addParticipant(i + 1)">
+        </div>
+      </div>
+    </section>
+    <button class="btn btn-primary"
+            (click)="clickedSave()">Dodaj ogłoszenie
+    </button>
+  </form>
+</div>
+<div *ngIf="participantUniqueLinkData.length">
+  <h1>title: {{name}}</h1>
+  <div *ngFor="let participant of participantUniqueLinkData; let i = index;">
+    <div>
+      <span>{{i + 1}}. </span>
+      <span>{{participant.name}}</span>
+    </div>
+    <a href="http://localhost:9000/participation/{{participant.uniqueLink}}"><span>http://localhost:9000/participation/{{participant.uniqueLink}}</span></a>
+  </div>
 </div>
