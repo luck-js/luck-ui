@@ -11,25 +11,25 @@
 body {
   font-family: $ft_main;
   background: color-base('white');
-  color: color-base('dark-gray');
+  color: color-base('light-black');
   margin: 0;
-}
-
-.card.card-no-shadow{
-  box-shadow: unset;
-  -webkit-box-shadow: unset;
 }
 
 li {
   list-style: none;
 }
 
+p {
+  margin: 0;
+}
+
 h1 {
+  @include responsive-text-size('main-header');
   margin: 0;
   padding: 10px 0;
 }
 
 a {
   color: inherit;
-  text-decoration-color: color-base('dark-gray');
+  text-decoration-color: color-base('light-black');
 }

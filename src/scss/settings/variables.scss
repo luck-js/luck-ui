@@ -1,12 +1,12 @@
 $colors-map-base: (
   'white':        #FFFFFF,
-  'dark-white':   #eeeeee,
-  'light-gray':   #eaeaea,
-  'light-gray-1': #d0d0d0,
-  'gray':         #a7a7a7,
-  'dark-gray':    #6a6a6a,
-  'light-black':  #2a2a2a,
-  'black':        #232323
+  'dark-white':   #f2f2f2,
+  'light-gray':   #e5e5e5,
+  'light-gray-1': #cccccc,
+  'gray':         #b2b2b2,
+  'dark-gray':    #999999,
+  'light-black':  #4c4c4c,
+  'black':        #333333
 );
 
 @function color-base($color-name) {

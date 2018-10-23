@@ -4,5 +4,6 @@
 
   footer {
     text-align: center;
+    @include responsive-text-size('sub-description');
   }
 }
