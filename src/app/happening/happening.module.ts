@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
+
 import { HappeningPageComponent } from './happening-page/happening-page.component';
 import { NewHappeningPageComponent } from './new-happening-page/new-happening-page.component';
 
@@ -25,6 +27,7 @@ import { NewHappeningPageGuardService } from './new-happening-page/new-happening
         path: ':id',
         component: HappeningPageComponent,
       }]),
+    TextareaAutosizeModule
   ],
   declarations: [
     HappeningPageComponent,

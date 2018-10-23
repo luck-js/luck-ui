@@ -3,7 +3,8 @@
   <form>
     <section [formGroup]="form">
       <input type="text" id="gForm_1" placeholder="NAZWA WYDARZENIA..." formControlName="name">
-      <textarea type="text" id="gForm_2" placeholder="Opis wydarzenia..." formControlName="description"></textarea>
+      <textarea autosize
+        type="text" id="gForm_2" placeholder="Opis wydarzenia..." formControlName="description"></textarea>
       <p>ZAPROŚ UCZESTNIKÓW:</p>
       <div formArrayName="participantList"
            *ngFor="let participant of forParticipantList.controls; let i = index;">
