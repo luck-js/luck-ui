@@ -1,0 +1,55 @@
+@import '~src/scss/base';
+
+:host{
+  form {
+    padding: 35px 0 0 0;
+
+    p{
+      padding: 35px 0 10px 0;
+      text-align: center;
+    }
+
+    textarea {
+      margin: 2px 0;
+
+      width: 100%;
+      color: color-base('light-black');
+      background-color: color-base('light-gray');
+      border: 1px solid color-base('light-gray');
+      border-radius: 5px;
+      padding: 10px 15px;
+
+      &::placeholder {
+        color: color-base('gray');
+      }
+    }
+
+    input {
+      margin: 2px 0;
+
+      width: 100%;
+      color: color-base('light-black');
+      background-color: color-base('light-gray');
+      border: 1px solid color-base('light-gray');
+      border-radius: 5px;
+      padding: 10px 15px;
+
+      &::placeholder {
+        color: color-base('gray');
+      }
+    }
+
+    button {
+      margin: 2px 0 0 0;
+
+      width: 100%;
+      color: color-base('light-black');
+      background-color: color-base('light-gray-1');
+      border: 1px solid color-base('light-gray-1');
+      border-radius: 5px;
+      padding: 10px 15px;
+
+      font-weight: 700;
+    }
+  }
+}

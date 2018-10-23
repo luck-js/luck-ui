@@ -1,29 +1,19 @@
 <div *ngIf="!participantUniqueLinkData.length">
 
   <form>
-    <section [formGroup]="form" class="form-block">
-
-      <div class="form-group name">
-        <label for="gForm_1">Name:</label>
-        <input type="text" id="gForm_1" placeholder="Np. name" formControlName="name">
-      </div>
-
-      <div class="form-group description">
-        <label for="gForm_2">Description:</label>
-        <input type="text" id="gForm_2" placeholder="Np. description" formControlName="description">
-      </div>
+    <section [formGroup]="form">
+      <input type="text" id="gForm_1" placeholder="NAZWA WYDARZENIA..." formControlName="name">
+      <textarea type="text" id="gForm_2" placeholder="Opis wydarzenia..." formControlName="description"></textarea>
+      <p>ZAPROŚ UCZESTNIKÓW:</p>
       <div formArrayName="participantList"
            *ngFor="let participant of forParticipantList.controls; let i = index;">
         <div [formGroupName]="i">
-          <label for="'gForm_3' + i">{{i + 1}}. </label>
-          <input type="text" id="'gForm_3' + i" placeholder="participant name" formControlName="name"
+          <input type="text" id="'gForm_3' + i" placeholder="nazwa..." formControlName="name"
                  (keyup)="addParticipant(i + 1)">
         </div>
       </div>
     </section>
-    <button class="btn btn-primary"
-            (click)="clickedSave()">Dodaj ogłoszenie
-    </button>
+    <button (click)="clickedSave()">UPUBLIKUJ WYDARZENIE</button>
   </form>
 </div>
 <div *ngIf="participantUniqueLinkData.length">
