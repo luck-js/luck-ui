@@ -10,10 +10,26 @@ export interface IHappeningView {
   isPublish: boolean;
 }
 
+export interface IMatchedParticipationData {
+  me: IMemberView;
+  matchedMember: IMemberView;
+}
+
 export interface IParticipationHappening {
   member: IMemberView;
   happening: IHappeningView;
 }
+
+export const MATCHED_PARTICIPATION_DATA: IMatchedParticipationData = {
+  me: {
+    id: '',
+    name: ''
+  },
+  matchedMember: {
+    id: '',
+    name: ''
+  }
+};
 
 export const PARTICIPATION_HAPPENING_MOCK: IParticipationHappening = {
   happening: {

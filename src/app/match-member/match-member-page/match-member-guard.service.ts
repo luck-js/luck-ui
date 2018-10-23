@@ -13,7 +13,7 @@ export class MatchMemberGuardService implements CanActivate {
 
   private getMatchedMemberData(id: string): Observable<boolean> {
     return this.matchMemberService
-      .getMatchedMember(id).pipe(
+      .getMatchedParticipation(id).pipe(
         map(() => true),
         catchError((error) => {
           this.router.navigate(['/']);

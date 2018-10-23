@@ -1,6 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { IMemberView } from '../../participation-happening/participation-happening/participation-happening.model';
+import {
+  IMatchedParticipationData,
+  MATCHED_PARTICIPATION_DATA
+} from '../../participation-happening/participation-happening/participation-happening.model';
 import { takeUntil } from 'rxjs/operators';
 import { MatchMemberService } from './match-member.service';
 
@@ -12,7 +15,7 @@ import { MatchMemberService } from './match-member.service';
 
 export class MatchMemberPageComponent implements OnInit, OnDestroy {
 
-  public memberView: IMemberView;
+  public matchedParticipation: IMatchedParticipationData = MATCHED_PARTICIPATION_DATA;
 
   private ngUnsubscribe: Subject<void> = new Subject<void>();
 
@@ -21,10 +24,10 @@ export class MatchMemberPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.matchMemberService.memberViewSubject.pipe(
+    this.matchMemberService.matchedParticipationSubject.pipe(
       takeUntil(this.ngUnsubscribe)
     )
-      .subscribe((memberView) => this.memberView = memberView);
+      .subscribe((matchedParticipation) => this.matchedParticipation = matchedParticipation);
   }
 
   ngOnDestroy() {
