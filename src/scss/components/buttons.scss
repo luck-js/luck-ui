@@ -1,0 +1,18 @@
+a.lk-button{
+  text-decoration: none;
+  display: block;
+}
+
+a.lk-button, button.lk-button{
+  width: 100%;
+  @include responsive-text-size('description');
+
+  text-align: center;
+  color: color-base('light-black');
+  background-color: color-base('light-gray-1');
+  border: 1px solid color-base('light-gray-1');
+  border-radius: 5px;
+  padding: 10px 15px;
+
+  font-weight: 700;
+}
