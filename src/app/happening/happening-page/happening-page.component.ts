@@ -22,7 +22,7 @@ export class HappeningPageComponent implements OnInit, OnDestroy {
 
   public name = INIT_FORM_HAPPENING.name;
   public description = INIT_FORM_HAPPENING.description;
-  public participantUniqueLinkData: ParticipantUniqueLinkData[] = PARTICIPANT_UNIQUE_LINK_DATA;
+  public participantUniqueLinkData: ParticipantUniqueLinkData[] = [];
 
   private max = 2;
 

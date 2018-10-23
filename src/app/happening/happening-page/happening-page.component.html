@@ -1,4 +1,4 @@
-<div *ngIf="!participantUniqueLinkData.length">
+<div *ngIf="!participantUniqueLinkData.length" class="form-container">
 
   <form>
     <section [formGroup]="form">
@@ -16,13 +16,18 @@
     <button (click)="clickedSave()">UPUBLIKUJ WYDARZENIE</button>
   </form>
 </div>
-<div *ngIf="participantUniqueLinkData.length">
-  <h1>title: {{name}}</h1>
-  <div *ngFor="let participant of participantUniqueLinkData; let i = index;">
-    <div>
-      <span>{{i + 1}}. </span>
+<div *ngIf="participantUniqueLinkData.length" class="display-view-container">
+  <h1>{{name}}</h1>
+  <p>{{description}}</p>
+  <div class="block-row"
+    *ngFor="let participant of participantUniqueLinkData; let i = index;">
+    <div class="block-element">
       <span>{{participant.name}}</span>
     </div>
-    <a href="http://localhost:9000/participation/{{participant.uniqueLink}}"><span>http://localhost:9000/participation/{{participant.uniqueLink}}</span></a>
+    <div class="block-element">
+      <a href="http://localhost:9000/participation/{{participant.uniqueLink}}">
+        http://localhost:9000/participation/{{participant.uniqueLink}}
+      </a>
+    </div>
   </div>
 </div>
