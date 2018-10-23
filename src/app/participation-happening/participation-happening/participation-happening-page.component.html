@@ -1,4 +1,3 @@
-<p>title: {{participationHappening.happening.name}}</p>
-<!--<p>description: {{participationHappening.happening.description}}</p>-->
-<h1>Welcome {{participationHappening.member.name}} !</h1>
-<a [routerLink]="['/match', happeningId]"><button>Luck !</button></a>
+<h1>{{participationHappening.happening.name}}</h1>
+<p>{{participationHappening.happening.description}}</p>
+<a class="lk-button" [routerLink]="['/match', happeningId]">Luck !</a>

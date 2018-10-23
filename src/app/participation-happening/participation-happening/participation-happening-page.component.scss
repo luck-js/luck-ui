@@ -1,0 +1,17 @@
+@import '~src/scss/base';
+
+:host{
+  h1{
+    margin: 35px 0 0 0;
+    text-align: center;
+    @include responsive-text-size('block-header');
+  }
+  p{
+    @include responsive-text-size('description');
+    text-align: center;
+  }
+
+  a{
+    margin: 35px 0 0 0;
+  }
+}
