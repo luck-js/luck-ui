@@ -1,1 +1,7 @@
 @import '~src/scss/base';
+
+:host{
+  h1{
+    font-weight: 500;
+  }
+}

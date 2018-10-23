@@ -1,1 +1,8 @@
 @import '~src/scss/base';
+
+:host {
+
+  footer {
+    text-align: center;
+  }
+}

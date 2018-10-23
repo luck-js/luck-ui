@@ -1,39 +1,13 @@
 @import '~src/scss/base';
 
-.main-container {
-  height: auto;
-}
-
-.container {
-  flex-grow: 1;
-}
-
-.bg-wrapper {
-  position: relative;
-  z-index: 1;
+:host {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
+  padding: 10px 25px;
 
-.bg-container {
-  background-color: color-base('wheat');
-
-  &:before,
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-  }
-
-  &:before {
-  }
-
-  &:after {
-    background: linear-gradient(to top, color-base('wheat'), transparent);
+  .container {
+    flex-grow: 1;
   }
 }
+

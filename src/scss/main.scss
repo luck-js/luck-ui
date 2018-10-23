@@ -1,11 +1,17 @@
 @import 'base';
 
+* {
+  box-sizing: border-box;
+}
+
 .app-icon {
   @include icon;
 }
 
 body {
+  font-family: $ft_main;
   background: color-base('white');
+  color: color-base('dark-gray');
   margin: 0;
 }
 
@@ -16,4 +22,14 @@ body {
 
 li {
   list-style: none;
+}
+
+h1 {
+  margin: 0;
+  padding: 10px 0;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: color-base('dark-gray');
 }
