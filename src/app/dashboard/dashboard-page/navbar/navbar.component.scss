@@ -1,6 +1,8 @@
 @import '~src/scss/base';
 
 :host{
+  flex: 0 0 auto;
+
   h1{
     padding: 0 0 5px 0;
     font-weight: 500;
