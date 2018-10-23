@@ -1,8 +1,3 @@
-export interface ParticipantUniqueLinkData {
-  name: string;
-  uniqueLink: string;
-}
-
 export interface IMemberView {
   id: string;
   name: string;

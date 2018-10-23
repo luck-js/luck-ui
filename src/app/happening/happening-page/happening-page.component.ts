@@ -4,8 +4,8 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { takeUntil, tap } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { HappeningService } from './happening.service';
-import { Happening, INIT_FORM_HAPPENING } from './happening.model';
-import { ParticipantUniqueLinkData } from '../../participation-happening/participation-happening/participation-happening.model';
+import { Happening, INIT_FORM_HAPPENING, PARTICIPANT_UNIQUE_LINK_DATA } from './happening.model';
+import { ParticipantUniqueLinkData } from './happening.model';
 
 @Component({
   selector: 'lk-happening-page',
@@ -20,9 +20,9 @@ export class HappeningPageComponent implements OnInit, OnDestroy {
   public form: FormGroup;
   public participantList: FormArray;
 
-  public name = '';
-  public description = '';
-  public participantUniqueLinkData: ParticipantUniqueLinkData[] = [];
+  public name = INIT_FORM_HAPPENING.name;
+  public description = INIT_FORM_HAPPENING.description;
+  public participantUniqueLinkData: ParticipantUniqueLinkData[] = PARTICIPANT_UNIQUE_LINK_DATA;
 
   private max = 2;
 

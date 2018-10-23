@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Happening } from './happening.model';
-import { ParticipantUniqueLinkData } from '../../participation-happening/participation-happening/participation-happening.model';
+import { ParticipantUniqueLinkData } from './happening.model';
 
 @Injectable()
 export class HappeningService {
