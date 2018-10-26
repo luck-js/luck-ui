@@ -1,11 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
-import { takeUntil, tap } from 'rxjs/operators';
+import { skip, takeUntil, tap } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { HappeningService } from './happening.service';
-import { Happening, INIT_FORM_HAPPENING, PARTICIPANT_UNIQUE_LINK_DATA } from './happening.model';
+import { Happening, INIT_FORM_HAPPENING } from './happening.model';
 import { ParticipantUniqueLinkData } from './happening.model';
+import { NewHappeningPageService } from '../new-happening-page/new-happening-page.service';
 
 @Component({
   selector: 'lk-happening-page',
@@ -20,8 +21,8 @@ export class HappeningPageComponent implements OnInit, OnDestroy {
   public form: FormGroup;
   public participantList: FormArray;
 
-  public name = INIT_FORM_HAPPENING.name;
-  public description = INIT_FORM_HAPPENING.description;
+  public name = '';
+  public description = '';
   public participantUniqueLinkData: ParticipantUniqueLinkData[] = [];
 
   private max = 2;
@@ -30,6 +31,7 @@ export class HappeningPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private happeningService: HappeningService,
+    private newHappeningPageService: NewHappeningPageService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder) {
   }
@@ -39,10 +41,22 @@ export class HappeningPageComponent implements OnInit, OnDestroy {
       takeUntil(this.ngUnsubscribe)
     )
       .subscribe((params) => this.happeningId = params['id']);
+
+    this.happeningService.createdHappeningSubject.pipe(
+      takeUntil(this.ngUnsubscribe)
+    )
+      .subscribe((created) => {
+        this.participantUniqueLinkData = created ? created.participantList : [];
+        this.name = created ? created.name : '';
+        this.description = created ? created.description : '';
+      });
+
     this.initForm({ ...INIT_FORM_HAPPENING, ...this.model });
   }
 
   ngOnDestroy() {
+    this.newHappeningPageService.isCreatingProcessFlag = false;
+    this.happeningService.createdHappeningSubject.next(null);
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
   }
@@ -97,11 +111,8 @@ export class HappeningPageComponent implements OnInit, OnDestroy {
       this.participantList.removeAt(index);
     }
 
-    this.happeningService.generateDetailedParticipantListInformation(this.happeningId, this.form.value).pipe(
-      tap((participantUniqueLinkData) => this.participantUniqueLinkData = participantUniqueLinkData),
-      tap(() => this.name = this.form.get('name').value),
-      tap(() => this.description = this.form.get('description').value)
-    )
+    this.happeningService.generateDetailedParticipantListInformation(this.happeningId, this.form.value)
+      .pipe()
       .subscribe();
   }
 }

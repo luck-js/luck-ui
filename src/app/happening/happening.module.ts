@@ -10,7 +10,9 @@ import { NewHappeningPageComponent } from './new-happening-page/new-happening-pa
 
 import { HappeningService } from './happening-page/happening.service';
 import { NewHappeningPageService } from './new-happening-page/new-happening-page.service';
+
 import { NewHappeningPageGuardService } from './new-happening-page/new-happening-page-guard.service';
+import { HappeningServiceGuardService } from './happening-page/happening-guard.service';
 
 @NgModule({
   imports: [
@@ -26,6 +28,7 @@ import { NewHappeningPageGuardService } from './new-happening-page/new-happening
       {
         path: ':id',
         component: HappeningPageComponent,
+        canActivate: [HappeningServiceGuardService]
       }]),
     TextareaAutosizeModule
   ],
@@ -36,6 +39,7 @@ import { NewHappeningPageGuardService } from './new-happening-page/new-happening
   providers: [
     HappeningService,
     NewHappeningPageService,
+    HappeningServiceGuardService,
     NewHappeningPageGuardService
   ]
 })

@@ -11,11 +11,16 @@ export interface IParticipantView {
 export const INIT_FORM_NEW_PARTICIPANT: IParticipantView[] = [];
 
 export const INIT_FORM_HAPPENING: Happening = {
-  name: 'Lorem Ipsum 20.10.2018r',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse convallis massa ' +
-    'vitae odio fermentum, eu ultrices odio facilisis. Cras tincidunt neque libero, non dapibus sem ultricies in.',
+  name: '',
+  description: '',
   participantList: INIT_FORM_NEW_PARTICIPANT,
 };
+
+export interface CreatedHappening {
+  name: string;
+  description: string;
+  participantList: ParticipantUniqueLinkData[];
+}
 
 export interface ParticipantUniqueLinkData {
   name: string;
