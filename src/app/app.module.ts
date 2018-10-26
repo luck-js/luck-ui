@@ -9,6 +9,19 @@ import { AppComponent } from './core/containers/app/app.component';
 
 import {routes} from './routes';
 
+import { InjectionToken, FactoryProvider } from '@angular/core';
+
+export const WINDOW = new InjectionToken<Window>('window');
+
+const windowProvider: FactoryProvider = {
+  provide: WINDOW,
+  useFactory: () => window
+};
+
+export const WINDOW_PROVIDERS = [
+  windowProvider
+]
+
 @NgModule({
   declarations: [],
   imports: [
@@ -17,7 +30,9 @@ import {routes} from './routes';
     RouterModule.forRoot(routes),
     CoreModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    WINDOW_PROVIDERS
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
