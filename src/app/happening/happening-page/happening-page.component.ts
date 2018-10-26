@@ -1,12 +1,13 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
-import { skip, takeUntil, tap } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { HappeningService } from './happening.service';
 import { Happening, INIT_FORM_HAPPENING } from './happening.model';
 import { ParticipantUniqueLinkData } from './happening.model';
 import { NewHappeningPageService } from '../new-happening-page/new-happening-page.service';
+import { WINDOW } from '../../app.module';
 
 @Component({
   selector: 'lk-happening-page',
@@ -30,6 +31,7 @@ export class HappeningPageComponent implements OnInit, OnDestroy {
   private ngUnsubscribe: Subject<void> = new Subject<void>();
 
   constructor(
+    @Inject(WINDOW) private window: Window,
     private happeningService: HappeningService,
     private newHappeningPageService: NewHappeningPageService,
     private route: ActivatedRoute,
@@ -114,5 +116,9 @@ export class HappeningPageComponent implements OnInit, OnDestroy {
     this.happeningService.generateDetailedParticipantListInformation(this.happeningId, this.form.value)
       .pipe()
       .subscribe();
+  }
+
+  private getHostname(): string {
+    return this.window.location.hostname;
   }
 }

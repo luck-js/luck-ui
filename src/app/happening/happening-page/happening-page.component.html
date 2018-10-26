@@ -26,8 +26,8 @@
       <span>{{participant.name}}</span>
     </div>
     <div class="block-element">
-      <a href="http://localhost:9000/participation/{{participant.uniqueLink}}">
-        http://localhost:9000/participation/{{participant.uniqueLink}}
+      <a [routerLink]="['/participation', participant.uniqueLink]">
+        http://{{getHostname()}}/participation/{{participant.uniqueLink}}
       </a>
     </div>
   </div>
