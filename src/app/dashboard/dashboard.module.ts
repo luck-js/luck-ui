@@ -2,11 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { HomeModule } from '../core/home/home.module';
-import { HappeningModule } from '../happening/happening.module';
-import { ParticipationHappeningModule } from '../participation-happening/participation-happening.module';
-import { MatchMemberModule } from '../match-member/match-member.module';
-
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 
 import { NavbarComponent } from './dashboard-page/navbar/navbar.component';
@@ -22,19 +17,19 @@ import { FooterComponent } from './dashboard-page/footer/footer.component';
         // {path: '', redirectTo: '', pathMatch: 'full'},
         {
           path: '',
-          loadChildren: () => HomeModule,
+          loadChildren: '../core/home/home.module#HomeModule',
         },
         {
           path: 'participation',
-          loadChildren: () => ParticipationHappeningModule
+          loadChildren: '../participation-happening/participation-happening.module#ParticipationHappeningModule'
         },
         {
           path: 'match',
-          loadChildren: () => MatchMemberModule
+          loadChildren: '../match-member/match-member.module#MatchMemberModule'
         },
         {
           path: 'happening',
-          loadChildren: () => HappeningModule,
+          loadChildren: '../happening/happening.module#HappeningModule'
         },
       ]
     }
