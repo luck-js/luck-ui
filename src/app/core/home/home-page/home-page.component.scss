@@ -1,0 +1,44 @@
+@import '~src/scss/base';
+
+:host{
+  .content{
+    padding: 70px 30px 30px 30px;
+    text-align: center;
+
+    @include respond-above('medium') {
+      padding: 70px 40px 30px 40px;
+    }
+
+    img{
+      width: 165px;
+      height: 165px;
+      margin-bottom: 40px;
+
+      @include respond-above('medium') {
+        width: 180px;
+        height: 180px;
+      }
+    }
+
+    h1, h2 {
+      margin: 5px 0;
+      font-weight: 300;
+      white-space: pre-line;
+    }
+  }
+
+  img.bg-bottom{
+    width: 260%;
+    margin-bottom: -35%;
+    margin-left: -80%;
+
+    @include respond-above('medium') {
+      width: 114%;
+      margin-bottom: -19%;
+      margin-left: -7%;
+    }
+
+    position: fixed;
+    bottom: 0;
+  }
+}
