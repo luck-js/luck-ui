@@ -10,7 +10,8 @@
   align-items: stretch;
   align-content: stretch;
 
-  padding: 10px 25px;
+  background-image: url('src/assets/bg-bubbles.png');
+  background-color: color-base('red');
 
   .container {
     flex: 1;
