@@ -10,8 +10,11 @@
   align-items: stretch;
   align-content: stretch;
 
-  background-image: url('src/assets/bg-bubbles.png');
-  background-color: color-base('red');
+  .bg-wrapper {
+    background-image: url('src/assets/bg-bubbles.png');
+    background-repeat: repeat;
+    background-color: color-base('red');
+  }
 
   .container {
     flex: 1;
