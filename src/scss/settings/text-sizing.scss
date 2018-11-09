@@ -12,46 +12,66 @@ $text-sizing: (
   ),
   'sub-header': (
     'small': (
-      'font-size': 18px,
+      'font-size': 21px,
     ),
     'medium': (
-      'font-size': 21px,
+      'font-size': 28px,
     ),
     'large': (
-      'font-size': 21px,
+      'font-size': 28px,
     ),
   ),
   'block-header': (
     'small': (
-      'font-size': 22px,
+      'font-size': 18px,
     ),
     'medium': (
-      'font-size': 22px,
+      'font-size': 24px,
     ),
     'large': (
-      'font-size': 22px,
+      'font-size': 24px,
     ),
   ),
   'description': (
     'small': (
-      'font-size': 14px,
+      'font-size': 24px,
+      'font-weight': 300,
     ),
     'medium': (
-      'font-size': 14px,
+      'font-size': 36px,
+      'font-weight': 300,
     ),
     'large': (
-      'font-size': 14px,
+      'font-size': 36px,
+      'font-weight': 300,
     ),
   ),
   'sub-description': (
     'small': (
-      'font-size': 12px,
+      'font-size': 18px,
+      'font-weight': 300,
     ),
     'medium': (
-      'font-size': 12px,
+      'font-size': 24px,
+      'font-weight': 300,
     ),
     'large': (
-      'font-size': 12px,
+      'font-size': 24px,
+      'font-weight': 300,
+    ),
+  ),
+  'small-description': (
+    'small': (
+      'font-size': 16px,
+      'font-weight': 300,
+    ),
+    'medium': (
+      'font-size': 18px,
+      'font-weight': 300,
+    ),
+    'large': (
+      'font-size': 18px,
+      'font-weight': 300,
     ),
   ),
 );
@@ -82,6 +102,7 @@ $text-sizing: (
 
   @if $text-size-properties {
     font-size: map-get($text-size-properties, 'font-size');
+    font-weight: map-get($text-size-properties, 'font-weight');
   }
 }
 
