@@ -17,6 +17,7 @@ li {
 
 p, h1, h2, h3 {
   margin: 0;
+  padding: 3px 0;
 }
 
 h1, h2, h3 {
@@ -25,13 +26,11 @@ h1, h2, h3 {
 
 p {
   font-size: 18px;
+  font-weight: 300;
+  opacity: 0.85;
 }
 
-.app-icon {
-  @include icon;
-}
-
-.color-font{
+.color-font {
   &.red {
     color: color-base('red');
   }
