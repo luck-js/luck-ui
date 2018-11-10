@@ -133,15 +133,15 @@
     }
 
     .content {
-      padding: 0 10px;
     }
 
     .image-container, .content {
       align-self: center;
-      flex: 1 1;
+      flex: 1 1 50%;
+      padding: 0 32px;
 
       @include respond-above('medium') {
-        flex: 1 2;
+        flex: 1 2 50%;
       }
     }
 
@@ -154,7 +154,7 @@
     }
   }
 
-  section.about-us, section.help-us, section.join-us {
+  section.about-us, section.help-us {
     width: 100%;
     max-width: 100%;
     padding: 0 25px;
@@ -172,19 +172,53 @@
 
     p {
       @include responsive-text-size('sub-description');
+      padding: 45px 0;
     }
   }
 
   section.about-us {
+    padding: 100px 0 0 0;
+
+    .content {
+      padding: 0 0 115px 0;
+    }
+
     img {
       width: 100%;
       max-width: 600px;
-      padding: 10px 0 30px 0;
       box-shadow: 0px 0px 84px 0px rgba(0,0,0,0.13);
     }
   }
 
   section.help-us {
+    .content{
+      padding: 0 0 80px 0;
+    }
+
+    a {
+      display: block;
+      width: 240px;
+      height: 80px;
+      border-radius: 15px;
+      margin: 0 auto;
+      background-image: url('src/assets/wspieram-to.png');
+      background-color: color-base('white');
+      background-size: 80% auto;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      cursor: pointer;
+
+      transition: 2s;
+
+      &:hover{
+        background-color: color-shade('white', 10);
+      }
+    }
+
+    p {
+      padding: 30px 0;
+    }
   }
 
   .logo__container{
@@ -195,13 +229,17 @@
       height: 100px;
 
       @include respond-above('medium') {
-        width: 130px;
-        height: 130px;
+        width: 115px;
+        height: 115px;
+        margin: -15px 0 0 0;
       }
     }
   }
 
   section.join-us {
+    width: 100%;
+    max-width: 100%;
+
     text-align: center;
     background-color: color-base('white');
     color: color-base('black');
@@ -212,6 +250,7 @@
 
     p {
       @include responsive-text-size('small-description');
+      padding: 10px 0;
     }
   }
 
@@ -219,5 +258,21 @@
     text-align: center;
     color: color-base('black');
     background-color: color-base('white');
+
+    button {
+      color: color-base('red');
+      font-size: 45px;
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    button.app-icon-github{
+      transform: translateY(2px);
+      font-size: 51px;
+    }
+
+    p {
+      padding: 10px 0;
+    }
   }
 }
