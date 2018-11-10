@@ -147,38 +147,6 @@
 
     img {
       width: 100%;
-
-      @include respond-above('medium') {
-        max-width: initial;
-        width: auto;
-      }
-
-      &.horizontal {
-        max-width: 300px;
-        padding: 50px 0;
-
-        @include respond-above('medium') {
-          width: 100%;
-          height: auto;
-          margin-left: 0;
-        }
-      }
-
-      &.duplicated {
-        max-width: 185px;
-        padding: 50px 0;
-      }
-
-      &.shadow {
-        max-width: 600px;
-        padding: 50px 0px 0px 32%;
-
-        @include respond-above('medium') {
-          padding: 0;
-          margin-left: 26%;
-          max-height: 290px;
-        }
-      }
     }
 
     h3 {
