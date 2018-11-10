@@ -13,7 +13,7 @@
       position: absolute;
       z-index: -1;
       width: 100%;
-      height: 200px;
+      height: 112px;
       background-position: center top;
 
       @include respond-above('medium') {
@@ -21,29 +21,29 @@
     }
 
     &__container {
-      margin-bottom: 160px;
+      margin-bottom: 112px;
 
       .bg-bubbles__image {
         background-image: url('src/assets/bubbles.png');
 
         &__bottom {
-          bottom: -160px;
+          bottom: -112px;
           transform: rotate(180deg);
         }
         &__top {
-          top: -160px;
+          top: -112px;
         }
       }
     }
 
     &__container-footer {
-      margin-top: 160px;
+      margin-top: 112px;
 
       .bg-bubbles__image {
         background-image: url('src/assets/bubbles-footer.png');
 
         &__top {
-          top: -160px;
+          top: -112px;
         }
       }
     }
@@ -53,7 +53,7 @@
   }
 
   section.welcome-screen {
-    height: 100vh;
+    height: calc(100vh - 40px);
     width: 100%;
     max-width: 100%;
 
@@ -72,11 +72,10 @@
         width: 165px;
         height: 165px;
         margin-bottom: 40px;
-        //box-shadow: 0 0 84px 84px rgba(0,0,0,0.13);
 
         @include respond-above('medium') {
-          width: 180px;
-          height: 180px;
+          width: 143px;
+          height: 143px;
         }
       }
 
@@ -92,11 +91,12 @@
     display: flex;
     flex-direction: column;
     color: color-base('black');
+    padding: 40px 0 0 0;
 
     .cart {
       display: flex;
       flex-direction: column;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
 
       @include respond-above('medium') {
@@ -167,7 +167,7 @@
     }
 
     h2 {
-      @include responsive-text-size('sub-header');
+      @include responsive-text-size('main-header');
     }
 
     p {
@@ -178,18 +178,16 @@
   section.about-us {
     img {
       width: 100%;
+      max-width: 600px;
       padding: 10px 0 30px 0;
+      box-shadow: 0px 0px 84px 0px rgba(0,0,0,0.13);
     }
   }
 
   section.help-us {
   }
 
-  section.join-us {
-
-  }
-
-  footer {
+  .logo__container{
     text-align: center;
 
     img {
@@ -201,5 +199,25 @@
         height: 130px;
       }
     }
+  }
+
+  section.join-us {
+    text-align: center;
+    background-color: color-base('white');
+    color: color-base('black');
+
+    h2 {
+      @include responsive-text-size('sub-header');
+    }
+
+    p {
+      @include responsive-text-size('small-description');
+    }
+  }
+
+  footer {
+    text-align: center;
+    color: color-base('black');
+    background-color: color-base('white');
   }
 }
