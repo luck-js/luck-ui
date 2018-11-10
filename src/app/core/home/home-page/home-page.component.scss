@@ -2,33 +2,29 @@
 
 :host {
   .bg-section {
-    position: relative;
-    z-index: 0;
     background-color: color-base('white');
   }
 
-  .bg-section {
+  .bg-bubbles {
     position: relative;
+    z-index: 0;
 
-    &:nth-of-type(1) {
+    &__image {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 200px;
+      background-position: center top;
+
+      @include respond-above('medium') {
+      }
+    }
+
+    &__container {
       margin-bottom: 160px;
-    }
 
-    &:nth-of-type(2) {
-      margin-top: 160px;
-    }
-
-    .bg-bubbles {
-      &__image {
-        position: absolute;
-        z-index: -1;
-        width: 100%;
-        height: 200px;
+      .bg-bubbles__image {
         background-image: url('src/assets/bubbles.png');
-        background-position: center top;
-
-        @include respond-above('medium') {
-        }
 
         &__bottom {
           bottom: -160px;
@@ -40,17 +36,11 @@
       }
     }
 
-    .bg-bubbles-footer {
-      &__image {
-        position: absolute;
-        z-index: -1;
-        width: 100%;
-        height: 200px;
-        background-image: url('src/assets/bubbles-footer.png');
-        background-position: center top;
+    &__container-footer {
+      margin-top: 160px;
 
-        @include respond-above('medium') {
-        }
+      .bg-bubbles__image {
+        background-image: url('src/assets/bubbles-footer.png');
 
         &__top {
           top: -160px;
