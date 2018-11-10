@@ -15,9 +15,16 @@ li {
   list-style: none;
 }
 
-h1, h2, h3 {
+p, h1, h2, h3 {
   margin: 0;
+}
+
+h1, h2, h3 {
   @include responsive-text-size('main-header');
+}
+
+p {
+  font-size: 18px;
 }
 
 .app-icon {
