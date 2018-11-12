@@ -69,9 +69,13 @@
   }
 
   section.welcome-screen {
-    height: calc(100vh - 40px);
+    height: calc(100vh - 60px);
     width: 100%;
     max-width: 100%;
+
+    @include respond-above('medium') {
+      height: calc(100vh - 40px);
+    }
 
     .content {
       height:  calc(100% - 112px);
