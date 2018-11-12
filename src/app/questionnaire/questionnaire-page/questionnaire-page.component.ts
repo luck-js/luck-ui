@@ -10,6 +10,7 @@ import { INIT_FORM_QUESTIONNAIRE, Questionnaire, QuestionnaireData, Questionnair
 })
 export class QuestionnairePageComponent implements OnInit {
   public happeningId: string;
+  public formSend = true;
 
   public model: Questionnaire;
   public form: FormGroup;
@@ -36,6 +37,7 @@ export class QuestionnairePageComponent implements OnInit {
   }
 
   public clickedSave() {
+    this.formSend = false
     const data: any = Object.keys(this.form.value).reduce((obj, key) => {
       const id = QuestionnaireId[key];
       obj[id] = this.form.value[key];

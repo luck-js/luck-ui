@@ -34,6 +34,47 @@
   }
 
   form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    font-size: 23px;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px 0;
+
+      &__label {
+        margin-bottom: 20px;
+      }
+
+      &__input {
+        padding: 10px;
+      }
+
+      &__checkbox {
+        margin-right: 10px;
+      }
+    }
+
+    .rodo {
+      align-items: flex-start;
+      flex-direction: row;
+      font-size: 12px;
+      max-width: 400px;
+      padding: 0 20px;
+    }
+
+    .button {
+      margin-top: 10px;
+    }
+
+    .button:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
 
   }
 

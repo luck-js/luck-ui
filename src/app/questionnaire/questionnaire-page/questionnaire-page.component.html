@@ -1,23 +1,41 @@
-<form [formGroup]="form" class="form-block">
+<form [formGroup]="form" class="form-block" *ngIf=formSend>
 
   <div class="form-group name">
-    <label for="gForm_1">Imię i nazwisko:</label>
-    <input type="text" id="gForm_1" placeholder="Imię i nazwisko" formControlName="name">
+    <label class="form-group__label" for="gForm_1">
+      Imię i nazwisko:
+    </label>
+    <input class="form-group__input" type="text" id="gForm_1" placeholder="Imię i nazwisko" formControlName="name">
   </div>
 
-  <div class="form-group description">
-    <label for="gForm_2">Adres email:</label>
-    <input type="text" id="gForm_2" placeholder="Adres email" formControlName="email">
+  <div class="form-group email">
+    <label class="form-group__label" for="gForm_2">
+      Adres email:
+    </label>
+    <input class="form-group__input" type="text" id="gForm_2" placeholder="Adres email" formControlName="email">
   </div>
 
-  <div class="form-group description">
-    <label for="gForm_3">Numer Telefonu</label>
-    <input type="text" id="gForm_3" placeholder="Numer Telefonu" formControlName="telephone">
+  <div class="form-group tel">
+    <label class="form-group__label" for="gForm_3">
+      Numer telefonu:
+    </label>
+    <input class="form-group__input" type="text" id="gForm_3" placeholder="Numer Telefonu" formControlName="telephone">
   </div>
-  <button class="btn btn-primary"
-          (click)="clickedSave()">Prześlij
+
+  <div class="form-group rodo">
+    <input class="form-group__checkbox" type="checkbox" id="gForm_4">
+    Wyrażam zgodę na przetwarzanie danych osobowych zawartych w niniejszym formularzu w celu otrzymania "Przewodnika
+    prezentowego" zgodnie z ustawą z dnia 10 maja 2018 roku o ochronie danych osobowych (Dz. Ustaw z 2018, poz. 1000)
+    oraz zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie
+    ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych
+    oraz uchylenia dyrektywy 95/46/WE (RODO).
+  </div>
+
+  <button class="button" (click)="clickedSave()">
+    Prześlij
   </button>
+
 </form>
+
 <div class="bg-section bg-bubbles bg-bubbles__container-footer">
   <div class="bg-bubbles__image bg-bubbles__image__top logo__container">
     <img src="assets/logo-shadow.png">
@@ -28,6 +46,6 @@
       <button class="app-icon app-icon-github"></button>
       <button class="app-icon app-icon-instagram"></button>
     </div>
-    <p>Luck 20018</p>
+    <p>Luck 2018</p>
   </footer>
 </div>
