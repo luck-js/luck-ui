@@ -54,10 +54,18 @@
 
     span{
       color: color-base('pink');
-    }
-  }
+      font-size: 50px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -25px;
+      transition: transform 0.5s, color 0.5s;
 
-  section {
+      &:hover {
+        color: color-shade('pink', 10);
+        transform: translateY(-5px);
+      }
+    }
   }
 
   section.welcome-screen {
@@ -66,20 +74,29 @@
     max-width: 100%;
 
     .content {
+      height:  calc(100% - 112px);
       max-width: 1200px;
       margin: 0 auto;
 
-      padding: 70px 30px 30px 30px;
+      padding: 60px 15px 0px 15px;
       text-align: center;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
 
       @include respond-above('medium') {
         padding: 70px 40px 30px 40px;
       }
 
+      .header-container {
+        padding-bottom: 65px;
+      }
+
       img {
         width: 165px;
         height: 165px;
-        margin-bottom: 40px;
 
         @include respond-above('medium') {
           width: 143px;
@@ -91,6 +108,15 @@
         @include responsive-text-size('description');
         margin: 5px 0;
         white-space: pre-line;
+      }
+
+      p {
+        @include responsive-text-size('sub-description');
+        opacity: 0;
+
+        @include respond-above('medium') {
+          @include responsive-text-size('sub-description');
+        }
       }
     }
   }
@@ -166,12 +192,17 @@
   section.about-us, section.help-us, section.join-us {
     width: 100%;
     max-width: 1000px;
+    margin: 0 auto;
+
+    padding: 30px 0 0 0;
+
+    @include respond-above('medium') {
+      padding: 100px 0 0 0;
+    }
 
     .content {
-      max-width: 1000px;
-      margin: 0 auto;
       text-align: center;
-      padding: 0 15px 40px 15px;
+      padding: 0 15px;
     }
 
     h2 {
@@ -189,17 +220,6 @@
   }
 
   section.about-us {
-    padding: 30px 0 0 0;
-
-    @include respond-above('medium') {
-      padding: 100px 0 0 0;
-    }
-
-    .content {
-      @include respond-above('medium') {
-        padding: 100px 0 0 0;
-      }
-    }
 
     img {
       width: 100%;
@@ -209,32 +229,35 @@
   }
 
   section.help-us {
-    //padding: 0 0 40px 0;
+    padding-bottom: 30px;
 
     a {
+      width: 180px;
+      height: 60px;
+
       display: block;
-      width: 240px;
-      height: 80px;
       border-radius: 15px;
       margin: 40px auto;
 
       background-image: url('src/assets/wspieram-to.png');
       background-color: color-base('white');
-      background-size: 80% auto;
+      background-size: 65% auto;
       background-repeat: no-repeat;
       background-position: center;
-
       cursor: pointer;
 
-      transition: 2s;
+      transition: background-color 2s;
+
+      box-shadow: 0px 0px 84px 0px rgba(0, 0, 0, 0.13);
+
+      @include respond-above('medium') {
+        width: 240px;
+        height: 80px;
+      }
 
       &:hover {
         background-color: color-shade('white', 10);
       }
-    }
-
-    p {
-      //padding-bottom: 30px;
     }
   }
 
@@ -244,11 +267,23 @@
     img {
       width: 100px;
       height: 100px;
+      transition: width .5s, height .5s;
+      cursor: pointer;
 
       @include respond-above('medium') {
         width: 115px;
         height: 115px;
         margin: -15px 0 0 0;
+      }
+
+      &:hover {
+        width: 110px;
+        height: 110px;
+
+        @include respond-above('medium') {
+          width: 125px;
+          height: 125px;
+        }
       }
     }
   }
@@ -257,6 +292,8 @@
     text-align: center;
     background-color: color-base('white');
     color: color-base('black');
+    padding: 0 0 0 0;
+
 
     h2 {
       @include responsive-text-size('sub-header');
@@ -272,6 +309,14 @@
     text-align: center;
     color: color-base('black');
     background-color: color-base('white');
+
+    .content {
+      padding: 5px 0;
+
+      @include respond-above('medium') {
+        padding: 10px 0;
+      }
+    }
 
     button {
       color: color-base('red');
