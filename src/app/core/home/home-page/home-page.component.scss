@@ -25,6 +25,7 @@
 
       .bg-bubbles__image {
         background-image: url('src/assets/bubbles.png');
+        backface-visibility: hidden;
 
         &__bottom {
           bottom: -110px;
@@ -40,11 +41,12 @@
       margin-top: calc(113px + 45px);
 
       @include respond-above('medium') {
-        margin-top: calc(113px + 100px);
+        margin-top: calc(113px + 120px);
       }
 
       .bg-bubbles__image {
         background-image: url('src/assets/bubbles-footer.png');
+        backface-visibility: hidden;
 
         &__top {
           top: -110px;
@@ -281,7 +283,7 @@
       background-repeat: no-repeat;
       background-position: center;
       cursor: pointer;
-
+      backface-visibility: hidden;
       border: 2px solid color-base('white');
       transition: background-color 0.5s, border-color 0.5s;
 
@@ -350,20 +352,22 @@
     background-color: color-base('white');
 
     .content {
-      padding: 5px 0;
+      padding: 10px 0;
 
       @include respond-above('medium') {
-        padding: 10px 0;
+        padding: 15px 0;
       }
     }
 
-    button {
+    a {
+
       cursor: pointer;
       color: color-base('red');
       font-size: 40px;
       text-align: center;
       padding: 0 10px;
       transition: color 0.5s;
+      display: inline-block;
 
       &:hover {
         color: color-shade('dark-pink');
