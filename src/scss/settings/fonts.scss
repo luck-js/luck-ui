@@ -29,18 +29,18 @@
 
 @mixin github {
   &:before {
-    content: '\e901';
+    content: '\e902';
   }
 }
 
 @mixin facebook {
   &:before {
-    content: '\ea91';
+    content: '\e903';
   }
 }
 
 @mixin instagram {
   &:before {
-    content: '\ea92';
+    content: '\e901';
   }
 }

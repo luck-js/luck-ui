@@ -13,7 +13,7 @@
       position: absolute;
       z-index: -1;
       width: 100%;
-      height: 112px;
+      height: 113px;
       background-position: center top;
 
       @include respond-above('medium') {
@@ -21,7 +21,7 @@
     }
 
     &__container {
-      margin-bottom: 112px;
+      margin-bottom: 113px;
 
       .bg-bubbles__image {
         background-image: url('src/assets/bubbles.png');
@@ -37,7 +37,11 @@
     }
 
     &__container-footer {
-      margin-top: 112px;
+      margin-top: calc(113px + 30px);
+
+      @include respond-above('medium') {
+        margin-top: calc(113px + 100px);
+      }
 
       .bg-bubbles__image {
         background-image: url('src/assets/bubbles-footer.png');
@@ -49,36 +53,38 @@
     }
   }
 
-  .arrow__container{
+  .arrow__container {
     text-align: center;
 
-    span{
+    span {
       color: color-base('pink');
       font-size: 50px;
       position: absolute;
       left: 50%;
       top: 50%;
       margin-left: -25px;
+      margin-top: 25px;
       transition: transform 0.5s, color 0.5s;
+      cursor: pointer;
 
       &:hover {
-        color: color-shade('pink', 10);
+        color: color-shade('dark-pink');
         transform: translateY(-5px);
       }
     }
   }
 
   section.welcome-screen {
-    height: calc(100vh - 60px);
+    height: calc(100vh - 70px);
     width: 100%;
     max-width: 100%;
 
     @include respond-above('medium') {
-      height: calc(100vh - 40px);
+      height: calc(100vh - 50px);
     }
 
     .content {
-      height:  calc(100% - 112px);
+      height: calc(100% - 113px);
       max-width: 1200px;
       margin: 0 auto;
 
@@ -99,13 +105,8 @@
       }
 
       img {
-        width: 165px;
-        height: 165px;
-
-        @include respond-above('medium') {
-          width: 143px;
-          height: 143px;
-        }
+        width: 12.5%;
+        height: auto;
       }
 
       h1, h2 {
@@ -129,7 +130,11 @@
     display: flex;
     flex-direction: column;
     color: color-base('black');
-    padding: 40px 0 0 0;
+    padding: 50px 0 50px 0;
+
+    @include respond-above('medium') {
+      padding: 40px 0 40px 0;
+    }
 
     .cart {
       display: flex;
@@ -168,6 +173,14 @@
 
     .image-container {
       text-align: center;
+
+      &.vertical {
+        padding: 20px 15px 0 15px;
+
+        @include respond-above('medium') {
+          padding: 0;
+        }
+      }
     }
 
     .content {
@@ -226,14 +239,15 @@
   section.about-us {
 
     img {
+      margin-top: 20px;
       width: 100%;
       max-width: 600px;
       box-shadow: 0px 0px 84px 0px rgba(0, 0, 0, 0.13);
+      opacity: 0.9;
     }
   }
 
   section.help-us {
-    padding-bottom: 30px;
 
     a {
       width: 180px;
@@ -241,7 +255,7 @@
 
       display: block;
       border-radius: 15px;
-      margin: 40px auto;
+      margin: 20px auto 0;
 
       background-image: url('src/assets/wspieram-to.png');
       background-color: color-base('white');
@@ -250,17 +264,19 @@
       background-position: center;
       cursor: pointer;
 
-      transition: background-color 2s;
+      border: 2px solid color-base('white');
+      transition: background-color 0.5s, border-color 0.5s;
 
       box-shadow: 0px 0px 84px 0px rgba(0, 0, 0, 0.13);
 
       @include respond-above('medium') {
-        width: 240px;
-        height: 80px;
+        //width: 240px;
+        //height: 80px;
       }
 
       &:hover {
-        background-color: color-shade('white', 10);
+        border: 2px solid color-base('white');
+        background-color: color-base('pink');
       }
     }
   }
@@ -298,6 +314,7 @@
     color: color-base('black');
     padding: 0 0 0 0;
 
+    max-width: 800px;
 
     h2 {
       @include responsive-text-size('sub-header');
@@ -323,15 +340,16 @@
     }
 
     button {
+      cursor: pointer;
       color: color-base('red');
-      font-size: 45px;
+      font-size: 40px;
       text-align: center;
       padding: 0 10px;
-    }
+      transition: color 0.5s;
 
-    button.app-icon-github {
-      transform: translateY(2px);
-      font-size: 51px;
+      &:hover {
+        color: color-shade('dark-pink');
+      }
     }
 
     p {
