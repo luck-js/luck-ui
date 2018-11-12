@@ -1,8 +1,9 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {RouterModule} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
-import {AppComponent} from './containers/app/app.component';
+import { AppComponent } from './containers/app/app.component';
 
 export const COMPONENTS = [
   AppComponent
@@ -12,6 +13,7 @@ export const COMPONENTS = [
   imports: [
     CommonModule,
     RouterModule,
+    HttpClientModule,
   ],
   declarations: COMPONENTS,
   exports: COMPONENTS,
