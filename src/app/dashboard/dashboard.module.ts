@@ -18,6 +18,10 @@ import { FooterComponent } from './dashboard-page/footer/footer.component';
           path: '',
           loadChildren: '../core/home/home.module#HomeModule',
         },
+        {
+          path: 'questionnaire',
+          loadChildren: '../questionnaire/questionnaire.module#QuestionnaireModule',
+        },
       ]
     }
     ])
