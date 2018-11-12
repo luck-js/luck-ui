@@ -1,0 +1,33 @@
+<form [formGroup]="form" class="form-block">
+
+  <div class="form-group name">
+    <label for="gForm_1">Imię i nazwisko:</label>
+    <input type="text" id="gForm_1" placeholder="Imię i nazwisko" formControlName="name">
+  </div>
+
+  <div class="form-group description">
+    <label for="gForm_2">Adres email:</label>
+    <input type="text" id="gForm_2" placeholder="Adres email" formControlName="email">
+  </div>
+
+  <div class="form-group description">
+    <label for="gForm_3">Numer Telefonu</label>
+    <input type="text" id="gForm_3" placeholder="Numer Telefonu" formControlName="telephone">
+  </div>
+  <button class="btn btn-primary"
+          (click)="clickedSave()">Prześlij
+  </button>
+</form>
+<div class="bg-section bg-bubbles bg-bubbles__container-footer">
+  <div class="bg-bubbles__image bg-bubbles__image__top logo__container">
+    <img src="assets/logo-shadow.png">
+  </div>
+  <footer>
+    <div class="content">
+      <button class="app-icon app-icon-facebook"></button>
+      <button class="app-icon app-icon-github"></button>
+      <button class="app-icon app-icon-instagram"></button>
+    </div>
+    <p>Luck 20018</p>
+  </footer>
+</div>
