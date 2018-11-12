@@ -1,4 +1,4 @@
-<section class="welcome-screen">
+<section #home class="welcome-screen">
   <div class="content">
     <img src="assets/logo-shadow.png">
     <div class="header-container">
@@ -10,9 +10,9 @@
 </section>
 <div class="bg-section bg-bubbles bg-bubbles__container">
   <div class="bg-bubbles__image bg-bubbles__image__top arrow__container">
-    <span class="app-icon app-icon-arrow"></span>
+    <span (click)="moveToStructure()" class="app-icon app-icon-arrow"></span>
   </div>
-  <section class="philosophy">
+  <section #philosophy class="philosophy">
     <div class="cart">
       <div class="image-container">
         <img src="assets/widok1-cien.png">
@@ -97,7 +97,7 @@
 </section>
 <div class="bg-section bg-bubbles bg-bubbles__container-footer">
   <div class="bg-bubbles__image bg-bubbles__image__top logo__container">
-    <img src="assets/logo-shadow.png">
+    <img (click)="moveToUp()" src="assets/logo-shadow.png">
   </div>
   <section class="join-us">
     <div class="content">

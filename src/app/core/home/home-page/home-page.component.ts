@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'lk-home-page',
@@ -6,11 +6,16 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./home-page.component.scss']
 })
 
-export class HomePageComponent implements OnInit {
+export class HomePageComponent {
+  @ViewChild('philosophy') public philosophy:ElementRef;
+  @ViewChild('home') public home:ElementRef;
 
-  constructor() { }
+  public moveToStructure():void {
+    this.philosophy.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+  }
 
-  ngOnInit() {
+  public moveToUp():void {
+    this.home.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
   }
 
 }
