@@ -144,10 +144,6 @@
     color: color-base('black');
     padding: 50px 0 50px 0;
 
-    @include respond-above('medium') {
-      padding: 40px 0 40px 0;
-    }
-
     .cart {
       display: flex;
       flex-direction: column;
