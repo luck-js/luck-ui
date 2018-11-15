@@ -27,7 +27,7 @@ export const WINDOW_PROVIDERS = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {useHash: true}),
     CoreModule.forRoot(),
   ],
   providers: [
