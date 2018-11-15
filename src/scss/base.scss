@@ -3,6 +3,9 @@
 @import 'settings/text-sizing';
 @import 'settings/fonts';
 
+@import 'components/buttons';
+@import 'components/input';
+
 @import url('https://fonts.googleapis.com/css?family=Lato:100,200,250,300,400,500,700,900&subset=latin-ext');
 $ft_main: 'Lato', sans-serif;
 
