@@ -1,0 +1,24 @@
+a.lk-button{
+  text-decoration: none;
+  display: block;
+}
+
+a.lk-button, button.lk-button{
+  width: 100%;
+  @include text-size('description');
+
+  text-align: center;
+  color: color-base('dark-gray');
+  background-color: color-base('light-black');
+  border: 1px solid color-base('light-black');
+  border-radius: 5px;
+  padding: 10px 15px;
+
+  font-weight: 700;
+
+  &:hover {
+    color: color-shade('dark-gray', 10);
+    background-color: color-shade('light-black', 10);
+    border: 1px solid color-shade('light-black', 10);
+  }
+}

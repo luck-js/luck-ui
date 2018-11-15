@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AppStateService } from '../../app-state.service';
 
 @Component({
   selector: 'lk-home-page',
@@ -10,12 +11,20 @@ export class HomePageComponent {
   @ViewChild('philosophy') public philosophy:ElementRef;
   @ViewChild('home') public home:ElementRef;
 
+  constructor(private appStateService: AppStateService) {
+
+  }
+
   public moveToStructure():void {
     this.philosophy.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
   }
 
   public moveToUp():void {
     this.home.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+  }
+
+  public updateNameHappening(name: string){
+    this.appStateService.setNameHappening(name);
   }
 
 }

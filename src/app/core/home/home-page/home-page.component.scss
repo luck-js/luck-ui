@@ -106,6 +106,40 @@
         padding-bottom: 65px;
       }
 
+      .first-step-happening-form{
+        padding: 10px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        @include respond-above('medium') {
+          flex-direction: row;
+        }
+
+        input, a {
+          flex: 1 1 50%;
+        }
+
+        input {
+          margin-bottom: 5px;
+
+          @include respond-above('medium') {
+            margin-right: 20px;
+            flex: 1 2 auto
+          }
+        }
+
+        a {
+          margin-top: 5px;
+
+          @include respond-above('medium') {
+            text-transform: uppercase;
+            margin-left: 20px;
+            flex: 1 2 100px
+          }
+        }
+      }
+
       img {
         width: 165px;
         height: 165px;
@@ -123,6 +157,7 @@
 
       h1, h2 {
         @include responsive-text-size('description');
+        text-transform: uppercase;
         margin: 5px 0;
         white-space: pre-line;
       }

@@ -18,6 +18,18 @@ import { FooterComponent } from './dashboard-page/footer/footer.component';
           path: '',
           loadChildren: '../core/home/home.module#HomeModule',
         },
+        {
+          path: 'participation',
+          loadChildren: '../participation-happening/participation-happening.module#ParticipationHappeningModule'
+        },
+        {
+          path: 'match',
+          loadChildren: '../match-member/match-member.module#MatchMemberModule'
+        },
+        {
+          path: 'happening',
+          loadChildren: '../happening/happening.module#HappeningModule'
+        },
       ]
     }
     ])
