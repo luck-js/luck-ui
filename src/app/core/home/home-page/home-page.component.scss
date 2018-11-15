@@ -28,11 +28,11 @@
         backface-visibility: hidden;
 
         &__bottom {
-          bottom: -110px;
+          bottom: -105px;
           transform: rotate(180deg);
         }
         &__top {
-          top: -110px;
+          top: -105px;
         }
       }
     }
@@ -65,7 +65,7 @@
       left: 50%;
       top: 50%;
       margin-left: -25px;
-      margin-top: 25px;
+      margin-top: 12px;
       transition: transform 0.5s, color 0.5s;
       cursor: pointer;
 
