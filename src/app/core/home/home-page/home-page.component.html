@@ -1,1 +1,121 @@
-<a class="lk-button" [routerLink]="['/happening']">NOWE WYDARZENIE</a>
+<section #home class="welcome-screen">
+  <div class="content">
+    <img src="assets/logo-shadow.png">
+    <div class="header-container">
+      <h1>Poznaj aplikacje, która ułatwi Ci zorganizowanie Mikołajek!</h1>
+      <h2>Już niedługo dostępna!</h2>
+    </div>
+    <p>Dowiedz się więcej</p>
+  </div>
+</section>
+<div class="bg-section bg-bubbles bg-bubbles__container">
+  <div class="bg-bubbles__image bg-bubbles__image__top arrow__container">
+    <span (click)="moveToStructure()" class="app-icon app-icon-arrow"></span>
+  </div>
+  <section #philosophy class="philosophy">
+    <div class="cart">
+      <div class="image-container">
+        <img src="assets/widok1-cien.png">
+      </div>
+      <div class="content">
+        <h3>Mikołajki</h3>
+        <p class="color-font red">Aplikacja powstała z myślą o tym, by ułatwić Ci zorganizowanie losowania w gronie
+          Twoich znajomych.</p>
+        <p>
+          Teraz brak jednej osoby nie przeszkodzi Wam w dobraniu się na Mikołajki. Wystarczy utworzyć wydarzenie, dodać
+          jego
+          uczestników wpisując ich imiona! Luck wygeneruje dla Ciebie unikalne linki. Możesz je wysłać do członków
+          wydarzenia. Pozwolą im one wylosować swoją parę.
+        </p>
+      </div>
+    </div>
+
+    <div class="cart">
+      <div class="image-container horizontal">
+        <img src="assets/desktop.png">
+      </div>
+      <div class="content">
+        <h3>Dostępność</h3>
+        <p>
+          Aplikacja jest dostępna w pełni na naszej stronie internetowej. Nie musisz pobierać jej z Google Play czy App
+          Store, czy martwić się o system operacyjny Twoich znajomych. Wystarczy, że macie dostęp do Internetu! Link
+          możecie
+          otworzyć na telefonie czy komputerze!
+        </p>
+      </div>
+    </div>
+
+    <div class="cart">
+      <div class="image-container vertical">
+        <img src="assets/widok2-zlozony.png">
+      </div>
+      <div class="content">
+        <h3>Precyzyjność</h3>
+        <p>
+          Algorytm losujący został, tak obmyślony, by nikt nie mógł zostać pominięty, a jednocześnie, byś sam nie był
+          dla
+          siebie wylosowaną osobą. Nie musisz martwić się o nieważne losowania i ich powtarzanie.
+        </p>
+      </div>
+    </div>
+
+    <div class="cart">
+      <div class="image-container vertical">
+        <img src="assets/widok3-cien.png">
+      </div>
+      <div class="content">
+        <h3>Bezpieczeństwo</h3>
+        <p class="color-font red"> Wiemy, jak ważna jest dyskretność w trakcie dopasowywania.</p>
+        <p>
+          Zadbaliśmy o to, by linki uczestników wydarzenia, były unikalne, aby informacja o wylosowanej osobie została
+          tajemnicą. Sam założyciel wydarzenia nie dowie się o ich wynikach. Wygenerowany link przez twórcę wydarzenia
+          będzie mógł być otwarty tylko raz!
+        </p>
+      </div>
+    </div>
+  </section>
+  <div class="bg-bubbles__image bg-bubbles__image__bottom"></div>
+</div>
+<section class="about-us">
+  <div class="content">
+    <h2>O nas</h2>
+    <p>Jesteśmy grupką przyjaciół. Luck to projekt, który połączył nasze indywidualne zainteresowania w obszarze
+      wdrażania
+      aplikacji. Projekt umożliwia nam zdobycie nowych kompetencji. Chcieliśmy połączyć naszą wiedzę teoretyczną z
+      praktyką i jednocześnie ułatwić dobieranie się na Mikołajki!</p>
+    <img src="assets/photo-about-us.jpg">
+  </div>
+</section>
+<section class="help-us" style="display: none;">
+  <div class="content">
+    <h2>Wesprzyj nas</h2>
+    <p>Aplikacja jest w pełni darmowa. Jeśli spodobał Ci się projekt i chciałbyś nas wesprzeć, byśmy mogli trafić do jak
+      największej ilości osób, zapraszamy na strony: wesprzyj.to, Patronite. Zebrane pieniądze wykorzystamy przede
+      wszystkim na kampanię marketingową i pokrycie kosztów utrzymania domeny i serwera.</p>
+    <a></a>
+  </div>
+</section>
+<div class="bg-section bg-bubbles bg-bubbles__container-footer">
+  <div class="bg-bubbles__image bg-bubbles__image__top logo__container">
+    <img (click)="moveToUp()" src="assets/logo-shadow.png">
+  </div>
+  <section class="join-us">
+    <div class="content">
+      <h2>Dołącz do nas</h2>
+      <p>Zainteresowała Cię aplikacja? Chciałbyś ją przetestować? Może masz sugestię, jakbyśmy mogli ją ulepszyć bądź
+        usprawnić? Oprogramowanie jest tworzone w filozofii open source, możesz w każdej chwili pomóc je nam rozwinąć.
+        Napisz do nas. Chętnie Cię poznamy!
+      </p>
+      <!--<p>luck@org.pl</p>-->
+    </div>
+  </section>
+  <footer>
+    <div class="content">
+      <a class="app-icon app-icon-facebook" target="_blank" href="https://www.facebook.com/Luck-strona-aplikacji-893444557528245"></a>
+      <a class="app-icon app-icon-github" target="_blank" href="https://github.com/luck-js"></a>
+      <a class="app-icon app-icon-instagram" target="_blank" href="https://www.instagram.com/karskidesign/"></a>
+    </div>
+    <p>Luck 20018</p>
+  </footer>
+</div>
+
