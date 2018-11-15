@@ -1,0 +1,36 @@
+@import '~src/scss/base';
+
+:host{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  height: 100%;
+
+    .main-content{
+      flex: 1;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      align-content: stretch;
+    }
+
+
+  h1{
+    margin: 35px 0 0 0;
+    text-align: center;
+    @include responsive-text-size('block-header');
+  }
+
+  p{
+    @include responsive-text-size('description');
+    text-align: center;
+  }
+
+  a{
+    margin: 10px 0 0 0;
+  }
+}

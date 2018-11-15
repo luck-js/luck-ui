@@ -54,7 +54,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "luck-ui:build"
+            "browserTarget": "luck-ui:build",
+            "port": 9000
           },
           "configurations": {
             "production": {
