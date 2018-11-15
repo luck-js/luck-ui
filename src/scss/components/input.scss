@@ -1,0 +1,20 @@
+input.lk-input{
+  //width: 100%;
+  //@include responsive-text-size('description');
+
+  //text-align: center;
+  color: color-base('dark-gray');
+  background-color: color-base('white');
+  border: 1px solid color-base('white');
+  border-radius: 5px;
+  padding: 10px 15px;
+
+  font-weight: 700;
+
+  &:focus {
+    outline: none !important;
+    border:1px solid color-base('dark-white-2');
+    box-shadow: 0 0 10px color-base('dark-white-2');
+  }
+
+}

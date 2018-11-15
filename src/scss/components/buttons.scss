@@ -5,7 +5,7 @@ a.lk-button{
 
 a.lk-button, button.lk-button{
   width: 100%;
-  @include responsive-text-size('description');
+  @include text-size('description');
 
   text-align: center;
   color: color-base('dark-gray');
@@ -15,4 +15,10 @@ a.lk-button, button.lk-button{
   padding: 10px 15px;
 
   font-weight: 700;
+
+  &:hover {
+    color: color-shade('dark-gray', 10);
+    background-color: color-shade('light-black', 10);
+    border: 1px solid color-shade('light-black', 10);
+  }
 }
