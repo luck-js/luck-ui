@@ -8,6 +8,7 @@ import { Happening, INIT_FORM_HAPPENING } from './happening.model';
 import { ParticipantUniqueLinkData } from './happening.model';
 import { NewHappeningPageService } from '../new-happening-page/new-happening-page.service';
 import { WINDOW } from '../../app.module';
+import { AppStateService } from '../../core/app-state.service';
 
 @Component({
   selector: 'lk-happening-page',
@@ -32,6 +33,7 @@ export class HappeningPageComponent implements OnInit, OnDestroy {
 
   constructor(
     @Inject(WINDOW) private window: Window,
+    private appStateService: AppStateService,
     private happeningService: HappeningService,
     private newHappeningPageService: NewHappeningPageService,
     private route: ActivatedRoute,
@@ -53,7 +55,7 @@ export class HappeningPageComponent implements OnInit, OnDestroy {
         this.description = created ? created.description : '';
       });
 
-    this.initForm({ ...INIT_FORM_HAPPENING, ...this.model });
+    this.initForm({ ...INIT_FORM_HAPPENING, ...{ name: this.appStateService.nameHappening }, ...this.model });
   }
 
   ngOnDestroy() {

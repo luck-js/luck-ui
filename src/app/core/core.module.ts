@@ -8,6 +8,8 @@ import { AppComponent } from './containers/app/app.component';
 import { HeadersInterceptor } from './interceptors/headers.interceptor';
 import { BaseUrlInterceptor } from './interceptors/base-url.interceptor';
 
+import { AppStateService } from './app-state.service';
+
 export const COMPONENTS = [
   AppComponent
 ];
@@ -19,6 +21,9 @@ export const COMPONENTS = [
   ],
   declarations: COMPONENTS,
   exports: COMPONENTS,
+  providers: [
+    AppStateService
+  ]
 })
 
 export class CoreModule {
