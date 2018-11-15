@@ -13,32 +13,12 @@
 
       textarea {
         margin: 2px 0;
-
         width: 100%;
-        color: color-base('dark-gray');
-        background-color: color-base('light-black');
-        border: 1px solid color-base('light-black');
-        border-radius: 5px;
-        padding: 10px 15px;
-
-        &::placeholder {
-          color: color-base('dark-gray');
-        }
       }
 
       input {
         margin: 2px 0;
-
         width: 100%;
-        color: color-base('dark-gray');
-        background-color: color-base('light-black');
-        border: 1px solid color-base('light-black');
-        border-radius: 5px;
-        padding: 10px 15px;
-
-        &::placeholder {
-          color: color-base('dark-gray');
-        }
       }
 
       button {

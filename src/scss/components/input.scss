@@ -1,4 +1,4 @@
-input.lk-input{
+textarea.lk-input, input.lk-input{
   //width: 100%;
   //@include responsive-text-size('description');
 
@@ -10,6 +10,10 @@ input.lk-input{
   padding: 10px 15px;
 
   font-weight: 700;
+
+  &::placeholder {
+    color: color-base('dark-gray');
+  }
 
   &:focus {
     outline: none !important;
