@@ -4,32 +4,49 @@
   box-sizing: border-box;
 }
 
-.app-icon {
-  @include icon;
-}
-
 body {
   font-family: $ft_main;
-  background: color-base('white');
-  color: color-base('light-black');
+  background: color-base('red');
   margin: 0;
+  color: color-base('white');
 }
 
 li {
   list-style: none;
 }
 
-p {
+p, h1, h2, h3 {
   margin: 0;
+  padding: 3px 0;
 }
 
-h1 {
+h1, h2, h3 {
   @include responsive-text-size('main-header');
-  margin: 0;
-  padding: 10px 0;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 300;
+  opacity: 0.85;
 }
 
 a {
   color: inherit;
-  text-decoration-color: color-base('light-black');
+  text-decoration:none;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background: none;
+
+}
+
+.color-font {
+  &.red {
+    color: color-base('red');
+  }
 }

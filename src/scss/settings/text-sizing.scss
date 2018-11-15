@@ -1,57 +1,104 @@
 $text-sizing: (
   'main-header': (
     'small': (
-      'font-size': 36px,
+      'font-size': 33px,
+      'letter-spacing': 0px,
     ),
     'medium': (
-      'font-size': 42px,
+      'font-size': 53px,
+      'letter-spacing': 0px,
     ),
     'large': (
-      'font-size': 42px,
+      'font-size': 53px,
+      'letter-spacing': 0px,
     ),
   ),
   'sub-header': (
     'small': (
-      'font-size': 18px,
+      'font-size': 21px,
+      'letter-spacing': 0px,
     ),
     'medium': (
-      'font-size': 21px,
+      'font-size': 27px,
+      'letter-spacing': 0px,
     ),
     'large': (
-      'font-size': 21px,
+      'font-size': 27px,
+      'letter-spacing': 0px,
     ),
   ),
   'block-header': (
     'small': (
-      'font-size': 22px,
+      'font-size': 18px,
+      'letter-spacing': 0px,
     ),
     'medium': (
-      'font-size': 22px,
+      'font-size': 23px,
+      'letter-spacing': 0px,
     ),
     'large': (
-      'font-size': 22px,
+      'font-size': 23px,
+      'letter-spacing': 0px,
     ),
   ),
   'description': (
     'small': (
-      'font-size': 14px,
+      'font-size': 24px,
+      'font-weight': 300,
+      'opacity': 0.85,
+      'letter-spacing': 0px,
     ),
     'medium': (
-      'font-size': 14px,
+      'font-size': 38px,
+      'font-weight': 300,
+      'opacity': 0.85,
+      'letter-spacing': 0px,
     ),
     'large': (
-      'font-size': 14px,
+      'font-size': 38px,
+      'font-weight': 300,
+      'opacity': 0.85,
+      'letter-spacing': 0px,
     ),
   ),
   'sub-description': (
     'small': (
-      'font-size': 12px,
+      'font-size': 18px,
+      'font-weight': 300,
+      'opacity': 0.85,
+      'letter-spacing': 0px,
     ),
     'medium': (
-      'font-size': 12px,
+      'font-size': 24px,
+      'font-weight': 300,
+      'opacity': 0.85,
+      'letter-spacing': 0px,
     ),
     'large': (
-      'font-size': 12px,
+      'font-size': 24px,
+      'font-weight': 300,
+      'opacity': 0.85,
+      'letter-spacing': 0px,
+    ),
+  ),
+  'small-description': (
+    'small': (
+      'font-size': 16px,
+      'font-weight': 300,
+      'opacity': 0.85,
+      'letter-spacing': 0px,
+    ),
+    'medium': (
+      'font-size': 16px,
+      'font-weight': 300,
+      'opacity': 0.85,
+      'letter-spacing': 0px,
+    ),
+    'large': (
+      'font-size': 16px,
+      'font-weight': 300,
+      'opacity': 0.85,
+      'letter-spacing': 0px,
     ),
   ),
 );
@@ -82,6 +129,9 @@ $text-sizing: (
 
   @if $text-size-properties {
     font-size: map-get($text-size-properties, 'font-size');
+    font-weight: map-get($text-size-properties, 'font-weight');
+    letter-spacing: map-get($text-size-properties, 'letter-spacing');
+    opacity: map-get($text-size-properties, 'opacity');
   }
 }
 

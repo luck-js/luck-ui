@@ -1,11 +1,1 @@
 @import '~src/scss/base';
-
-:host {
-  margin: 35px 0 0 0;
-  flex: 0 0 auto;
-
-  footer {
-    text-align: center;
-    @include responsive-text-size('sub-description');
-  }
-}

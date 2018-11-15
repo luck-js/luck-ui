@@ -1,9 +1,27 @@
-@import 'settings/mixin';
 @import 'settings/breakpoint';
 @import 'settings/variables';
 @import 'settings/text-sizing';
+@import 'settings/fonts';
 
-@import 'components/buttons';
-
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,500,700,900&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,200,250,300,400,500,700,900&subset=latin-ext');
 $ft_main: 'Lato', sans-serif;
+
+.app-icon {
+  @include icon;
+
+  &.app-icon-arrow {
+    @include arrow;
+  }
+
+  &.app-icon-github {
+    @include github;
+  }
+
+  &.app-icon-facebook {
+    @include facebook;
+  }
+
+  &.app-icon-instagram {
+    @include instagram;
+  }
+}
