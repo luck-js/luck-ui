@@ -1,14 +1,20 @@
-<h1>{{name}}</h1>
-<p>{{description}}</p>
-<div class="block-row"
-     *ngFor="let participant of participantUniqueLinkData; let i = index;">
-  <div class="block-element">
-    <span>{{participant.name}}</span>
-  </div>
-  <div class="block-element">
-    <a [routerLink]="['#/participation', participant.uniqueLink]">
-      http://{{getHostname()}}#/participation/{{participant.uniqueLink}}
-    </a>
+<img src="assets/logo-shadow.png">
+<div class="header-content">
+  <h1>{{name}}</h1>
+  <p>{{description}}</p>
+</div>
+<h2>zaproś uczestników</h2>
+<div class="block-container">
+  <div class="block-row"
+       *ngFor="let participant of participantUniqueLinkData; let i = index;">
+    <div class="block-element">
+      <span>{{participant.name}}</span>
+    </div>
+    <div class="block-element">
+      <a [routerLink]="['#/participation', participant.uniqueLink]">
+        http://{{getHostname()}}#/participation/{{participant.uniqueLink}}
+      </a>
+    </div>
   </div>
 </div>
 <a class="lk-button">Twój los</a>
