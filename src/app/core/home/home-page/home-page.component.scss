@@ -1,6 +1,11 @@
 @import '~src/scss/base';
 
 :host {
+  background-image: url('src/assets/bg-bubbles.png');
+  background-repeat: repeat;
+  background-color: color-base('red');
+  display: block;
+
   .bg-section {
     background-color: color-base('white');
   }

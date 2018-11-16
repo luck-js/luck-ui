@@ -6,9 +6,10 @@
 
 body {
   font-family: $ft_main;
-  background: color-base('red');
+  background: color-base('white');
   margin: 0;
   color: color-base('white');
+  height: 100%;
 }
 
 li {
