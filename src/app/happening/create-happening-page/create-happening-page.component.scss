@@ -1,0 +1,26 @@
+@import '~src/scss/base';
+
+:host {
+  form {
+    padding: 35px 0 0 0;
+
+    p {
+      padding: 35px 0 10px 0;
+      text-align: center;
+    }
+
+    textarea {
+      margin: 2px 0;
+      width: 100%;
+    }
+
+    input {
+      margin: 2px 0;
+      width: 100%;
+    }
+
+    button {
+      margin: 2px 0 0 0;
+    }
+  }
+}

@@ -7,13 +7,15 @@ import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 
 import { HappeningPageComponent } from './happening-page/happening-page.component';
 import { NewHappeningPageComponent } from './new-happening-page/new-happening-page.component';
+import { CreateHappeningPageComponent } from './create-happening-page/create-happening-page.component';
 
 import { HappeningService } from './happening-page/happening.service';
 import { NewHappeningPageService } from './new-happening-page/new-happening-page.service';
+import { CreateHappeningService } from './create-happening-page/create-happening.service';
 
-import { NewHappeningPageGuardService } from './new-happening-page/new-happening-page-guard.service';
 import { HappeningServiceGuardService } from './happening-page/happening-guard.service';
-import { CreateHappeningPageComponent } from './create-happening-page/create-happening-page.component';
+import { NewHappeningPageGuardService } from './new-happening-page/new-happening-page-guard.service';
+import { CreateHappeningServiceGuardService } from './create-happening-page/create-happening-guard.service';
 
 @NgModule({
   imports: [
@@ -28,9 +30,15 @@ import { CreateHappeningPageComponent } from './create-happening-page/create-hap
       },
       {
         path: ':id',
+        component: CreateHappeningPageComponent,
+        canActivate: [CreateHappeningServiceGuardService]
+      },
+      {
+        path: 'view/:id',
         component: HappeningPageComponent,
         canActivate: [HappeningServiceGuardService]
-      }]),
+      }
+      ]),
     TextareaAutosizeModule
   ],
   declarations: [
@@ -41,8 +49,10 @@ import { CreateHappeningPageComponent } from './create-happening-page/create-hap
   providers: [
     HappeningService,
     NewHappeningPageService,
+    CreateHappeningService,
     HappeningServiceGuardService,
-    NewHappeningPageGuardService
+    NewHappeningPageGuardService,
+    CreateHappeningServiceGuardService
   ]
 })
 export class HappeningModule {

@@ -2,22 +2,16 @@ import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { HappeningService } from './happening.service';
-import { NewHappeningPageService } from '../new-happening-page/new-happening-page.service';
+import { HappeningService } from '../happening-page/happening.service';
 
 
 @Injectable()
 export class HappeningServiceGuardService implements CanActivate {
   constructor(private router: Router,
-              private happeningService: HappeningService,
-              private newHappeningPageService: NewHappeningPageService,
-              ) {
+              private happeningService: HappeningService) {
   }
 
   private getParticipationHappeningData(id: string): Observable<boolean> {
-    if (this.newHappeningPageService.isCreatingProcessFlag) {
-      return of(true);
-    }
 
     return this.happeningService
       .getCreatedHappening(id).pipe(
