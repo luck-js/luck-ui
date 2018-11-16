@@ -12,6 +12,9 @@
 
   .container-for-mobile{
     height: calc(100% - 30px);
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
     padding: 15px;
   }
 
@@ -35,6 +38,7 @@
   }
 
   img {
+    cursor: pointer;
     display: none;
     width: 110px;
     height: 110px;
@@ -42,17 +46,19 @@
 
     @include respond-above('medium') {
       display: block;
-      width: 143px;
-      height: 143px;
+      width: 110px;
+      height: 110px;
     }
 
     @include respond-above('x-large') {
-      width: 220px;
-      height: 220px;
+      width: 143px;
+      height: 143px;
     }
   }
 
   .header-content {
+    max-width: 500px;
+    margin: 0 auto;
     background-color: color-base('dark-white-2');
     color: color-base('light-black-1');
     border-radius: 15px;
@@ -82,11 +88,27 @@
       display: flex;
       flex-flow: row;
 
+      &:last-of-type{
+        padding-bottom: 70px;
+
+        @include respond-above('medium') {
+          padding-bottom: 180px;
+        }
+      }
+
       .block-element {
-        transition: width 0.5s, margin-right 0.5s, margin-left 0.5s, padding-right 0.5s, padding-left 0.5s, flex 0.5s;
+        transition:
+          width 1s,
+          margin-right 1s,
+          margin-left 1s,
+          padding-right 1s,
+          padding-left 1s,
+          flex-basis 1s,
+          flex-grow 1s,
+          flex-basis 1s;
 
         .app-icon-arrow {
-          transition: left 0.5s;
+          transition: left 1s;
         }
       }
 
@@ -96,15 +118,29 @@
           margin-left: 0;
           margin-right: 0;
           padding: 0;
-          flex: 0 0 0%;
+          flex: 1 1 0%;
+
+          @include respond-above('medium') {
+            margin: 5px 10px 5px 0;
+            padding: 5px 15px;
+            flex: 1 1 40%;
+          }
         }
 
         .block-element:nth-child(even) {
           flex: 1 1 100%;
           margin: 5px 0 5px 0;
 
+          @include respond-above('medium') {
+            margin: 5px 0 5px 10px;
+          }
+
           .app-icon-arrow {
             left: 0;
+
+            @include respond-above('medium') {
+              left: -20px;
+            }
           }
         }
       }
@@ -194,7 +230,7 @@
   }
 
   a.lk-button {
-    margin: 0 0 35px 0;
+    margin: 0 auto 35px auto;
   }
 
   footer {
