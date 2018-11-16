@@ -54,11 +54,16 @@
       flex-flow: row;
 
       .block-element {
-        transition: margin-right 0.5s, margin-left 0.5s, padding-right 0.5s, padding-left 0.5s, flex 0.5s;
+        transition: width 0.5s, margin-right 0.5s, margin-left 0.5s, padding-right 0.5s, padding-left 0.5s, flex 0.5s;
+
+        .app-icon-arrow {
+          transition: left 0.5s;
+        }
       }
 
       &:hover {
         .block-element:nth-child(odd) {
+          width: 0;
           margin-left: 0;
           margin-right: 0;
           padding: 0;
@@ -68,6 +73,10 @@
         .block-element:nth-child(even) {
           flex: 1 1 100%;
           margin: 5px 0 5px 0;
+
+          .app-icon-arrow {
+            left: 0;
+          }
         }
       }
     }
@@ -79,9 +88,9 @@
       border-radius: 15px;
 
       color: color-base('light-black-1');
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
+      //text-overflow: ellipsis;
+      //white-space: nowrap;
+      //overflow: hidden;
 
       &:nth-child(odd) {
         margin: 5px 10px 5px 0;
@@ -90,8 +99,18 @@
       }
 
       &:nth-child(even) {
+        position: relative;
         margin: 5px 0 5px 10px;
         height: 37px;
+
+        .app-icon-arrow {
+          position: absolute;
+          left: -20px;
+          top: 50%;
+          margin-top: -20px;
+          font-size: 20px;
+          transform: rotate(270deg);
+        }
       }
 
       span {
@@ -107,6 +126,7 @@
       }
 
       .clipboard-input {
+        overflow: hidden;
         position: relative;
         height: 100%;
 
@@ -114,7 +134,8 @@
           height: 100%;
           width: 100%;
           padding: 5px 15px;
-          background-color: transparent;
+          background-color: color-base('dark-white-2');
+          border-radius: 15px;
           border: none;
 
           &:focus {
@@ -133,7 +154,7 @@
           color: color-base('white');
           font-size: 24px;
 
-          box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5)
+          box-shadow: -10px 0 20px 0 rgba(0, 0, 0, 0.20);
         }
       }
     }
