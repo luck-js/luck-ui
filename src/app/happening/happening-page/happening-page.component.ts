@@ -39,7 +39,25 @@ export class HappeningPageComponent implements OnInit, OnDestroy {
     this.ngUnsubscribe.complete();
   }
 
-  public getHostname(): string {
-    return this.window.location.hostname;
+  private getHost(): string {
+    return this.window.location.host;
+  }
+
+  public getValue(id: string) : string {
+    return `http://www.${this.getHost()}/#/participation/${id}`
+  }
+
+  public copyValue(target: HTMLInputElement){
+    target.select();
+    document.execCommand('copy');
+  }
+
+  public provoked(event: Event) {
+    event.preventDefault()
+  }
+
+  public returnValue(target: HTMLInputElement, id: string){
+    const originValue = this.getValue(id);
+    target.value = target.value !== originValue ? originValue : target.value;
   }
 }
