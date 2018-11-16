@@ -5,6 +5,8 @@ a.lk-button{
 
 a.lk-button, button.lk-button{
   width: 100%;
+  max-width: 240px;
+  cursor: pointer;
   background-color: color-base('red');
   border: 1px solid color-base('red');
   color: color-base('white');
@@ -13,7 +15,7 @@ a.lk-button, button.lk-button{
   @include responsive-app-text-size('sub-header');
   border-radius: 30px;
   padding: 10px 15px;
-
+  margin: 0 auto;
   font-weight: 700;
 
   &:hover {
