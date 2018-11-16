@@ -52,6 +52,24 @@
     .block-row {
       display: flex;
       flex-flow: row;
+
+      .block-element {
+        transition: margin-right 0.5s, margin-left 0.5s, padding-right 0.5s, padding-left 0.5s, flex 0.5s;
+      }
+
+      &:hover {
+        .block-element:nth-child(odd) {
+          margin-left: 0;
+          margin-right: 0;
+          padding: 0;
+          flex: 0 0 0%;
+        }
+
+        .block-element:nth-child(even) {
+          flex: 1 1 100%;
+          margin: 5px 0 5px 0;
+        }
+      }
     }
 
     .block-element {
@@ -65,11 +83,10 @@
       white-space: nowrap;
       overflow: hidden;
 
-      border: 1px solid color-base('dark-white-2');
-
       &:nth-child(odd) {
         margin: 5px 10px 5px 0;
         padding: 5px 15px;
+        height: 37px;
       }
 
       &:nth-child(even) {
@@ -78,7 +95,10 @@
       }
 
       span {
+        display: flex;
+        height: 100%;
         @include responsive-app-text-size('sub-header');
+        align-items: center;
         text-transform: uppercase;
       }
 
@@ -92,6 +112,7 @@
 
         input {
           height: 100%;
+          width: 100%;
           padding: 5px 15px;
           background-color: transparent;
           border: none;
