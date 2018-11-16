@@ -58,7 +58,6 @@
 
       background-color: color-base('dark-white-2');
       border-radius: 15px;
-      padding: 5px 15px;
 
       color: color-base('dark-gray');
       text-overflow: ellipsis;
@@ -69,10 +68,12 @@
 
       &:nth-child(odd) {
         margin: 5px 10px 5px 0;
+        padding: 5px 15px;
       }
 
       &:nth-child(even) {
         margin: 5px 0 5px 10px;
+        height: 37px;
       }
 
       span {
@@ -80,10 +81,38 @@
         text-transform: uppercase;
       }
 
-      a {
-        display: inline-block;
-        overflow: hidden;
+      input {
         @include responsive-app-text-size('small-description');
+      }
+
+      .clipboard-input {
+        position: relative;
+        height: 100%;
+
+        input {
+          height: 100%;
+          padding: 5px 15px;
+          background-color: transparent;
+          border: none;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        button {
+          position: absolute;
+          right: 0;
+          height: 100%;
+          padding: 0px 20px;
+          border-radius: 15px;
+
+          background-color: color-base('red');
+          color: color-base('white');
+          font-size: 24px;
+
+          box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5)
+        }
       }
     }
   }

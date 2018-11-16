@@ -12,14 +12,16 @@
     </div>
     <div class="block-element">
       <!--TODO: move clipboard to directive-->
-      <input type="text" #elementToCopy
-             (keydown)="provoked($event)"
-             (blur)="returnValue(elementToCopy, participant.uniqueLink)"
-             (untouched)="returnValue(elementToCopy, participant.uniqueLink)"
-             (click)="copyValue(elementToCopy)"
-             (touched)="copyValue(elementToCopy)"
-             [value]="getValue(participant.uniqueLink)" >
-      <button (click)="copyValue(elementToCopy)" value="click to copy" >copy</button>
+      <div class="clipboard-input">
+        <input type="text" #elementToCopy
+               (keydown)="provoked($event)"
+               (blur)="returnValue(elementToCopy, participant.uniqueLink)"
+               (untouched)="returnValue(elementToCopy, participant.uniqueLink)"
+               (click)="copyValue(elementToCopy)"
+               (touched)="copyValue(elementToCopy)"
+               [value]="getValue(participant.uniqueLink)" >
+        <button class="app-icon app-icon-copy" (click)="copyValue(elementToCopy)"></button>
+      </div>
     </div>
   </div>
 </div>
