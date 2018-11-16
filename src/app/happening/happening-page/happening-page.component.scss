@@ -6,7 +6,7 @@
   overflow: hidden;
   display: block;
   background-color: color-base('white');
-  color: color-base('light-black');
+  color: color-base('black');
   padding: 15px;
 
   img {
@@ -28,6 +28,7 @@
 
   .header-content {
     background-color: color-base('dark-white-2');
+    color: color-base('light-black-1');
     border-radius: 15px;
     padding: 15px;
     text-align: center;
@@ -59,7 +60,7 @@
       background-color: color-base('dark-white-2');
       border-radius: 15px;
 
-      color: color-base('dark-gray');
+      color: color-base('light-black-1');
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
