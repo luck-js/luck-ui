@@ -21,6 +21,12 @@
   }
 }
 
+@mixin copy {
+  &:before {
+    content: '\e905';
+  }
+}
+
 @mixin arrow {
   &:before {
     content: '\e900';
