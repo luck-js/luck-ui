@@ -16,7 +16,9 @@
           <span class="app-icon app-icon-arrow"></span>
           <!--TODO: move clipboard to directive-->
           <div class="clipboard-input">
-            <input type="text" #elementToCopy
+            <input type="text"
+                   readonly="true"
+                   #elementToCopy
                    (keydown)="provoked($event)"
                    (blur)="returnValue(elementToCopy, participant.uniqueLink)"
                    (untouched)="returnValue(elementToCopy, participant.uniqueLink)"
