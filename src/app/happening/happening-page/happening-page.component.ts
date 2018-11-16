@@ -4,6 +4,7 @@ import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { ParticipantUniqueLinkData } from './happening.model';
 import { HappeningService } from './happening.service';
+import { AppStateService } from '../../core/app-state.service';
 
 @Component({
   selector: 'lk-happening-page',
@@ -20,7 +21,8 @@ export class HappeningPageComponent implements OnInit, OnDestroy {
 
   constructor(
     @Inject(WINDOW) private window: Window,
-    private happeningService: HappeningService) {
+    private happeningService: HappeningService,
+    private appStateService: AppStateService) {
   }
 
   ngOnInit() {
@@ -50,6 +52,7 @@ export class HappeningPageComponent implements OnInit, OnDestroy {
   public copyValue(target: HTMLInputElement){
     target.select();
     document.execCommand('copy');
+    this.appStateService.setModalVisibility();
   }
 
   public provoked(event: Event) {
