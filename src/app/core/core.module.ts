@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './containers/app/app.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 import { HeadersInterceptor } from './interceptors/headers.interceptor';
 import { BaseUrlInterceptor } from './interceptors/base-url.interceptor';
@@ -11,7 +12,8 @@ import { BaseUrlInterceptor } from './interceptors/base-url.interceptor';
 import { AppStateService } from './app-state.service';
 
 export const COMPONENTS = [
-  AppComponent
+  AppComponent,
+  ModalComponent
 ];
 
 @NgModule({
