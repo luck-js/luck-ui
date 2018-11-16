@@ -13,6 +13,7 @@ import { NewHappeningPageService } from './new-happening-page/new-happening-page
 
 import { NewHappeningPageGuardService } from './new-happening-page/new-happening-page-guard.service';
 import { HappeningServiceGuardService } from './happening-page/happening-guard.service';
+import { CreateHappeningPageComponent } from './create-happening-page/create-happening-page.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { HappeningServiceGuardService } from './happening-page/happening-guard.s
   ],
   declarations: [
     HappeningPageComponent,
-    NewHappeningPageComponent
+    NewHappeningPageComponent,
+    CreateHappeningPageComponent
   ],
   providers: [
     HappeningService,
