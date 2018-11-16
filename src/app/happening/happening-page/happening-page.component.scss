@@ -1,6 +1,8 @@
 @import '~src/scss/base';
 
 :host {
+  display: block;
+  position: relative;
   height: 100%;
   min-height: 100%;
   max-height: 100%;
@@ -10,13 +12,13 @@
   color: color-base('black');
 
   .container-for-mobile{
-    height: calc(100vh - 20px);
+    height: calc(100vh - 30px);
+    padding: 15px;
   }
 
   .wrapper {
-    height: calc(100% - 135px);
+    height: calc(100% - 110px);
     overflow: hidden;
-    padding: 15px;
   }
 
   img {
@@ -60,7 +62,7 @@
 
   .block-container {
     overflow-y: auto;
-    height: calc(100% - 264px);
+    height: calc(100% - 239px);
 
     .block-row {
       display: flex;
@@ -101,9 +103,6 @@
       border-radius: 15px;
 
       color: color-base('light-black-1');
-      //text-overflow: ellipsis;
-      //white-space: nowrap;
-      //overflow: hidden;
 
       &:nth-child(odd) {
         margin: 5px 10px 5px 0;
@@ -132,6 +131,10 @@
         @include responsive-app-text-size('sub-header');
         align-items: center;
         text-transform: uppercase;
+
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
       }
 
       input {
@@ -150,6 +153,9 @@
           background-color: color-base('dark-white-2');
           border-radius: 15px;
           border: none;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
 
           &:focus {
             outline: none;
@@ -178,6 +184,11 @@
   }
 
   footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 50%;
+    margin-left: -50%;
     text-align: center;
   }
 }
