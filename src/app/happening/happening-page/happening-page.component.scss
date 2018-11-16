@@ -1,13 +1,23 @@
 @import '~src/scss/base';
 
 :host {
-  min-height: 100vh;
-  max-height: 100vh;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
   overflow: hidden;
   display: block;
   background-color: color-base('white');
   color: color-base('black');
-  padding: 15px;
+
+  .container-for-mobile{
+    height: calc(100vh - 20px);
+  }
+
+  .wrapper {
+    height: calc(100% - 135px);
+    overflow: hidden;
+    padding: 15px;
+  }
 
   img {
     width: 110px;
@@ -49,6 +59,9 @@
   }
 
   .block-container {
+    overflow-y: auto;
+    height: calc(100% - 264px);
+
     .block-row {
       display: flex;
       flex-flow: row;
