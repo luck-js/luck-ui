@@ -11,9 +11,15 @@
       <span>{{participant.name}}</span>
     </div>
     <div class="block-element">
-      <a [routerLink]="['#/participation', participant.uniqueLink]">
-        http://{{getHostname()}}#/participation/{{participant.uniqueLink}}
-      </a>
+      <!--TODO: move clipboard to directive-->
+      <input type="text" #elementToCopy
+             (keydown)="provoked($event)"
+             (blur)="returnValue(elementToCopy, participant.uniqueLink)"
+             (untouched)="returnValue(elementToCopy, participant.uniqueLink)"
+             (click)="copyValue(elementToCopy)"
+             (touched)="copyValue(elementToCopy)"
+             [value]="getValue(participant.uniqueLink)" >
+      <button (click)="copyValue(elementToCopy)" value="click to copy" >copy</button>
     </div>
   </div>
 </div>
