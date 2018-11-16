@@ -13,6 +13,10 @@ $ft_main: 'Lato', sans-serif;
 .app-icon {
   @include icon;
 
+  &.app-icon-copy {
+    @include copy;
+  }
+
   &.app-icon-arrow {
     @include arrow;
   }
