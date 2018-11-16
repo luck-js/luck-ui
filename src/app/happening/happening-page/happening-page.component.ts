@@ -44,7 +44,7 @@ export class HappeningPageComponent implements OnInit, OnDestroy {
   }
 
   public getValue(id: string) : string {
-    return `http://www.${this.getHost()}/#/participation/${id}`
+    return `http://${this.getHost()}/#/participation/${id}`
   }
 
   public copyValue(target: HTMLInputElement){
