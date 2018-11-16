@@ -35,12 +35,13 @@
   }
 
   img {
+    display: none;
     width: 110px;
     height: 110px;
     margin: 0 auto;
-    display: block;
 
     @include respond-above('medium') {
+      display: block;
       width: 143px;
       height: 143px;
     }
@@ -75,7 +76,7 @@
 
   .block-container {
     overflow-y: auto;
-    height: calc(100% - 239px);
+    height: calc(100% - 135px);
 
     .block-row {
       display: flex;
@@ -203,5 +204,9 @@
     left: 50%;
     margin-left: -50%;
     text-align: center;
+
+    a {
+      text-decoration: underline;
+    }
   }
 }
