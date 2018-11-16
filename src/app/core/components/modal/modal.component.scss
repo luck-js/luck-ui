@@ -1,0 +1,26 @@
+@import '~src/scss/base';
+
+:host{
+ position: relative;
+
+  .container{
+    background-color: color-base('black');
+    color: color-base('white');
+    position: fixed;
+    top: -40px;
+    left: 50%;
+    text-align: center;
+    width: 140px;
+    margin-left: -70px;
+    z-index: 100;
+    padding: 10px 15px;
+    border-radius: 20px;
+    opacity: 0;
+    transition: top 0.5s, opacity 0.5s;
+  }
+
+  .container.show{
+    opacity: 0.7;
+    top: 25px
+  }
+}
