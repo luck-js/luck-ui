@@ -37,7 +37,7 @@
       @include responsive-app-text-size('main-header');
     }
     p {
-      @include responsive-app-text-size('sub-description');
+      @include responsive-app-text-size('description');
     }
   }
 
