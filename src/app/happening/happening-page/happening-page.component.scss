@@ -1,62 +1,98 @@
 @import '~src/scss/base';
 
 :host {
-  h1 {
-    padding: 35px 0 0 0;
-    text-align: center;
-    @include responsive-text-size('block-header');
-  }
-  p {
-    @include responsive-text-size('description');
-    text-align: center;
-  }
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  display: block;
+  background-color: color-base('white');
+  color: color-base('light-black');
+  padding: 15px;
 
-  .block-row {
-    &:first-of-type {
-      padding: 35px 0 0 0;
+  img {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+    display: block;
+
+    @include respond-above('medium') {
+      width: 143px;
+      height: 143px;
     }
 
-    display: flex;
-    flex-flow: row;
+    @include respond-above('x-large') {
+      width: 220px;
+      height: 220px;
+    }
   }
 
-  .block-element {
-    flex: 1;
+  .header-content {
+    background-color: color-base('dark-white-2');
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
 
-    color: color-base('dark-gray');
-    background-color: color-base('light-black');
-    border: 1px solid color-base('light-black');
-    border-radius: 5px;
-    padding: 10px 15px;
-    word-wrap: break-word;
-    height: calc(24px + 2em);
-    max-height: calc(24px + 2em);
-    line-height: 1em;
-    max-width: 60%;
-
-    &:nth-child(odd) {
-      text-align: center;
-      margin: 2px 2px 2px 0;
-      flex: 0 0 40%;
+    h1 {
+      @include responsive-app-text-size('main-header');
     }
-    &:nth-child(even) {
-      position: relative;
-      margin: 2px 0 2px 2px;
-      flex: 0 0 60%;
+    p {
+      @include responsive-app-text-size('sub-description');
+    }
+  }
 
-      &::after {
-        content: "...";
-        position: absolute;
-        right: 7px;
-        bottom: 10px;
+  h2 {
+    margin: 20px 0;
+    text-transform: uppercase;
+    text-align: center;
+    @include responsive-app-text-size('main-header');
+  }
+
+  .block-container {
+    .block-row {
+      display: flex;
+      flex-flow: row;
+    }
+
+    .block-element {
+      flex: 1 1 50%;
+
+      background-color: color-base('dark-white-2');
+      border-radius: 15px;
+      padding: 5px 15px;
+
+      color: color-base('dark-gray');
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+
+      border: 1px solid color-base('dark-white-2');
+
+      &:nth-child(odd) {
+        margin: 5px 10px 5px 0;
+      }
+
+      &:nth-child(even) {
+        margin: 5px 0 5px 10px;
+      }
+
+      span {
+        @include responsive-app-text-size('sub-header');
+        text-transform: uppercase;
+      }
+
+      a {
+        display: inline-block;
+        overflow: hidden;
+        @include responsive-app-text-size('small-description');
       }
     }
+  }
 
-    a {
-      height: 100%;
-      display: inline-block;
-      width: 100%;
-      overflow: hidden;
-    }
+  a.lk-button {
+    margin: 35px 0;
+  }
+
+  footer {
+    text-align: center;
   }
 }
