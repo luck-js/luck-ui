@@ -9,26 +9,19 @@
     padding: 15px;
   }
 
-  form {
-    padding: 35px 0 0 0;
 
-    p {
-      padding: 35px 0 10px 0;
-      text-align: center;
-    }
+  h2 {
+    margin: 20px 0;
+    text-transform: uppercase;
+    text-align: center;
+    @include responsive-app-text-size('main-header');
+  }
 
-    textarea {
-      margin: 2px 0;
-      width: 100%;
-    }
+  input, textarea {
+    width: 100%;
+  }
 
-    input {
-      margin: 2px 0;
-      width: 100%;
-    }
-
-    button {
-      margin: 2px 0 0 0;
-    }
+  a.lk-button {
+    margin: 0 auto 35px auto;
   }
 }
