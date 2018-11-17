@@ -1,6 +1,14 @@
 @import '~src/scss/base';
 
 :host {
+  .container {
+    background-color: color-base('white');
+    color: color-base('black');
+    height: 100%;
+    margin: 0 auto;
+    padding: 15px;
+  }
+
   form {
     padding: 35px 0 0 0;
 
