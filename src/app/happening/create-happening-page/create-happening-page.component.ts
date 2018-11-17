@@ -35,7 +35,8 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
     private newHappeningPageService: NewHappeningPageService,
     private router: Router,
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder) {
+  }
 
   ngOnInit() {
     this.route.params.pipe(
@@ -56,26 +57,22 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
     this.form = this.formBuilder.group({
       name: [model.name],
       description: [model.description],
-      participantList: this.formBuilder.array([this.createParticipant()]),
+      participantList: this.formBuilder.array([]),
     });
   }
 
-  private createParticipant(): FormGroup {
-    return this.formBuilder.group({
-      name: '',
-    });
+  private createParticipant(name: string): FormGroup {
+    return this.formBuilder.group({ name });
   }
 
   public get forParticipantList() {
     return this.form.get('participantList') as FormArray;
   }
 
-  public addParticipant(event: any, i): void {
+  public addParticipant(target: HTMLInputElement): void {
     this.participantList = this.forParticipantList;
-
-    if (this.participantList.length === i) {
-      this.participantList.push(this.createParticipant());
-    }
+    this.participantList.push(this.createParticipant(target.value));
+    target.value = "";
   }
 
   public clickedSave() {
