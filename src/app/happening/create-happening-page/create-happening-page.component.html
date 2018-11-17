@@ -11,7 +11,7 @@
              *ngFor="let participant of forParticipantList.controls; let i = index;">
           <div [formGroupName]="i">
             <input class="lk-input" type="text" id="'gForm_3' + i" placeholder="nazwa..." formControlName="name"
-                   (keyup)="addParticipant($event, i + 1)" (blur)="clearEmpty()">
+                   (keyup)="addParticipant($event, i + 1)">
           </div>
         </div>
       </section>
