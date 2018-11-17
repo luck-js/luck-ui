@@ -66,40 +66,20 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
     });
   }
 
-  private clearEmpty() {
-    this.participantList = this.forParticipantList;
-    this.participantList.controls.forEach((participant, index) => {
-      if (participant.value.name === '' && this.participantList.length !== index + 1) {
-        this.participantList.removeAt(index);
-      }
-    });
-  }
-
   public get forParticipantList() {
     return this.form.get('participantList') as FormArray;
   }
 
   public addParticipant(event: any, i): void {
-    this.clearEmpty();
-
-    if (event.target.value === '') {
-      return;
-    }
-
     this.participantList = this.forParticipantList;
 
     if (this.participantList.length === i) {
-      ++this.max;
       this.participantList.push(this.createParticipant());
     }
   }
 
   public clickedSave() {
     this.participantList = this.forParticipantList;
-    const index = this.participantList.length - 1;
-    if (this.participantList.controls[index].value.name === '') {
-      this.participantList.removeAt(index);
-    }
 
     this.createHappeningService.publishHappening(this.happeningId, this.form.value).pipe(
       tap((data) => this.router.navigate([`/happening/view/${this.happeningId}`])),
