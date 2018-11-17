@@ -4,8 +4,8 @@ textarea.lk-input, input.lk-input{
 
   //text-align: center;
   color: color-base('dark-gray');
-  background-color: color-base('white');
-  border: 1px solid color-base('white');
+  background-color: color-base('gray');
+  border: 1px solid color-base('gray');
   border-radius: 5px;
   padding: 10px 15px;
 
@@ -17,8 +17,8 @@ textarea.lk-input, input.lk-input{
 
   &:focus {
     outline: none !important;
-    border:1px solid color-base('dark-white-2');
-    box-shadow: 0 0 10px color-base('dark-white-2');
+    border:1px solid color-base('gray');
+    box-shadow: 0 0 10px color-base('gray');
   }
 
 }
