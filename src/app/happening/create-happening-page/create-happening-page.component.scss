@@ -24,4 +24,28 @@
   a.lk-button {
     margin: 0 auto 35px auto;
   }
+
+  .block-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .block-element {
+      display: flex;
+      flex: 0 0 calc(50% - 10px);
+      border-radius: 5px;
+      padding: 10px 15px;
+      background-color: color-base('red');
+      color: color-base('white');
+
+      &:nth-child(odd) {
+        margin: 5px 0;
+      }
+
+      &:nth-child(even) {
+        margin: 5px 0;
+      }
+    }
+  }
 }
