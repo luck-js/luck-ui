@@ -1,6 +1,7 @@
 @import '~src/scss/base';
 
 :host {
+  height: 100%;
   background-image: url('src/assets/bg-bubbles.png');
   background-repeat: repeat;
   background-color: color-base('red');
@@ -82,13 +83,12 @@
   }
 
   section.welcome-screen {
-    height: calc(100vh - 70px);
-    min-height: 400px;
+    height: calc(100% - 70px);
     width: 100%;
     max-width: 100%;
 
     @include respond-above('medium') {
-      height: calc(100vh - 50px);
+      height: calc(100% - 50px);
     }
 
     .content {
