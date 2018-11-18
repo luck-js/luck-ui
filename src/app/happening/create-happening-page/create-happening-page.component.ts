@@ -25,7 +25,7 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
   public description = '';
   public participantUniqueLinkData: ParticipantUniqueLinkData[] = [];
 
-  public isSwitched = false;
+  public isSwitched = true;
 
   private max = 2;
 
