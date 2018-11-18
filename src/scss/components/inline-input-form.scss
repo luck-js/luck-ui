@@ -21,4 +21,42 @@ $button-width: 120px;
 
     border: 2px solid color-base('white');
   }
+
+  &.switch{
+    .lk-input{
+      border-bottom-left-radius: $input-radius;
+      border-bottom-right-radius: $switch-width;
+      padding-right: calc(#{$switch-width} + 15px);
+    }
+
+    .lk-switch{
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      width: $switch-width;
+
+      border: 2px solid color-base('white');
+    }
+  }
+
+
+
+  &.switch.left {
+    .lk-input{
+      border-bottom-left-radius: $switch-width;
+      border-bottom-right-radius: $input-radius;
+      padding-left: calc(#{$switch-width} + 15px);
+    }
+
+    .lk-switch{
+      position: absolute;
+      top: 11px;
+      left: 0;
+
+      width: $switch-width;
+
+      border: 2px solid color-base('white');
+    }
+  }
 }
