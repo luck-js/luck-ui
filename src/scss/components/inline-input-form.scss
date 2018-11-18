@@ -25,7 +25,9 @@ $button-width: 120px;
   &.switch{
     .lk-input{
       border-bottom-left-radius: $input-radius;
+      border-top-left-radius: $input-radius;
       border-bottom-right-radius: $switch-width;
+      border-top-right-radius: $switch-width;
       padding-right: calc(#{$switch-width} + 15px);
     }
 
@@ -45,7 +47,9 @@ $button-width: 120px;
   &.switch.left {
     .lk-input{
       border-bottom-left-radius: $switch-width;
+      border-top-left-radius: $switch-width;
       border-bottom-right-radius: $input-radius;
+      border-top-right-radius: $input-radius;
       padding-left: calc(#{$switch-width} + 15px);
     }
 

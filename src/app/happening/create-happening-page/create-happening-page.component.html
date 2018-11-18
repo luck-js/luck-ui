@@ -7,12 +7,14 @@
         <textarea class="lk-input" autosize
                   type="text" id="gForm_2" placeholder="Opis wydarzenia..." formControlName="description"></textarea>
 
-        <div class="lk-inline-input-form switch left">
+        <div  [class]="isSwitched ? 'lk-inline-input-form switch left' : 'lk-inline-input-form switch left hidden'">
+          <p>Nie biorę udziału</p>
           <input class="lk-input"
+                 formControlName="organiserName"
                  type="text"
                  placeholder="Twoja nazwa...">
           <label class="lk-switch">
-            <input type="checkbox" checked>
+            <input type="checkbox" [checked]="isSwitched" #switch (change)="onSwitchChange(switch)">
             <span class="slider"></span>
           </label>
         </div>
