@@ -22,32 +22,51 @@
   }
 
   .logo__container{
-    text-align: center;
 
     img {
       width: 100px;
       height: 100px;
-      transition: width .5s, height .5s;
+      transition: width .5s, height .5s, margin .5s, top .5s;
       cursor: pointer;
       position: absolute;
       left: 50%;
       margin-left: -50px;
       top: 15px;
 
-      @include respond-above('medium') {
-        width: 115px;
-        height: 115px;
-        margin: -15px 0 0 0;
-      }
-
       &:hover {
         width: 110px;
         height: 110px;
+        margin-left: -55px;
+        top: 20px;
 
         @include respond-above('medium') {
-          width: 125px;
-          height: 125px;
+          width: 168px;
+          height: 168px;
+
+          margin-left: -84px;
+          top: 63px;
         }
+
+
+        @include respond-above('x-large') {
+          width: 240px;
+          height: 240px;
+          margin-left: -120px;
+          top: 65px;
+        }
+      }
+
+      @include respond-above('medium') {
+        top: 75px;
+        width: 144px;
+        height: 144px;
+        margin-left: -72px;
+      }
+
+      @include respond-above('x-large') {
+        width: 220px;
+        height: 220px;
+        margin-left: -110px;
       }
     }
   }
@@ -66,10 +85,18 @@
     h1 {
       @include responsive-app-text-size('sub-description');
       font-size: 24px;
+
+      @include respond-above('medium') {
+        font-size: 37px;
+      }
     }
     p {
       @include responsive-app-text-size('sub-header');
       font-size: 31px;
+
+      @include respond-above('medium') {
+        font-size: 54px;
+      }
     }
   }
 
