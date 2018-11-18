@@ -1,8 +1,7 @@
 import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd} from '@angular/router';
 import { fromEvent, Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
-import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 
 @Component({
   selector: 'lk-app-root',
@@ -11,7 +10,7 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 })
 export class AppComponent implements OnInit, OnDestroy {
   @HostBinding('style.height')
-  public styleHeight: SafeStyle;
+  public styleHeight: any;
 
   private oryginalHeight: number;
   private ngUnsubscribe: Subject<void> = new Subject<void>();
@@ -38,11 +37,14 @@ export class AppComponent implements OnInit, OnDestroy {
     //   takeUntil(this.ngUnsubscribe)
     // )
     //   .subscribe((event) => this.windowOrientationChangeSubscriber());
+
   }
 
   ngOnDestroy() {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
+
+
   }
 
   private windowResizeSubscriber() {
@@ -55,28 +57,28 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private recalculateSizeForAllComponents() {
     const currentHeight = this.getHeightNativeElement();
-    const newHeight = getPercent(this.oryginalHeight, currentHeight)
+    const newHeight = getPercent(this.oryginalHeight, currentHeight);
     this.setStyleHeight(newHeight);
-    console.log('currentHeight: ', currentHeight );
+    console.log('currentHeight: ', currentHeight);
     console.log('this.oryginalHeight : ', this.oryginalHeight);
-    console.log('newHeight: ', newHeight );
+    console.log('newHeight: ', newHeight);
   }
 
   private getHeightNativeElement(): number {
     return Number(window.innerHeight);
   }
 
-  private setStyleHeight(height: number){
-    this.styleHeight = this.sanitization.bypassSecurityTrustStyle(`${height}%`)
+  private setStyleHeight(height: number) {
+    this.styleHeight = `${height}%`;
   }
 
 
 }
 
-export function getPercent(a:number, b:number):number {
+export function getPercent(a: number, b: number): number {
   return (b !== 0) ? mathRound(a * 100 / b, 2) : 0;
 }
 
-function mathRound(number, decimalPlaces) : number{
-  return Number(Math.round(number * 100).toFixed(decimalPlaces)) / 100
+function mathRound(number, decimalPlaces): number {
+  return Number(Math.round(number * 100).toFixed(decimalPlaces)) / 100;
 }
