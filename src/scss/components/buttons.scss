@@ -57,3 +57,14 @@ a.lk-button, button.lk-button {
   }
 }
 
+a.lk-button.disabled, button.lk-button.disabled {
+  background-color: color-shade('red', -30);
+  border: 2px solid color-shade('red', -30);
+  color: color-shade('white', -30);
+
+  &:hover {
+    background-color: color-shade('red', -30);
+    border: 2px solid color-shade('red', -30);
+    color: color-shade('white', -30);
+  }
+}

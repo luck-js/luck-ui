@@ -1,9 +1,17 @@
-<div class="main-content">
-  <h1>{{matchedParticipation.me.name}}, wylosowałeś:</h1>
-  <p>{{matchedParticipation.matchedMember.name}}</p>
-</div>
-<div>
-  <p>Zapamiętaj swój los lub</p>
-  <a class="lk-button">ZALOGUJ SIĘ</a>
-</div>
+<div class="container-for-mobile">
+  <div class="logo__container">
+    <img [routerLink]="['/']" src="assets/logo-shadow.png">
+  </div>
+  <div class="container">
+    <h1>{{matchedParticipation.me.name}}, wylosowałeś:</h1>
+    <p>{{matchedParticipation.matchedMember.name}}</p>
+  </div>
 
+  <div class="bg-bubbles">
+    <div class="bg-bubbles__image bg-bubbles__image"></div>
+  </div>
+  <footer>
+    <p>Zapamiętaj swój los lub</p>
+    <a class="lk-button disabled">ZALOGUJ SIĘ</a>
+  </footer>
+</div>
