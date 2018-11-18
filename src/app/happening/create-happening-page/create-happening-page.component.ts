@@ -25,6 +25,8 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
   public description = '';
   public participantUniqueLinkData: ParticipantUniqueLinkData[] = [];
 
+  public isSwitched = false;
+
   private max = 2;
 
   private ngUnsubscribe: Subject<void> = new Subject<void>();
@@ -56,6 +58,7 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
 
     this.form = this.formBuilder.group({
       name: [model.name],
+      organiserName: [model.organiserName],
       description: [model.description],
       participantList: this.formBuilder.array([]),
     });
@@ -88,5 +91,9 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
     )
       .subscribe();
   }
+
+  public onSwitchChange(target: HTMLInputElement) {
+    this.isSwitched = target.checked;
+  };
 
 }

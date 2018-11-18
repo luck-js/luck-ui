@@ -13,7 +13,7 @@
   }
 
   .bg-bubbles {
-    &__image{
+    &__image {
       background-image: url('src/assets/bubbles-shadow.png');
 
       backface-visibility: hidden;
@@ -37,6 +37,39 @@
   input, textarea {
     width: 100%;
     margin: 8px 0;
+  }
+
+  .lk-inline-input-form {
+    overflow: hidden;
+
+    .lk-input {
+      transition: width 1s, padding-left 1s, padding-right 1s;
+    }
+
+    p {
+      z-index: 0;
+      position: absolute;
+      top: 50%;
+      left: -100%;
+      margin-top: -11px;
+      padding-left: calc(#{$switch-width} + 15px);
+      color: color-base('black');
+      @include responsive-app-text-size('sub-header');
+
+      transition: left 1s;
+    }
+
+    &.hidden{
+      .lk-input {
+        width: 0%;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      p {
+        left: 0;
+      }
+    }
   }
 
   a.lk-button {
@@ -88,7 +121,7 @@
         margin: 5px 0;
       }
 
-      &:last-of-type{
+      &:last-of-type {
         margin-bottom: 70px;
 
         @include respond-above('medium') {

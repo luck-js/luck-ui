@@ -1,5 +1,6 @@
 export interface Happening {
   name: string;
+  organiserName: string;
   description: string;
   participantList: IParticipantView[];
 }
@@ -12,6 +13,7 @@ export const INIT_FORM_NEW_PARTICIPANT: IParticipantView[] = [];
 
 export const INIT_FORM_HAPPENING: Happening = {
   name: '',
+  organiserName: '',
   description: '',
   participantList: INIT_FORM_NEW_PARTICIPANT,
 };
