@@ -14,10 +14,11 @@ a.lk-button, button.lk-button{
   text-transform: uppercase;
   @include responsive-app-text-size('block-header');
   border-radius: $button-radius;
-  padding: $padding-element;
+  padding: $padding-button;
   margin: 0 auto;
-  font-weight: 700;
+  font-weight: 800;
   transition: border-color 0.5s, color 0.5s, background-color 0.5s, text-decoration-color 0.5s;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.13);
 
   &:hover {
     background-color: color-shade('red', 20);
@@ -40,6 +41,7 @@ a.lk-button, button.lk-button {
   }
 
   &.underline{
+    box-shadow: none;
     text-decoration: underline;
     text-decoration-color: transparent;
 

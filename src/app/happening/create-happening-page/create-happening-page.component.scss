@@ -13,30 +13,53 @@
   }
 
   .bg-bubbles {
+    height: 93px;
+
+    @include respond-above('medium') {
+      height: 110px;
+    }
+
     &__image {
       background-image: url('src/assets/bubbles-shadow.png');
 
       backface-visibility: hidden;
       width: 100%;
-      height: 135px;
+      height: 100px;
+
+      @include respond-above('medium') {
+        height: 110px;
+      }
+
 
       &__top {
         position: absolute;
-        bottom: 85px;
+        bottom: 95px;
+
+        @include respond-above('medium') {
+          bottom: 85px;
+        }
       }
     }
   }
 
   h2 {
-    margin: 0 0 8px 0;
+    margin: 34px 0 2px 0;
     text-transform: uppercase;
     text-align: center;
     @include responsive-app-text-size('main-header');
+
+    @include respond-above('medium') {
+      margin: 36px 0 4px 0;
+    }
   }
 
   input, textarea {
     width: 100%;
-    margin: 8px 0;
+    margin: 6px 0;
+
+    @include respond-above('x-large') {
+      margin: 8px 0;
+    }
   }
 
   .lk-inline-input-form {
@@ -73,28 +96,31 @@
   }
 
   a.lk-button {
-    margin: 5px auto 35px auto;
+    margin: 15px auto 30px auto
   }
 
   .block-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: self-start;
 
     .block-element {
       position: relative;
       text-transform: uppercase;
       display: flex;
-      flex: 0 0 calc(50% - 5px);
+      flex: 0 0 calc(50% - 11.5px);
       border-radius: 8px;
       padding: 8px 10px;
       background-color: color-base('red');
       color: color-base('white');
 
+      @include responsive-app-text-size('description');
+      font-weight: 500;
+
       @include respond-above('medium') {
-        flex: 0 0 calc(33% - 5px);
+        flex: 0 0 calc(33% - 11.5px);
       }
 
       span {
@@ -114,10 +140,6 @@
         display: block;
 
       }
-
-      @include responsive-app-text-size('description');
-      font-weight: 500;
-
       &:nth-child(odd) {
         margin: 5px 0;
       }

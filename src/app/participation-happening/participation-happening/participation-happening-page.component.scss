@@ -26,13 +26,16 @@
     padding: 15px;
 
     @include respond-above('medium') {
+      padding-top: 40px;
+    }
+    @include respond-above('x-large') {
       padding-top: 70px;
     }
   }
 
   .header-container {
     margin: 0 auto;
-    padding: 5px 15px;
+    padding: 0px 15px;
     border-radius: 15px;
     border: 2px dashed color-base('white');
     text-align: center;
@@ -78,9 +81,9 @@
     color: color-base('red');
     text-align: center;
     text-transform: uppercase;
-    border-radius: $button-radius;
-    padding: $padding-element;
-    font-weight: 700;
+    border-radius: 20px;
+    padding: $padding-button;
+    font-weight: 800;
     transition: border-color 0.5s, color 0.5s, background-color 0.5s;
 
     &:hover {
@@ -90,6 +93,15 @@
     }
 
     @include respond-above('medium') {
+      font-size: 35px;
+      margin-left: -65px;
+      margin-top: calc(-65px - 15px);
+
+      width: 130px;
+      height: 130px;;
+    }
+
+    @include respond-above('x-large') {
       margin-left: -75px;
       margin-top: calc(-75px - 30px);
 

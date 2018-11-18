@@ -31,8 +31,13 @@
   .bg-bubbles {
     position: relative;
     z-index: 0;
-    height: 112px;
     background-color: color-base('red');
+
+    height: 93px;
+
+    @include respond-above('medium') {
+      height: 110px;
+    }
 
     &__image {
       position: absolute;

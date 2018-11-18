@@ -53,7 +53,7 @@
   .header-content {
     max-width: 500px;
     margin: 0 auto;
-    background-color: color-base('dark-white-2');
+    background-color: color-base('gray');
     color: color-base('light-black-1');
     border-radius: 15px;
     padding: 15px;
@@ -82,11 +82,36 @@
       display: flex;
       flex-flow: row;
 
+      &:first-of-type {
+        .block-element{
+          &:nth-child(odd) {
+            margin: 0 10px 5px 0;
+          }
+
+          &:nth-child(even) {
+            margin: 0 0 5px 10px;
+          }
+        }
+
+        &:hover {
+          .block-element:nth-child(odd) {
+            @include respond-above('medium') {
+              margin: 0 10px 5px 0;
+            }
+          }
+
+          .block-element:nth-child(even) {
+            margin: 0 0 5px 0;
+          }
+        }
+
+      }
+
       &:last-of-type{
         padding-bottom: 70px;
 
         @include respond-above('medium') {
-          padding-bottom: 180px;
+          padding-bottom: 90px;
         }
       }
 
@@ -143,21 +168,21 @@
     .block-element {
       flex: 1 1 50%;
 
-      background-color: color-base('dark-white-2');
-      border-radius: 15px;
+      background-color: color-base('gray');
+      border-radius: 30px;
 
       color: color-base('light-black-1');
 
       &:nth-child(odd) {
         margin: 5px 10px 5px 0;
         padding: 5px 15px;
-        height: 37px;
+        height: 33px;
       }
 
       &:nth-child(even) {
         position: relative;
         margin: 5px 0 5px 10px;
-        height: 37px;
+        height: 33px;
 
         .app-icon-arrow {
           position: absolute;
@@ -172,7 +197,8 @@
       span {
         display: flex;
         height: 100%;
-        @include responsive-app-text-size('sub-header');
+        @include responsive-app-text-size('block-header');
+        font-weight: 700;
         align-items: center;
         text-transform: uppercase;
 
@@ -194,8 +220,8 @@
           height: 100%;
           width: 100%;
           padding: 5px 15px;
-          background-color: color-base('dark-white-2');
-          border-radius: 15px;
+          background-color: color-base('gray');
+          border-radius: 30px;
           border: none;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -207,15 +233,16 @@
         }
 
         button {
+          cursor: pointer;
           position: absolute;
           right: 0;
           height: 100%;
-          padding: 0px 20px;
-          border-radius: 15px;
+          padding: 0px 18px;
+          border-radius: 30px;
 
           background-color: color-base('red');
           color: color-base('white');
-          font-size: 24px;
+          font-size: 23px;
 
           box-shadow: -10px 0 20px 0 rgba(0, 0, 0, 0.20);
         }
