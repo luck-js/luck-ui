@@ -5,7 +5,7 @@
     background-color: color-base('white');
     color: color-base('black');
     height: calc(100% - 170px);
-
+    max-width: 550px;
     margin: 0 auto;
     padding: 0 15px 15px 15px;
 
@@ -80,20 +80,24 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: self-start;
+
     .block-element {
       position: relative;
       text-transform: uppercase;
       display: flex;
       flex: 0 0 calc(50% - 5px);
       border-radius: 8px;
-      padding: 10px 10px;
+      padding: 8px 10px;
       background-color: color-base('red');
       color: color-base('white');
 
-      span {
+      @include respond-above('medium') {
+        flex: 0 0 calc(33% - 5px);
+      }
 
+      span {
         position: absolute;
         top: 50%;
         margin-top: -7.5px;
@@ -113,6 +117,7 @@
 
       @include responsive-app-text-size('description');
       font-weight: 500;
+
       &:nth-child(odd) {
         margin: 5px 0;
       }
