@@ -55,7 +55,7 @@
       img {
         width: 100px;
         height: 100px;
-        transition: width .5s, height .5s;
+        transition: width .5s, height .5s, margin-left .5s;
         cursor: pointer;
         position: absolute;
         left: 50%;
@@ -65,16 +65,18 @@
         @include respond-above('medium') {
           width: 115px;
           height: 115px;
-          margin: -15px 0 0 0;
+          margin-left: -57px;
         }
 
         &:hover {
           width: 110px;
           height: 110px;
+          margin-left: -55px;
 
           @include respond-above('medium') {
             width: 125px;
             height: 125px;
+            margin-left: -62px;
           }
         }
       }
