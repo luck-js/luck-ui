@@ -138,18 +138,18 @@
 
       h1, h2 {
         @include responsive-text-size('description');
-        text-transform: uppercase;
         margin: 5px 0;
         white-space: pre-line;
       }
 
-      p {
+      h2 {
         @include responsive-text-size('sub-description');
-        opacity: 0;
+        margin: 30px 0 0 0;
+      }
 
-        @include respond-above('medium') {
-          @include responsive-text-size('sub-description');
-        }
+      .lk-button.underline {
+        @include responsive-text-size('sub-description');
+        text-transform: inherit;
       }
     }
   }

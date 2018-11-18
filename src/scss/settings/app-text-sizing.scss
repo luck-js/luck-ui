@@ -20,12 +20,12 @@ $app-text-sizing: (
       'letter-spacing': 0px,
     ),
     'medium': (
-      'font-size': 13px,
+      'font-size': 14px,
       'font-weight': 700,
       'letter-spacing': 0px,
     ),
     'large': (
-      'font-size': 13px,
+      'font-size': 14px,
       'font-weight': 700,
       'letter-spacing': 0px,
     ),
@@ -97,7 +97,7 @@ $app-text-sizing: (
   ),
 );
 
-@function text-breakpoints-for($text-size) {
+@function app-text-breakpoints-for($text-size) {
   $text-breakpoints: map-get($app-text-sizing, $text-size);
 
   @if $text-breakpoints {
@@ -107,8 +107,8 @@ $app-text-sizing: (
   @warn "Text size '#{$text-size}' not found in $app-text-sizing";
 }
 
-@function text-properties-for($text-size, $breakpoint-name) {
-  $text-breakpoints: text-breakpoints-for($text-size);
+@function app-text-properties-for($text-size, $breakpoint-name) {
+  $text-breakpoints: app-text-breakpoints-for($text-size);
   $text-properties: map-get($text-breakpoints, $breakpoint-name);
 
   @if $text-properties {
@@ -119,7 +119,7 @@ $app-text-sizing: (
 }
 
 @mixin app-text-size($text-size, $breakpoint-name: 'small') {
-  $text-size-properties: text-properties-for($text-size, $breakpoint-name);
+  $text-size-properties: app-text-properties-for($text-size, $breakpoint-name);
 
   @if $text-size-properties {
     font-size: map-get($text-size-properties, 'font-size');
@@ -132,7 +132,7 @@ $app-text-sizing: (
 @mixin responsive-app-text-size($text-size, $default-breakpoint: 'small') {
   @include app-text-size($text-size, $default-breakpoint);
 
-  $text-breakpoints-map: text-breakpoints-for($text-size);
+  $text-breakpoints-map: app-text-breakpoints-for($text-size);
   $text-breakpoints-keys: map-keys($text-breakpoints-map);
 
   @each $breakpoint-name in $text-breakpoints-keys {

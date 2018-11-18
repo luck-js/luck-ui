@@ -2,7 +2,8 @@
   <div class="content">
     <img src="assets/logo-shadow.png">
     <div class="header-container">
-      <h1>Wpisz nazwę Twojego wydarzenia</h1>
+      <h1>Aplikacja już dostępna!</h1>
+      <h2>Wpisz nazwę Twojego wydarzenia</h2>
       <div class="first-step-happening-form">
         <div class="lk-inline-input-form">
           <input type="text" placeholder="Nazwa wydarzenia..." class="lk-input" #nameInput (change)="updateNameHappening(nameInput.value)">
@@ -10,7 +11,7 @@
         </div>
       </div>
     </div>
-    <p>Dowiedz się więcej</p>
+    <a class="lk-button underline" (click)="moveToStructure()">Dowiedz się więcej</a>
   </div>
 </section>
 <div class="bg-section bg-bubbles bg-bubbles__container">

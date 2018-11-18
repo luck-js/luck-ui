@@ -1,8 +1,6 @@
 textarea.lk-input, input.lk-input{
-  //width: 100%;
-  //@include responsive-text-size('description');
+  @include responsive-app-text-size('sub-header');
 
-  //text-align: center;
   color: color-base('dark-gray');
   background-color: color-base('gray');
   border: 1px solid color-base('gray');
@@ -17,8 +15,5 @@ textarea.lk-input, input.lk-input{
 
   &:focus {
     outline: none !important;
-    border:1px solid color-base('gray');
-    box-shadow: 0 0 10px color-base('gray');
   }
-
 }
