@@ -48,6 +48,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: self-start;
 
     .block-element {
       position: relative;
@@ -86,6 +87,14 @@
 
       &:nth-child(even) {
         margin: 5px 0;
+      }
+
+      &:last-of-type{
+        margin-bottom: 70px;
+
+        @include respond-above('medium') {
+          //margin-bottom: 70px;
+        }
       }
     }
   }
