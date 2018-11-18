@@ -11,8 +11,9 @@
                  #name placeholder="nazwa..."
                  (keydown.enter)="addParticipant(name)">
         <div class="block-container">
-          <div class="block-element" *ngFor="let participant of forParticipantList.controls">
+          <div class="block-element" *ngFor="let participant of forParticipantList.controls; let i = index">
             {{participant.value.name}}
+            <span (click)="removeParticipant(i)">x</span>
           </div>
         </div>
       </section>
