@@ -6,8 +6,8 @@ textarea.lk-input, input.lk-input{
   color: color-base('dark-gray');
   background-color: color-base('gray');
   border: 1px solid color-base('gray');
-  border-radius: 5px;
-  padding: 10px 15px;
+  border-radius: $input-radius;
+  padding: $padding-element;
 
   font-weight: 700;
 
