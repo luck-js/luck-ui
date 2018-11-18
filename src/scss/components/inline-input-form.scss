@@ -24,11 +24,12 @@ $button-width: 120px;
 
   &.switch{
     .lk-input{
-      border-bottom-left-radius: $input-radius;
-      border-top-left-radius: $input-radius;
-      border-bottom-right-radius: $switch-width;
-      border-top-right-radius: $switch-width;
-      padding-right: calc(#{$switch-width} + 15px);
+      margin: 0px;
+      border-top-left-radius: 60px;
+      border-top-right-radius: 35px;
+      border-bottom-right-radius: 35px;
+      border-bottom-left-radius: 60px;
+      padding-right: calc(#{$switch-width} - 10px + 15px);
     }
 
     .lk-switch{
@@ -46,16 +47,17 @@ $button-width: 120px;
 
   &.switch.left {
     .lk-input{
-      border-bottom-left-radius: $switch-width;
-      border-top-left-radius: $switch-width;
-      border-bottom-right-radius: $input-radius;
-      border-top-right-radius: $input-radius;
-      padding-left: calc(#{$switch-width} + 15px);
+      margin: 0px;
+      border-top-left-radius: 60px;
+      border-top-right-radius: 35px;
+      border-bottom-right-radius: 35px;
+      border-bottom-left-radius: 60px;
+      padding-left: calc(#{$switch-width} - 10px + 15px);
     }
 
     .lk-switch{
       position: absolute;
-      top: 11px;
+      top: 1px;
       left: 0;
 
       width: $switch-width;

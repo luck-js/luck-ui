@@ -130,6 +130,11 @@
           @include respond-above('medium') {
             max-width: 350px
           }
+
+          a {
+            padding: $padding-element;
+            font-size: 12px;
+          }
         }
       }
 
@@ -174,6 +179,7 @@
 
       .lk-button.underline {
         @include responsive-text-size('sub-description');
+
         text-transform: inherit;
         display: none;
         //opacity: 0;

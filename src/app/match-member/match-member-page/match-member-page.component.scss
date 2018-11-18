@@ -31,7 +31,7 @@
       position: absolute;
       left: 50%;
       margin-left: -50px;
-      top: 15px;
+      top: 30px;
 
       &:hover {
         width: 110px;
@@ -115,7 +115,11 @@
 
     p {
       @include responsive-app-text-size('sub-header');
-      margin: 15px 0;
+      margin: 12px 0;
+
+      @include respond-above('medium') {
+        margin: 15px 0;
+      }
     }
   }
 
@@ -124,7 +128,7 @@
     bottom: 0;
     width: 100%;
     z-index: 0;
-    height: calc(112px + 88px);
+    height: calc(112px + 68px);
 
     &__image {
       position: absolute;
