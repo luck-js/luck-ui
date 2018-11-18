@@ -6,12 +6,12 @@
     color: color-base('black');
     height: 100%;
     margin: 0 auto;
-    padding: 15px;
+    padding: 0 15px 15px 15px;
   }
 
 
   h2 {
-    margin: 20px 0;
+    margin: 0 0 8px 0;
     text-transform: uppercase;
     text-align: center;
     @include responsive-app-text-size('main-header');
@@ -19,6 +19,7 @@
 
   input, textarea {
     width: 100%;
+    margin: 8px 0;
   }
 
   a.lk-button {
