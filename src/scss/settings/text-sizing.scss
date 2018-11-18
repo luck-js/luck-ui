@@ -1,151 +1,83 @@
-$text-sizing: (
-  'main-header': (
-    'small': (
-      'font-size': 33px,
-      'letter-spacing': 0px,
-    ),
-    'medium': (
-      'font-size': 53px,
-      'letter-spacing': 0px,
-    ),
-    'large': (
-      'font-size': 53px,
-      'letter-spacing': 0px,
-    ),
-  ),
-  'sub-header': (
-    'small': (
-      'font-size': 21px,
-      'letter-spacing': 0px,
-    ),
-    'medium': (
-      'font-size': 27px,
-      'letter-spacing': 0px,
-    ),
-    'large': (
-      'font-size': 27px,
-      'letter-spacing': 0px,
-    ),
-  ),
-  'block-header': (
-    'small': (
-      'font-size': 18px,
-      'letter-spacing': 0px,
-    ),
-    'medium': (
-      'font-size': 23px,
-      'letter-spacing': 0px,
-    ),
-    'large': (
-      'font-size': 23px,
-      'letter-spacing': 0px,
-    ),
-  ),
-  'description': (
-    'small': (
-      'font-size': 24px,
-      'font-weight': 300,
-      'opacity': 0.85,
-      'letter-spacing': 0px,
-    ),
-    'medium': (
-      'font-size': 38px,
-      'font-weight': 300,
-      'opacity': 0.85,
-      'letter-spacing': 0px,
-    ),
-    'large': (
-      'font-size': 38px,
-      'font-weight': 300,
-      'opacity': 0.85,
-      'letter-spacing': 0px,
-    ),
-  ),
-  'sub-description': (
-    'small': (
-      'font-size': 18px,
-      'font-weight': 300,
-      'opacity': 0.85,
-      'letter-spacing': 0px,
-    ),
-    'medium': (
-      'font-size': 24px,
-      'font-weight': 300,
-      'opacity': 0.85,
-      'letter-spacing': 0px,
-    ),
-    'large': (
-      'font-size': 24px,
-      'font-weight': 300,
-      'opacity': 0.85,
-      'letter-spacing': 0px,
-    ),
-  ),
-  'small-description': (
-    'small': (
-      'font-size': 16px,
-      'font-weight': 300,
-      'opacity': 0.85,
-      'letter-spacing': 0px,
-    ),
-    'medium': (
-      'font-size': 16px,
-      'font-weight': 300,
-      'opacity': 0.85,
-      'letter-spacing': 0px,
-    ),
-    'large': (
-      'font-size': 16px,
-      'font-weight': 300,
-      'opacity': 0.85,
-      'letter-spacing': 0px,
-    ),
-  ),
-);
+section.welcome-screen {
+  height: calc(100vh - 70px);
+  width: 100%;
+  max-width: 100%;
 
-@function text-breakpoints-for($text-size) {
-  $text-breakpoints: map-get($text-sizing, $text-size);
-
-  @if $text-breakpoints {
-    @return $text-breakpoints;
+  @media screen and (min-width: 414px) {
+    height: calc(100% - 50px);
   }
 
-  @warn "Text size '#{$text-size}' not found in $text-sizing";
-}
+  .content {
+    height: calc(100% - 113px);
+    max-width: 1200px;
+    margin: 0 auto;
 
-@function text-properties-for($text-size, $breakpoint-name) {
-  $text-breakpoints: text-breakpoints-for($text-size);
-  $text-properties: map-get($text-breakpoints, $breakpoint-name);
+    padding: 60px 15px 0px 15px;
+    text-align: center;
 
-  @if $text-properties {
-    @return $text-properties;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 
-  @warn "Breakpoint '#{$breakpoint-name}' for text size '#{$text-size}' was not found";
-}
+    @media screen and (min-width: 414px) {
+      padding: 70px 40px 30px 40px;
+    }
 
-@mixin text-size($text-size, $breakpoint-name: 'small') {
-  $text-size-properties: text-properties-for($text-size, $breakpoint-name);
+    .header-container {
+      padding-bottom: 65px;
+    }
 
-  @if $text-size-properties {
-    font-size: map-get($text-size-properties, 'font-size');
-    font-weight: map-get($text-size-properties, 'font-weight');
-    letter-spacing: map-get($text-size-properties, 'letter-spacing');
-    opacity: map-get($text-size-properties, 'opacity');
-  }
-}
+    .first-step-happening-form {
+      padding: 10px 0 0 0;
 
-@mixin responsive-text-size($text-size, $default-breakpoint: 'small') {
-  @include text-size($text-size, $default-breakpoint);
+      .lk-inline-input-form {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
 
-  $text-breakpoints-map: text-breakpoints-for($text-size);
-  $text-breakpoints-keys: map-keys($text-breakpoints-map);
-
-  @each $breakpoint-name in $text-breakpoints-keys {
-    @if $breakpoint-name != $default-breakpoint {
-      @include respond-above($breakpoint-name) {
-        @include text-size($text-size, $breakpoint-name);
+        @media screen and (min-width: 414px) {
+          max-width: 350px
+        }
       }
     }
+  }
+
+  img {
+    width: 165px;
+    height: 165px;
+
+    @media screen and (min-width: 414px) {
+      width: 143px;
+      height: 143px
+    }
+
+  }
+
+  h1, h2 {
+    font-size: 38px;
+    font-weight: 300;
+    opacity: 0.85;
+    letter-spacing: 0px;
+    margin: 5px 0;
+    white-space: pre-line;
+  }
+
+  h2 {
+
+    font-size: 24px;
+    font-weight: 300;
+    opacity: 0.85;
+    letter-spacing: 0px;
+    margin: 30px 0 0 0;
+  }
+
+  .lk-button.underline {
+
+    font-size: 24px;
+    font-weight: 300;
+    opacity: 0.85;
+    letter-spacing: 0px;
+    text-transform: inherit;
   }
 }
