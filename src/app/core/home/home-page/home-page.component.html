@@ -4,8 +4,10 @@
     <div class="header-container">
       <h1>Wpisz nazwę Twojego wydarzenia</h1>
       <div class="first-step-happening-form">
-        <input type="text" class="lk-input" #nameInput (change)="updateNameHappening(nameInput.value)">
-        <a class="lk-button" [routerLink]="['/happening']">Utwórz</a>
+        <div class="lk-inline-input-form">
+          <input type="text" placeholder="Nazwa wydarzenia..." class="lk-input" #nameInput (change)="updateNameHappening(nameInput.value)">
+          <a class="lk-button" [routerLink]="['/happening']">Utwórz</a>
+        </div>
       </div>
     </div>
     <p>Dowiedz się więcej</p>
