@@ -1,0 +1,24 @@
+$button-width: 120px;
+
+.lk-inline-input-form {
+  position: relative;
+
+  .lk-input{
+    width: 100%;
+    border-radius: $button-radius;
+
+    padding-right: calc(#{$button-width} + 15px);
+
+    border: 2px solid color-base('white');
+  }
+
+  a.lk-button, button.lk-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: $button-width;
+
+    border: 2px solid color-base('white');
+  }
+}
