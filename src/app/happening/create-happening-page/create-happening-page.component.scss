@@ -4,11 +4,28 @@
   .container {
     background-color: color-base('white');
     color: color-base('black');
-    height: 100%;
+    height: calc(100% - 170px);
+
     margin: 0 auto;
     padding: 0 15px 15px 15px;
+
+    overflow-y: auto;
   }
 
+  .bg-bubbles {
+    &__image{
+      background-image: url('src/assets/bubbles.png');
+
+      backface-visibility: hidden;
+      width: 100%;
+      height: 112px;
+
+      &__top {
+        position: absolute;
+        bottom: 85px;
+      }
+    }
+  }
 
   h2 {
     margin: 0 0 8px 0;
