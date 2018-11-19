@@ -3,10 +3,14 @@
 
 
 :host {
+  height: 100%;
+  display: block;
+
   .container {
     background-color: color-base('white');
     color: color-base('black');
     height: calc(100% - #{$space-for-action-button});
+    overflow: hidden;
     margin: 0 auto;
   }
 
@@ -21,12 +25,16 @@
 
   .header-content {
     max-width: 500px;
-    margin: 34px auto;
+    margin: 34px auto 34px auto;
     background-color: color-base('gray');
     color: color-base('light-black-1');
     border-radius: 15px;
     padding: 0 15px;
     text-align: center;
+
+    @include respond-above('medium') {
+      margin: calc(34px - #{$animation-space}) auto 34px auto;
+    }
 
     h1 {
       @include responsive-app-text-size('main-header');

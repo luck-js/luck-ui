@@ -1,13 +1,15 @@
+$animation-space: 10px;
+
 .lk-background-bubbles {
   position: relative;
   z-index: 0;
   overflow: hidden;
   background-color: color-base('red');
 
-  height: 93px;
+  height: calc(93px + #{$animation-space});
 
   @include respond-above('medium') {
-    height: 110px;
+    height: calc(106px + #{$animation-space});
   }
 
   &__image {
