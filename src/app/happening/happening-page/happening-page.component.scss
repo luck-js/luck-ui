@@ -227,6 +227,10 @@
     }
   }
 
+  .lk-background-bubbles {
+    background-color: color-base('red');
+  }
+
   .bg-bubbles__image {
     background-image: url('src/assets/bubbles-shadow.png');
     width: 100%;
