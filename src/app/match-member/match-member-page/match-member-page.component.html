@@ -1,4 +1,4 @@
-<div class="container-for-mobile">
+<div class="bg-container">
   <div class="logo__container">
     <img [routerLink]="['/']" src="assets/logo-shadow.png">
   </div>
@@ -6,12 +6,12 @@
     <h1>{{matchedParticipation.me.name}}, wylosowałeś:</h1>
     <p>{{matchedParticipation.matchedMember.name}}</p>
   </div>
-
-  <div class="bg-bubbles">
-    <div class="bg-bubbles__image bg-bubbles__image"></div>
-  </div>
-  <footer>
-    <p>Zapamiętaj swój los lub</p>
-    <a class="lk-button disabled">ZALOGUJ SIĘ</a>
-  </footer>
 </div>
+<div class="bg-bubbles">
+  <div class="bg-bubbles__image bg-bubbles__image"></div>
+</div>
+<footer>
+  <p>Zapamiętaj swój los lub</p>
+  <a class="lk-button disabled">ZALOGUJ SIĘ</a>
+</footer>
+
