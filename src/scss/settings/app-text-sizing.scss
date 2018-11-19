@@ -3,18 +3,23 @@ $app-text-sizing: (
     'small': (
       'font-size': 17px,
       'letter-spacing': 0px,
+      'font-weight': 700,
     ),
     'medium': (
       'font-size': 23px,
       'letter-spacing': 0px,
+      'font-weight': 700,
     ),
     'large': (
       'font-size': 23px,
       'letter-spacing': 0px,
+      'font-weight': 700,
+
     ),
     'x-large': (
       'font-size': 23px,
       'letter-spacing': 0px,
+      'font-weight': 700,
     ),
   ),
   'sub-header': (
@@ -41,19 +46,23 @@ $app-text-sizing: (
   ),
   'block-header': (
     'small': (
-      'font-size': 12px,
+      'font-size': 13px,
+      'font-weight': 700,
       'letter-spacing': 0px,
     ),
     'medium': (
       'font-size': 13px,
+      'font-weight': 700,
       'letter-spacing': 0px,
     ),
     'large': (
       'font-size': 13px,
+      'font-weight': 700,
       'letter-spacing': 0px,
     ),
     'x-large': (
       'font-size': 13px,
+      'font-weight': 700,
       'letter-spacing': 0px,
     ),
   ),

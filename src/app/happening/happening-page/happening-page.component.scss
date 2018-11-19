@@ -11,15 +11,14 @@
     background-color: color-base('white');
     color: color-base('black');
     height: calc(100% - #{$space-for-action-button});
-    overflow: hidden;
     margin: 0 auto;
+    overflow: auto;
   }
 
   .wrapper {
     max-width: 550px;
-
     margin: 0 auto;
-    height: calc(100% - #{$space-for-action-button});
+    //height: calc(100% - #{$space-for-action-button});
     overflow: hidden;
     padding: 0 15px 30px 15px;
   }
@@ -38,9 +37,11 @@
     }
 
     h1 {
+      padding-top: 15px;
       @include responsive-app-text-size('main-header');
     }
     p {
+      padding-bottom: 15px;
       @include responsive-app-text-size('description');
     }
   }
@@ -53,7 +54,6 @@
   }
 
   .block-container {
-    overflow-y: auto;
     height: calc(100% - 135px);
     min-height: 40px;
 
@@ -87,7 +87,9 @@
       }
 
       &:last-of-type{
-        padding-bottom: 70px;
+        padding-bottom: 40px;
+        //padding-bottom: 70px;
+        //padding-bottom: 100px;
 
         @include respond-above('medium') {
           padding-bottom: 90px;
@@ -155,20 +157,20 @@
       &:nth-child(odd) {
         margin: 5px 10px 5px 0;
         padding: 5px 15px;
-        height: 33px;
+        height: 35px;
       }
 
       &:nth-child(even) {
         position: relative;
         margin: 5px 0 5px 10px;
-        height: 33px;
+        height: 35px;
 
         .app-icon-arrow {
           position: absolute;
-          left: -20px;
+          left: -16px;
           top: 50%;
-          margin-top: -20px;
-          font-size: 20px;
+          margin-top: -17px;
+          font-size: 13px;
           transform: rotate(270deg);
         }
       }

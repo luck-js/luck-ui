@@ -10,26 +10,19 @@
     background-color: color-base('white');
     color: color-base('black');
     height: calc(100% - #{$space-for-action-button});
-    max-width: 550px;
+    //max-width: 550px;
     margin: 0 auto;
 
-    overflow-y: auto;
+    overflow: auto;
   }
 
   form {
+    max-width: 550px;
+    margin: 0 auto;
     padding: 0 15px 15px 15px;
   }
 
   h2 {
-    &:first-of-type {
-      margin: calc(34px - #{$animation-space}) auto 2px auto;
-
-      @include respond-above('medium') {
-        margin: calc(36px - #{$animation-space}) auto 4px auto;
-
-      }
-    }
-
     margin: 34px 0 2px 0;
     text-transform: uppercase;
     text-align: center;
@@ -37,6 +30,15 @@
 
     @include respond-above('medium') {
       margin: 36px 0 4px 0;
+    }
+
+    &:first-of-type {
+      margin: calc(34px - #{$animation-space}) auto 2px auto;
+
+      @include respond-above('medium') {
+        margin: calc(36px - #{$animation-space}) auto 4px auto;
+
+      }
     }
   }
 
@@ -47,6 +49,10 @@
     @include respond-above('x-large') {
       margin: 8px 0;
     }
+  }
+
+  textarea {
+    min-height: 72px;
   }
 
   .lk-inline-input-form {
@@ -64,12 +70,12 @@
       margin-top: -11px;
       padding-left: calc(#{$switch-width} + 15px);
       color: color-base('black');
-      @include responsive-app-text-size('sub-header');
+      @include responsive-app-text-size('block-header');
 
       transition: left 1s;
     }
 
-    &.hidden{
+    &.hidden {
       .lk-input {
         width: 0%;
         padding-left: 0;
@@ -88,6 +94,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: self-start;
+    min-height: 40px;
 
     .block-element {
       position: relative;
@@ -100,7 +107,7 @@
       color: color-base('white');
 
       @include responsive-app-text-size('description');
-      font-weight: 500;
+      //font-weight: 500;
 
       @include respond-above('medium') {
         flex: 0 0 calc(33% - 11.5px);
@@ -155,7 +162,6 @@
     &__image {
       background-image: url('src/assets/bubbles-shadow.png');
 
-
       width: 100%;
       height: 100px;
 
@@ -174,7 +180,6 @@
       }
     }
   }
-
 
   a.lk-button {
     margin: $margin-top-action-button auto $margin-bottom-action-button auto;

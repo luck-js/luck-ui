@@ -1,7 +1,7 @@
 @import '~src/scss/base';
 
 :host {
-  height: 100%;
+  height: calc(100% - 1px);
   display: flex;
   flex-direction: column;
   width: 100%;
