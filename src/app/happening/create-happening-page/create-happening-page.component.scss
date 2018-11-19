@@ -4,6 +4,7 @@
 :host {
   height: 100%;
   display: block;
+  position: relative;
 
   .container {
     background-color: color-base('white');
