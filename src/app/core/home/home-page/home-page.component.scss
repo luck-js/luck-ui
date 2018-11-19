@@ -31,7 +31,7 @@
 
       .bg-bubbles__image {
         background-image: url('src/assets/bubbles.png');
-        backface-visibility: hidden;
+
 
         &__bottom {
           bottom: -105px;
@@ -52,7 +52,7 @@
 
       .bg-bubbles__image {
         background-image: url('src/assets/bubbles-footer.png');
-        backface-visibility: hidden;
+
 
         &__top {
           top: -110px;
@@ -333,7 +333,7 @@
       background-repeat: no-repeat;
       background-position: center;
       cursor: pointer;
-      backface-visibility: hidden;
+
       border: 2px solid color-base('white');
       transition: background-color 0.5s, border-color 0.5s;
 
