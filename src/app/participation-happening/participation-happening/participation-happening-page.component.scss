@@ -11,6 +11,7 @@
     background-image: url('src/assets/bg-bubbles.png');
     background-repeat: repeat;
     background-color: color-base('red');
+    backface-visibility: hidden;
     height: 100%;
     margin: 0 auto;
     padding: 15px;
@@ -142,6 +143,7 @@
       height: 112px;
       background-position: center top;
       background-image: url('src/assets/bubbles.png');
+      backface-visibility: hidden;
 
       @include respond-above('medium') {
       }
