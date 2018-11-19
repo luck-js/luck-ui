@@ -1,5 +1,19 @@
 @import '~src/scss/base';
 
+$main-size-logo: 165px;
+$main-medium-size-logo: 143px;
+$main-xLarge-size-logo: 220px;
+
+$main-padding-top-logo: 50px;
+$main-medium-padding-top-logo: 70px;
+$main-xLarge-padding-top-logo: 80px;
+
+$space-needed-for-logo: $main-size-logo + $main-padding-top-logo;
+$space-medium-needed-for-logo: $main-medium-size-logo + $main-medium-padding-top-logo;
+$space-xLarge-needed-for-logo: $main-xLarge-size-logo + $main-xLarge-padding-top-logo;
+
+$bg-bubbles-position-top: -75px;
+
 :host {
   height: 100%;
   background-image: url('src/assets/bg-bubbles.png');
@@ -38,7 +52,7 @@
           transform: rotate(180deg);
         }
         &__top {
-          top: -75px;
+          top: $bg-bubbles-position-top;
         }
       }
     }
@@ -92,34 +106,34 @@
     }
 
     .content {
-      height: calc(100% - 112px);
+      height: calc(100% + #{$bg-bubbles-position-top});
       max-width: 1200px;
       margin: 0 auto;
 
-      padding: 60px 15px 0px 15px;
+      padding: $space-needed-for-logo 15px 0px 15px;
       text-align: center;
 
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
 
       @include respond-above('medium') {
-        padding: 70px 40px 0px 40px;
+        padding: $space-medium-needed-for-logo 40px 0px 40px;
+      }
+
+      @include respond-above('x-large') {
+        padding: $space-xLarge-needed-for-logo 40px 0px 40px;
       }
 
       .header-container {
-        padding-bottom: 20px;
 
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
       }
 
       .first-step-happening-form{
 
         @include respond-above('medium') {
-          padding: 40px 0 0 0;
+
         }
 
         .lk-inline-input-form {
@@ -139,17 +153,21 @@
       }
 
       img {
-        width: 165px;
-        height: 165px;
+        position: absolute;
+        top: $main-padding-top-logo;
+        width: $main-size-logo;
+        height: $main-size-logo;
 
         @include respond-above('medium') {
-          width: 143px;
-          height: 143px;
+          top: $main-medium-padding-top-logo;
+          width: $main-medium-size-logo;
+          height: $main-medium-size-logo;
         }
 
         @include respond-above('x-large') {
-          width: 220px;
-          height: 220px;
+          top: $main-xLarge-padding-top-logo;
+          width: $main-xLarge-size-logo;
+          height: $main-xLarge-size-logo;
         }
       }
 
@@ -160,8 +178,6 @@
       }
 
       h1 {
-        padding-bottom: 90px;
-
         @include respond-above('medium') {
           padding-bottom: 0px;
         }
