@@ -1,38 +1,40 @@
-<lk-application-wrapper>
-  <div class="container">
-    <div class="wrapper">
-      <div class="header-content">
-        <h1>{{name}}</h1>
-        <p>{{description}}</p>
-      </div>
-      <h2>zaproś uczestników</h2>
-      <div class="block-container">
-        <div class="block-row"
-             *ngFor="let participant of participantUniqueLinkData; let i = index;">
-          <div class="block-element">
-            <span>{{participant.name}}</span>
-          </div>
-          <div class="block-element">
-            <span class="app-icon app-icon-arrow"></span>
-            <!--TODO: move clipboard to directive-->
-            <div class="clipboard-input">
-              <input type="text"
-                     readonly="true"
-                     #elementToCopy
-                     (keydown)="provoked($event)"
-                     (blur)="returnValue(elementToCopy, participant.uniqueLink)"
-                     (untouched)="returnValue(elementToCopy, participant.uniqueLink)"
-                     (click)="copyValue(elementToCopy)"
-                     (touched)="copyValue(elementToCopy)"
-                     [value]="getValue(participant.uniqueLink)">
-              <button class="app-icon app-icon-copy" (click)="copyValue(elementToCopy)"></button>
-            </div>
+<div class="container">
+  <div class="lk-background-bubbles">
+    <div class="lk-background-bubbles__image logo">
+      <img [routerLink]="['/']" src="assets/logo-shadow.png">
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="header-content">
+      <h1>{{name}}</h1>
+      <p>{{description}}</p>
+    </div>
+    <h2>zaproś uczestników</h2>
+    <div class="block-container">
+      <div class="block-row"
+           *ngFor="let participant of participantUniqueLinkData; let i = index;">
+        <div class="block-element">
+          <span>{{participant.name}}</span>
+        </div>
+        <div class="block-element">
+          <span class="app-icon app-icon-arrow"></span>
+          <!--TODO: move clipboard to directive-->
+          <div class="clipboard-input">
+            <input type="text"
+                   readonly="true"
+                   #elementToCopy
+                   (keydown)="provoked($event)"
+                   (blur)="returnValue(elementToCopy, participant.uniqueLink)"
+                   (untouched)="returnValue(elementToCopy, participant.uniqueLink)"
+                   (click)="copyValue(elementToCopy)"
+                   (touched)="copyValue(elementToCopy)"
+                   [value]="getValue(participant.uniqueLink)">
+            <button class="app-icon app-icon-copy" (click)="copyValue(elementToCopy)"></button>
           </div>
         </div>
       </div>
-      <div class="bg-bubbles__image bg-bubbles__image__top"></div>
     </div>
-    <a class="lk-button">Twój los</a>
   </div>
-</lk-application-wrapper>
-
+</div>
+<div class="bg-bubbles__image bg-bubbles__image__top"></div>
+<a class="lk-button">Twój los</a>

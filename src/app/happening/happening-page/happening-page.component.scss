@@ -1,61 +1,31 @@
+@import '../happening.common';
 @import '~src/scss/base';
+
 
 :host {
   .container {
     background-color: color-base('white');
     color: color-base('black');
-    height: 100%;
+    height: calc(100% - #{$space-for-action-button});
     margin: 0 auto;
-    padding: 15px;
   }
 
   .wrapper {
     max-width: 550px;
 
     margin: 0 auto;
-    position: relative;
-    height: calc(100% - 75px - 112px);
+    height: calc(100% - #{$space-for-action-button});
     overflow: hidden;
-    padding: 0 0 35px 0;
-
-    .bg-bubbles__image {
-      background-image: url('src/assets/bubbles-shadow.png');;
-      width: 100%;
-      height: 112px;
-
-      &__top {
-        position: absolute;
-        bottom: -30px;
-      }
-    }
-  }
-
-  img {
-    cursor: pointer;
-    display: none;
-    width: 110px;
-    height: 110px;
-    margin: 0 auto;
-
-    @include respond-above('medium') {
-      display: block;
-      width: 110px;
-      height: 110px;
-    }
-
-    @include respond-above('x-large') {
-      width: 143px;
-      height: 143px;
-    }
+    padding: 0 15px 30px 15px;
   }
 
   .header-content {
     max-width: 500px;
-    margin: 0 auto;
+    margin: 34px auto;
     background-color: color-base('gray');
     color: color-base('light-black-1');
     border-radius: 15px;
-    padding: 15px;
+    padding: 0 15px;
     text-align: center;
 
     h1 {
@@ -249,7 +219,27 @@
     }
   }
 
+  .bg-bubbles__image {
+    background-image: url('src/assets/bubbles-shadow.png');
+    width: 100%;
+    height: 100px;
+
+    @include respond-above('medium') {
+      height: 110px;
+    }
+
+    &__top {
+      pointer-events: none;
+      position: absolute;
+      bottom: 67px;
+
+      @include respond-above('medium') {
+        bottom: 67px;
+      }
+    }
+  }
+
   a.lk-button {
-    margin: 0 auto 35px auto;
+    margin: $margin-top-action-button auto $margin-bottom-action-button auto;
   }
 }

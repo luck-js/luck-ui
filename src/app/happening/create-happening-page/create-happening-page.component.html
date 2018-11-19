@@ -1,37 +1,39 @@
-<lk-application-wrapper>
-  <div class="container">
-    <form>
-      <section [formGroup]="form">
-        <h2>stwórz wydarzenie</h2>
-        <input class="lk-input" type="text" id="gForm_1" placeholder="Nazwa wydarzenia..." formControlName="name">
-        <textarea class="lk-input" autosize
-                  type="text" id="gForm_2" placeholder="Opis wydarzenia..." formControlName="description"></textarea>
-
-        <div  [class]="isSwitched ? 'lk-inline-input-form switch left' : 'lk-inline-input-form switch left hidden'">
-          <p>Nie biorę udziału</p>
-          <input class="lk-input"
-                 formControlName="organiserName"
-                 type="text"
-                 placeholder="Twoja nazwa...">
-          <label class="lk-switch">
-            <input type="checkbox" [checked]="isSwitched" #switch (change)="onSwitchChange(switch)">
-            <span class="slider"></span>
-          </label>
-        </div>
-
-        <h2>zaproś uczestników</h2>
-          <input class="lk-input" type="text"
-                 #name placeholder="nazwa..."
-                 (keydown.enter)="addParticipant(name)">
-        <div class="block-container">
-          <div class="block-element" *ngFor="let participant of forParticipantList.controls; let i = index">
-            {{participant.value.name}}
-            <span (click)="removeParticipant(i)">x</span>
-          </div>
-        </div>
-      </section>
-    </form>
+<div class="container">
+  <div class="lk-background-bubbles">
+    <div class="lk-background-bubbles__image logo">
+      <img [routerLink]="['/']" src="assets/logo-shadow.png">
+    </div>
   </div>
-  <a class="lk-button outline" (click)="clickedSave()">UPUBLIKUJ WYDARZENIE</a>
-  <div class="bg-bubbles__image bg-bubbles__image__top"></div>
-</lk-application-wrapper>
+  <form [formGroup]="form">
+    <h2>stwórz wydarzenie</h2>
+    <input class="lk-input" type="text" id="gForm_1" placeholder="Nazwa wydarzenia..." formControlName="name">
+    <textarea class="lk-input" autosize
+              type="text" id="gForm_2" placeholder="Opis wydarzenia..." formControlName="description"></textarea>
+
+    <div [class]="isSwitched ? 'lk-inline-input-form switch left' : 'lk-inline-input-form switch left hidden'">
+      <p>Nie biorę udziału</p>
+      <input class="lk-input"
+             formControlName="organiserName"
+             type="text"
+             placeholder="Twoja nazwa...">
+      <label class="lk-switch">
+        <input type="checkbox" [checked]="isSwitched" #switch (change)="onSwitchChange(switch)">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <h2>zaproś uczestników</h2>
+    <input class="lk-input" type="text"
+           #name placeholder="nazwa..."
+           (keydown.enter)="addParticipant(name)">
+    <div class="block-container">
+      <div class="block-element" *ngFor="let participant of forParticipantList.controls; let i = index">
+        {{participant.value.name}}
+        <span (click)="removeParticipant(i)">x</span>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="bg-bubbles__image bg-bubbles__image__top"></div>
+<a class="lk-button outline" (click)="clickedSave()">UPUBLIKUJ WYDARZENIE</a>
+
