@@ -82,6 +82,7 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
 
           a {
             padding: $padding-element;
+            padding-top: 9px;
             font-size: 12px;
           }
         }
@@ -162,6 +163,15 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
     flex-direction: column;
     color: color-base('black');
     padding: 25px 0 25px 0;
+
+    p {
+      color: color-base('black');
+      &.color-font {
+        &.red {
+          color: color-base('red');
+        }
+      }
+    }
 
     .cart {
       display: flex;
@@ -392,6 +402,14 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
   }
 
   section.join-us {
+    h2, p {
+      color: color-base('black');
+      &.color-font {
+        &.red {
+          color: color-base('red');
+        }
+      }
+    }
     text-align: center;
     background-color: color-base('white');
     color: color-base('black');
@@ -438,6 +456,7 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
     }
 
     p {
+      color: color-base('black');
       padding: 10px 0;
     }
   }

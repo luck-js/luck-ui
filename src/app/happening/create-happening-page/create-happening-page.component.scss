@@ -26,6 +26,7 @@
     margin: 34px 0 2px 0;
     text-transform: uppercase;
     text-align: center;
+    color: color-base('black');
     @include responsive-app-text-size('main-header');
 
     @include respond-above('medium') {

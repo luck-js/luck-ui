@@ -84,15 +84,15 @@ $margin-bottom-action-button: 30px;
     }
 
     h1 {
-      @include responsive-app-text-size('sub-description');
+      @include responsive-app-text-size('sub-header');
       font-size: 24px;
 
       @include respond-above('medium') {
-        font-size: 37px;
+        font-size: 30px;
       }
     }
     p {
-      @include responsive-app-text-size('sub-header');
+      @include responsive-app-text-size('sub-description');
       font-size: 31px;
 
       @include respond-above('medium') {
@@ -113,8 +113,9 @@ $margin-bottom-action-button: 30px;
     text-align: center;
 
     p {
-      @include responsive-app-text-size('sub-header');
+      @include responsive-app-text-size('block-header');
       margin: $margin-top-action-button 0;
+      color: color-base('black');
 
       @include respond-above('medium') {
         margin: 15px 0;

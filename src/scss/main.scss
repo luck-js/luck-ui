@@ -22,17 +22,20 @@ li {
 p, h1, h2, h3 {
   margin: 0;
   padding: 3px 0;
-  opacity: 0.85;
 }
 
 h1, h2, h3 {
   @include responsive-text-size('main-header');
 }
 
+
+h1, h2, h3, p, a, textarea {
+  color: color-base('white');
+}
+
 p {
   font-size: 18px;
   font-weight: 300;
-  opacity: 0.85;
 }
 
 a {
@@ -44,14 +47,34 @@ button {
   margin: 0;
   padding: 0;
   border: none;
-  font: inherit;
-  color: inherit;
   background: none;
-
+  color: color-base('white');
 }
+
 
 .color-font {
   &.red {
     color: color-base('red');
+  }
+}
+
+
+input, textarea, select, button {
+  font-family: $ft_main, Arial, Helvetica, sans-serif;
+
+  &::-webkit-input-placeholder {
+    font-family: $ft_main, Arial, Helvetica, sans-serif;
+  }
+
+  &:-ms-input-placeholder {
+    font-family: $ft_main, Arial, Helvetica, sans-serif;
+  }
+
+  &:-moz-placeholder {
+    font-family: $ft_main, Arial, Helvetica, sans-serif;
+  }
+
+  &::-moz-placeholder {
+    font-family: $ft_main, Arial, Helvetica, sans-serif;
   }
 }

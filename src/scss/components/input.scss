@@ -2,6 +2,7 @@ textarea.lk-input, input.lk-input{
   @include responsive-app-text-size('block-header');
 
   color: color-base('black');
+  opacity: 0.98;
   background-color: color-base('gray');
   border: 1px solid color-base('gray');
   border-radius: $input-radius;
