@@ -1,0 +1,62 @@
+.lk-background-bubbles {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  background-color: color-base('red');
+
+  height: 93px;
+
+  @include respond-above('medium') {
+    height: 110px;
+  }
+
+  &__image {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 112px;
+    top: 20px;
+    background-position: center top;
+    background-image: url('/assets/bubbles.png');
+    background-color: color-base('red');
+
+
+    @include respond-above('medium') {
+    }
+  }
+}
+
+.lk-background-bubbles{
+  .logo {
+    text-align: center;
+
+    img {
+      width: 100px;
+      height: 100px;
+      transition: width .5s, height .5s, margin-left .5s;
+      cursor: pointer;
+      position: absolute;
+      left: 50%;
+      margin-left: -50px;
+      top: -15px;
+
+      @include respond-above('medium') {
+        width: 115px;
+        height: 115px;
+        margin-left: -57px;
+      }
+
+      &:hover {
+        width: 110px;
+        height: 110px;
+        margin-left: -55px;
+
+        @include respond-above('medium') {
+          width: 125px;
+          height: 125px;
+          margin-left: -62px;
+        }
+      }
+    }
+  }
+}
