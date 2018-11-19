@@ -2,6 +2,9 @@
 @import '~src/scss/base';
 
 :host {
+  height: 100%;
+  display: block;
+
   .container {
     background-color: color-base('white');
     color: color-base('black');
@@ -17,6 +20,15 @@
   }
 
   h2 {
+    &:first-of-type {
+      margin: calc(34px - #{$animation-space}) auto 2px auto;
+
+      @include respond-above('medium') {
+        margin: calc(36px - #{$animation-space}) auto 4px auto;
+
+      }
+    }
+
     margin: 34px 0 2px 0;
     text-transform: uppercase;
     text-align: center;
@@ -67,10 +79,6 @@
         left: 0;
       }
     }
-  }
-
-  a.lk-button {
-    margin: 15px auto 30px auto
   }
 
   .block-container {
@@ -159,5 +167,10 @@
         }
       }
     }
+  }
+
+
+  a.lk-button {
+    margin: $margin-top-action-button auto $margin-bottom-action-button auto;
   }
 }
