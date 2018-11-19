@@ -137,7 +137,7 @@
       height: 112px;
       background-position: center top;
       background-image: url('src/assets/bubbles.png');
-      backface-visibility: hidden;
+
 
       @include respond-above('medium') {
       }
