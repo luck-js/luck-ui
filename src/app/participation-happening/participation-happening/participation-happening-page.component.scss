@@ -140,7 +140,7 @@
       z-index: -1;
       top: $participant-bubble-position;
       width: 100%;
-      height: 112px;
+      height: $lk-background-bubbles-image-height;
       background-position: center top;
       background-image: url('src/assets/bubbles.png');
       backface-visibility: hidden;
