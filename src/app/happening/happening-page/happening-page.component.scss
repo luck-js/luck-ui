@@ -24,7 +24,7 @@
   }
 
   .header-content {
-    max-width: 500px;
+    max-width: 400px;
     margin: 34px auto 34px auto;
     background-color: color-base('gray');
     color: color-base('light-black-1');
@@ -38,10 +38,12 @@
 
     h1 {
       padding-top: 15px;
+      color: color-base('black');
       @include responsive-app-text-size('main-header');
     }
     p {
       padding-bottom: 15px;
+      color: color-base('black');
       @include responsive-app-text-size('description');
     }
   }
@@ -50,6 +52,7 @@
     margin: 20px 0;
     text-transform: uppercase;
     text-align: center;
+    color: color-base('black');
     @include responsive-app-text-size('main-header');
   }
 
@@ -226,6 +229,12 @@
           font-size: 23px;
 
           box-shadow: -10px 0 20px 0 rgba(0, 0, 0, 0.20);
+          transition: color 0.5s, background-color 0.5s, text-decoration-color 0.5s;
+
+          &:hover {
+            background-color: color-base('dark-red');
+            color: color-base('white-2');
+          }
         }
       }
     }
