@@ -16,6 +16,7 @@ $margin-bottom-action-button: 30px;
     background-image: url('src/assets/bg-bubbles.png');
     background-repeat: repeat;
     background-color: color-base('red');
+    backface-visibility: hidden;
     height: 100%;
     color: color-base('white');
     width: 100%;
@@ -144,6 +145,7 @@ $margin-bottom-action-button: 30px;
       height: 112px;
       background-position: center top;
       background-image: url('src/assets/bubbles.png');
+      backface-visibility: hidden;
 
       @include respond-above('medium') {
       }

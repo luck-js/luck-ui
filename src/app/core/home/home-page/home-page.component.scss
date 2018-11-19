@@ -21,13 +21,17 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
   background-image: url('src/assets/bg-bubbles.png');
   background-repeat: repeat;
   background-color: color-base('red');
+  backface-visibility: hidden;
   display: block;
 
   .bg-section {
     background-color: color-base('white');
 
     &.red {
+      background-image: url('src/assets/bg-bubbles.png');
+      background-repeat: repeat;
       background-color: color-base('red');
+      backface-visibility: hidden;
     }
   }
 
@@ -355,6 +359,7 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
       background-size: 65% auto;
       background-repeat: no-repeat;
       background-position: center;
+      backface-visibility: hidden;
       cursor: pointer;
 
       border: 2px solid color-base('white');

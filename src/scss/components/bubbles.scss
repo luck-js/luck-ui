@@ -22,6 +22,7 @@ $animation-space: 10px;
     background-position: center top;
     background-image: url('/assets/bubbles.png');
     background-color: color-base('red');
+    backface-visibility: hidden;
 
     @include respond-above('medium') {
     }
@@ -79,6 +80,7 @@ $animation-space: 10px;
 
     &__image {
       background-image: url('src/assets/bubbles-footer.png');
+      backface-visibility: hidden;
 
       &__top {
         top: -110px;
