@@ -16,11 +16,13 @@
     </div>
     <a class="lk-button underline" (click)="moveToStructure()">Dowiedz się więcej</a>
   </div>
+  <div class="lk-background-bubbles lk-background-bubbles-container">
+    <div class="lk-background-bubbles__image arrow">
+      <span (click)="moveToStructure()" class="app-icon app-icon-arrow"></span>
+    </div>
+  </div>
 </section>
 <div class="bg-section bg-bubbles bg-bubbles__container">
-  <div class="bg-bubbles__image bg-bubbles__image__top arrow__container">
-    <span (click)="moveToStructure()" class="app-icon app-icon-arrow"></span>
-  </div>
   <section #philosophy class="philosophy">
     <div class="cart">
       <div class="image-container">
@@ -83,9 +85,11 @@
       </div>
     </div>
   </section>
-  <div class="bg-bubbles__image bg-bubbles__image__bottom"></div>
 </div>
 <section class="about-us">
+  <div class="lk-background-bubbles lk-background-bubbles-container">
+    <div class="lk-background-bubbles__image lk-background-bubbles__image__bottom"></div>
+  </div>
   <div class="content">
     <h2>O nas</h2>
     <p>Jesteśmy grupką przyjaciół. Luck to projekt, który połączył nasze indywidualne zainteresowania w obszarze
@@ -93,6 +97,11 @@
       aplikacji. Projekt umożliwia nam zdobycie nowych kompetencji. Chcieliśmy połączyć naszą wiedzę teoretyczną z
       praktyką i jednocześnie ułatwić dobieranie się na Mikołajki!</p>
     <img src="assets/photo-about-us.jpg">
+  </div>
+  <div class="lk-background-bubbles lk-background-bubbles__footer-container">
+    <div class="lk-background-bubbles__image logo">
+      <img (click)="moveToUp()" src="assets/logo-shadow.png">
+    </div>
   </div>
 </section>
 <section class="help-us" style="display: none;">
@@ -104,10 +113,7 @@
     <a></a>
   </div>
 </section>
-<div class="bg-section bg-bubbles bg-bubbles__container-footer">
-  <div class="bg-bubbles__image bg-bubbles__image__top logo__container">
-    <img (click)="moveToUp()" src="assets/logo-shadow.png">
-  </div>
+<div class="bg-section">
   <section class="join-us">
     <div class="content">
       <h2>Dołącz do nas</h2>

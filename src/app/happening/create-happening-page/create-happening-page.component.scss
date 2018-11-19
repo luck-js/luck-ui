@@ -140,6 +140,10 @@
     }
   }
 
+  .lk-background-bubbles {
+    background-color: color-base('red');
+  }
+
   .bg-bubbles {
     height: 93px;
 
@@ -159,6 +163,7 @@
       }
 
       &__top {
+        pointer-events: none;
         position: absolute;
         bottom: 67px;
 
