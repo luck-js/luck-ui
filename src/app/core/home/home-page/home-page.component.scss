@@ -259,7 +259,7 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
 
     .lk-background-bubbles-container {
       background-color: color-base('white');
-      height: 112px;
+      height: $lk-background-bubbles-image-height;
       margin-bottom: 45px;
 
       @include respond-above('medium') {
