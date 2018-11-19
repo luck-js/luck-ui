@@ -243,10 +243,6 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
     max-width: 1000px;
     margin: 0 auto;
 
-    @include respond-above('medium') {
-      padding: 100px 0 0 0;
-    }
-
     .content {
       text-align: center;
       padding: 0 15px;
@@ -267,7 +263,7 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
   }
 
   section.about-us {
-    .content{
+    .content {
       img {
         margin-top: 20px;
         margin-bottom: 20px;
@@ -281,6 +277,11 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
     .lk-background-bubbles-container {
       background-color: color-base('white');
       height: 112px;
+      margin-bottom: 45px;
+
+      @include respond-above('medium') {
+        margin-bottom: 100px;
+      }
 
       .lk-background-bubbles__image {
         top: 0;
@@ -294,14 +295,21 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
 
     .lk-background-bubbles__footer-container {
       background-color: color-base('red');
-      height: calc(#{$lk-background-bubbles-image-height} - 32px);
+      height: calc(#{$lk-background-bubbles-image-height} - 32px + #{$animation-space});
+      margin-top: 45px;
+
+      @include respond-above('medium') {
+        height: calc(#{$lk-background-bubbles-image-height} - 20px + #{$animation-space});
+        margin-top: 100px;
+      }
 
       .lk-background-bubbles__image {
-        height: 75px;
+        height: calc(75px + #{$animation-space});
         top: initial;
         bottom: 0;
 
         @include respond-above('medium') {
+          height: calc(87px + #{$animation-space});
           top: initial;
           bottom: 0;
         }
@@ -312,6 +320,11 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
 
   section.help-us {
     padding: 45px 0 0 0;
+
+    @include respond-above('medium') {
+      padding: 100px 0 0 0;
+    }
+
     a {
       width: 180px;
       height: 60px;
