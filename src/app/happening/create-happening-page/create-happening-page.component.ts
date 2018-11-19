@@ -78,7 +78,7 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
 
   public addParticipant(target: HTMLInputElement): void {
     this.participantList = this.forParticipantList;
-    this.participantList.push(this.createParticipant(target.value));
+    this.participantList.insert(0, this.createParticipant(target.value));
     target.value = "";
   }
 
