@@ -25,6 +25,10 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
 
   .bg-section {
     background-color: color-base('white');
+
+    &.red {
+      background-color: color-base('red');
+    }
   }
 
   section.welcome-screen {
@@ -237,42 +241,7 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
     }
   }
 
-  section.about-us, section.help-us, section.join-us {
-    background-color: color-base('red');
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-
-    .content {
-      text-align: center;
-      padding: 0 15px;
-    }
-
-    h2 {
-      @include responsive-text-size('main-header');
-    }
-
-    p {
-      @include responsive-text-size('sub-description');
-      padding: 10px 0;
-
-      @include respond-above('medium') {
-        padding: 30px 0;
-      }
-    }
-  }
-
-  section.about-us {
-    .content {
-      img {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        width: 100%;
-        max-width: 600px;
-        box-shadow: 0px 0px 84px 0px rgba(0, 0, 0, 0.13);
-        opacity: 0.9;
-      }
-    }
+  .bg-section.info {
 
     .lk-background-bubbles-container {
       background-color: color-base('white');
@@ -314,6 +283,44 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
           bottom: 0;
         }
 
+      }
+    }
+  }
+
+  section.about-us, section.help-us, section.join-us {
+    background-color: color-base('red');
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .content {
+      text-align: center;
+      padding: 0 15px;
+    }
+
+    h2 {
+      @include responsive-text-size('main-header');
+    }
+
+    p {
+      @include responsive-text-size('sub-description');
+      padding: 10px 0;
+
+      @include respond-above('medium') {
+        padding: 30px 0;
+      }
+    }
+  }
+
+  section.about-us {
+    .content {
+      img {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 600px;
+        box-shadow: 0px 0px 84px 0px rgba(0, 0, 0, 0.13);
+        opacity: 0.9;
       }
     }
   }
