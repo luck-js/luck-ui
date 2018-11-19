@@ -4,14 +4,14 @@
     <div class="header-container">
       <h1>Poznaj aplikacje która ułatwi Ci organizowanie losowań.</h1>
       <h2>Już dostępna, stwórz wydarzenie!</h2>
-      <div class="first-step-happening-form">
-        <div class="lk-inline-input-form">
-          <input class="lk-input" #nameInput
-                 type="text"
-                 placeholder="Nazwa wydarzenia..."
-                 (keydown.enter)="moveToCreateHappeningPage(nameInput.value)">
-          <a class="lk-button" (click)="moveToCreateHappeningPage(nameInput.value)">Utwórz</a>
-        </div>
+    </div>
+    <div class="first-step-happening-form">
+      <div class="lk-inline-input-form">
+        <input class="lk-input" #nameInput
+               type="text"
+               placeholder="Nazwa wydarzenia..."
+               (keydown.enter)="moveToCreateHappeningPage(nameInput.value)">
+        <a class="lk-button" (click)="moveToCreateHappeningPage(nameInput.value)">Utwórz</a>
       </div>
     </div>
     <a class="lk-button underline" (click)="moveToStructure()">Dowiedz się więcej</a>
