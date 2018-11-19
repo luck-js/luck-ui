@@ -1,16 +1,10 @@
-<div class="container-for-mobile">
-  <div class="container">
-    <div class="header-container">
-      <h1>{{participationHappening.happening.name}}</h1>
-      <p>{{participationHappening.happening.description}}</p>
-    </div>
-    <a class="square-button" [routerLink]="['/match', happeningId]">losuj</a>
+<div class="container">
+  <div class="header-container">
+    <h1>{{participationHappening.happening.name}}</h1>
+    <p>{{participationHappening.happening.description}}</p>
   </div>
-
-  <div class="bg-bubbles">
-    <div class="bg-bubbles__image bg-bubbles__image"></div>
-  </div>
-  <!--<footer>
-    <p><a [routerLink]="['/']" >Luck</a> 2018</p>
-  </footer>-->
+  <a class="square-button" [routerLink]="['/match', happeningId]">losuj</a>
+</div>
+<div class="bg-bubbles">
+  <div class="bg-bubbles__image bg-bubbles__image"></div>
 </div>
