@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Happening, INIT_FORM_HAPPENING, ParticipantUniqueLinkData } from '../happening-page/happening.model';
+import { Happening, INIT_FORM_HAPPENING } from '../happening-page/happening.model';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { takeUntil, tap } from 'rxjs/operators';
 import { AppStateService } from '../../core/app-state.service';
@@ -24,7 +24,6 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
 
   public name = '';
   public description = '';
-  public participantUniqueLinkData: ParticipantUniqueLinkData[] = [];
 
   public isSwitched = true;
 
