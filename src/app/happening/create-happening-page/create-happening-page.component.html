@@ -35,5 +35,5 @@
   </form>
 </div>
 <div class="bg-bubbles__image bg-bubbles__image__top"></div>
-<a class="lk-button outline" (click)="clickedSave()">UPUBLIKUJ WYDARZENIE</a>
+<a [class]="form.valid ? 'lk-button outline' : 'lk-button outline disabled'" (click)="clickedSave()">UPUBLIKUJ WYDARZENIE</a>
 
