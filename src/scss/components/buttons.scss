@@ -70,4 +70,16 @@ a.lk-button.disabled, button.lk-button.disabled {
     border: 2px solid color-shade('red', -30);
     color: color-shade('white', -30);
   }
+
+  &.outline{
+    background-color: transparent;
+    border: 2px solid color-shade('red', - 30);
+    color: color-shade('red', - 30);
+
+    &:hover {
+      background-color: transparent;
+      border: 2px solid color-shade('red', - 30);
+      color: color-shade('red', - 30);
+    }
+  }
 }
