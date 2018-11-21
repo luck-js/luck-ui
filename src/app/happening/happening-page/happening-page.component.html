@@ -12,11 +12,11 @@
     <h2>zaproś uczestników</h2>
     <div class="block-container">
       <div class="block-row"
-           *ngFor="let participant of participantUniqueLinkData; let i = index;">
-        <div class="block-element">
+           *ngFor="let participant of participantsUniqueLink; let i = index;">
+        <div [class]="!participant.copied ? 'block-element' : 'block-element copied'">
           <span>{{participant.name}}</span>
         </div>
-        <div class="block-element">
+        <div [class]="!participant.copied ? 'block-element' : 'block-element copied'">
           <span class="app-icon app-icon-arrow"></span>
           <!--TODO: move clipboard to directive-->
           <div class="clipboard-input">
@@ -24,12 +24,12 @@
                    readonly="true"
                    #elementToCopy
                    (keydown)="provoked($event)"
-                   (blur)="returnValue(elementToCopy, participant.uniqueLink)"
-                   (untouched)="returnValue(elementToCopy, participant.uniqueLink)"
+                   (blur)="returnValue(elementToCopy, i)"
+                   (untouched)="returnValue(elementToCopy, i)"
                    (click)="copyValue(elementToCopy)"
                    (touched)="copyValue(elementToCopy)"
                    [value]="getValue(participant.uniqueLink)">
-            <button class="app-icon app-icon-copy" (click)="copyValue(elementToCopy)"></button>
+            <button class="app-icon app-icon-copy" (mouseup)="mouseUp(i)" (click)="copyValue(elementToCopy)"></button>
           </div>
         </div>
       </div>

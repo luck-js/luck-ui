@@ -157,6 +157,16 @@
 
       color: color-base('light-black-1');
 
+      transition: background-color .5s;
+
+      &.copied{
+        background-color: color-base('dark-gray-0');
+
+        .clipboard-input input {
+          background-color: color-base('dark-gray-0');
+        }
+      }
+
       &:nth-child(odd) {
         margin: 5px 10px 5px 0;
         padding: 5px 15px;
@@ -210,6 +220,8 @@
           text-overflow: ellipsis;
           white-space: nowrap;
           overflow: hidden;
+
+          transition: background-color .5s;
 
           &:focus {
             outline: none;
