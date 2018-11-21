@@ -11,6 +11,7 @@ import { delay, tap } from 'rxjs/operators';
 export class ModalComponent implements OnInit, OnDestroy {
   private ngUnsubscribe: Subject<void> = new Subject<void>();
   show = false;
+  text = '';
 
   constructor(private appStateService: AppStateService) {
   }
@@ -18,8 +19,9 @@ export class ModalComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.appStateService.showModal.pipe(
       delay(10),
-      tap(flag => this.show = flag),
-      delay(500)
+      tap(text => this.text = text),
+      tap(text => this.show = !!text),
+      delay(1000)
     )
       .subscribe(flag => this.show = false);
   }

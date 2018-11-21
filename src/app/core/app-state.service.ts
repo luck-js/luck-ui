@@ -3,7 +3,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 @Injectable()
 export class AppStateService {
   nameHappening = '';
-  showModal: EventEmitter<boolean> = new EventEmitter();
+  showModal: EventEmitter<string> = new EventEmitter();
 
   constructor() {
   }
@@ -12,12 +12,12 @@ export class AppStateService {
     this.nameHappening = name;
   }
 
-  setModalVisibility() {
-    this.showModal.emit(true)
+  showModalityText(text: string) {
+    this.showModal.emit(text)
   }
 
   hiddenModal() {
-    this.showModal.emit(false)
+    this.showModal.emit(null)
   }
 
 }

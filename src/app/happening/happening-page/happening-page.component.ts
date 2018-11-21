@@ -52,7 +52,7 @@ export class HappeningPageComponent implements OnInit, OnDestroy {
   public copyValue(target: HTMLInputElement){
     target.select();
     document.execCommand('copy');
-    this.appStateService.setModalVisibility();
+    this.appStateService.showModalityText('skopiowano !');
   }
 
   public provoked(event: Event) {
