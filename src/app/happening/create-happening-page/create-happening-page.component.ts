@@ -84,7 +84,10 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
   }
 
   public clickedSave() {
-    if(this.form.valid){
+    if(!this.form.valid){
+      this.appStateService.showModalityText('Nie odpowiednia liczba uczestników');
+
+    } else {
       this.participantList = this.forParticipantList;
 
       this.createHappeningService.publishHappening(this.happeningId, this.form.value).pipe(

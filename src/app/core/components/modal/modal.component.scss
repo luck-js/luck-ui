@@ -1,26 +1,37 @@
 @import '~src/scss/base';
 
-:host{
- position: relative;
-
-  .container{
-    background-color: color-base('black');
-    color: color-base('white');
-    position: fixed;
+:host {
+  pointer-events: none;
+  .container {
+    width: 100%;
     top: -40px;
-    left: 50%;
+    left: 0;
     text-align: center;
-    width: 140px;
-    margin-left: -70px;
+    position: fixed;
     z-index: 100;
-    padding: 10px 15px;
-    border-radius: 20px;
-    opacity: 0;
-    transition: top 0.5s, opacity 0.5s;
+    display: flex;
+    justify-content: center;
+
+    transition: top 0.5s;
+
+    .content {
+      background-color: color-base('black');
+      color: color-base('white');
+      text-align: center;
+      min-width: 140px;
+      padding: 10px 15px;
+      border-radius: 20px;
+      opacity: 0;
+
+      transition: opacity 0.5s;
+    }
   }
 
-  .container.show{
-    opacity: 0.7;
-    top: 25px
+  .container.show {
+    top: 25px;
+
+    .content {
+      opacity: 0.7;
+    }
   }
 }
