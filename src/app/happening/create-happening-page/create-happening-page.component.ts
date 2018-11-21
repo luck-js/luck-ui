@@ -7,6 +7,7 @@ import { CreateHappeningService } from './create-happening.service';
 import { NewHappeningPageService } from '../new-happening-page/new-happening-page.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { CustomValidation } from './custom-validation';
 
 @Component({
   selector: 'lk-create-happening-page',
@@ -60,7 +61,7 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
       name: [model.name],
       organiserName: [model.organiserName],
       description: [model.description],
-      participantList: this.formBuilder.array([]),
+      participantList: this.formBuilder.array([], CustomValidation.checkArrayLimit(3, 40)),
     });
   }
 
@@ -83,13 +84,15 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
   }
 
   public clickedSave() {
-    this.participantList = this.forParticipantList;
+    if(this.form.valid){
+      this.participantList = this.forParticipantList;
 
-    this.createHappeningService.publishHappening(this.happeningId, this.form.value).pipe(
-      tap((data) => this.router.navigate([`/happening/view/${this.happeningId}`])),
-      tap((data) => console.log('CreateHappeningService.publishHappening -> CreatedHappening: ', data))
-    )
-      .subscribe();
+      this.createHappeningService.publishHappening(this.happeningId, this.form.value).pipe(
+        tap((data) => this.router.navigate([`/happening/view/${this.happeningId}`])),
+        tap((data) => console.log('CreateHappeningService.publishHappening -> CreatedHappening: ', data))
+      )
+        .subscribe();
+    }
   }
 
   public onSwitchChange(target: HTMLInputElement) {
