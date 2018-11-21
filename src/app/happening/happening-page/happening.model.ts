@@ -29,6 +29,13 @@ export interface ParticipantUniqueLinkData {
   uniqueLink: string;
 }
 
+
+export interface ParticipantUniqueLinkDataView {
+  name: string;
+  uniqueLink: string;
+  copied: boolean;
+}
+
 export const PARTICIPANT_UNIQUE_LINK_DATA: ParticipantUniqueLinkData[] = [
   {
     name: 'Kline',
