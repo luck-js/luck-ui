@@ -33,6 +33,12 @@
   }
 }
 
+@mixin arrow-right {
+  &:before {
+    content: '\ea3c';
+  }
+}
+
 @mixin github {
   &:before {
     content: '\e902';

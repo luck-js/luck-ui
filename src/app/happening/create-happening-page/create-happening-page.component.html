@@ -23,9 +23,13 @@
     </div>
 
     <h2>zaproś uczestników</h2>
-    <input class="lk-input" type="text"
-           #name placeholder="nazwa..."
-           (keydown.enter)="addParticipant(name)">
+    <div class="lk-inline-input-form button">
+      <input class="lk-input" type="text"
+             #name placeholder="nazwa...">
+      <button class="app-icon app-icon-arrow-right"
+              (touched)="onClickButton(name)"
+              (click)="onClickButton(name)"></button>
+    </div>
     <div class="block-container">
       <div class="block-element" *ngFor="let participant of forParticipantList.controls; let i = index">
         {{participant.value.name}}
