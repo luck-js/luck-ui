@@ -77,10 +77,21 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
     this.participantList.removeAt(index);
   }
 
+  public onClickButton(target: HTMLInputElement): void {
+    target.focus();
+    this.addParticipant(target);
+  }
+
   public addParticipant(target: HTMLInputElement): void {
-    this.participantList = this.forParticipantList;
-    this.participantList.insert(0, this.createParticipant(target.value));
-    target.value = '';
+    if(isEmpty(target.value)){
+      this.appStateService.showModalityText('Wpisz nazwę uczestnika');
+
+    } else {
+
+      this.participantList = this.forParticipantList;
+      this.participantList.insert(0, this.createParticipant(target.value));
+      target.value = '';
+    }
   }
 
   public clickedSave() {
@@ -106,4 +117,8 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
     this.isSwitched = target.checked;
   };
 
+}
+
+function isEmpty(str){
+  return !str.replace(/\s+/, '').length;
 }

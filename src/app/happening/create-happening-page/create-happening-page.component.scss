@@ -56,7 +56,7 @@
     min-height: 72px;
   }
 
-  .lk-inline-input-form {
+  .lk-inline-input-form.switch {
     overflow: hidden;
 
     .lk-input {
@@ -85,6 +85,29 @@
 
       p {
         left: 0;
+      }
+    }
+  }
+
+
+  .lk-inline-input-form.button {
+    .lk-input{
+      border-radius: $input-radius;
+      padding-right: 65px;
+    }
+
+    button {
+      cursor: pointer;
+      padding: $padding-element;
+      padding-right: 30px;
+      margin: 5px 0;
+      font-size: 20px;
+      color: color-base('black');
+      transition: transform .5s ;
+
+      &:hover {
+        opacity: 0.95;
+        transform: translateX(5px);
       }
     }
   }

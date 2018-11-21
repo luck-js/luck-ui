@@ -25,6 +25,10 @@ $ft_main: 'Lato', sans-serif;
     @include arrow;
   }
 
+  &.app-icon-arrow-right {
+    @include arrow-right;
+  }
+
   &.app-icon-github {
     @include github;
   }

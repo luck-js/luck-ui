@@ -65,4 +65,12 @@ $button-width: 120px;
       border: 2px solid color-base('white');
     }
   }
+
+  &.button{
+    a.lk-button, button.lk-button, a, button {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
 }
