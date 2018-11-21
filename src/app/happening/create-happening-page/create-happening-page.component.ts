@@ -26,6 +26,7 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
   public description = '';
 
   public isSwitched = true;
+  public isPublishing = false;
 
   private max = 2;
 
@@ -86,7 +87,11 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
     if(!this.form.valid){
       this.appStateService.showModalityText('Nie odpowiednia liczba uczestników');
 
+    } else if(this.isPublishing){
+      this.appStateService.showModalityText('Poczekaj na przeładowanie strony');
+
     } else {
+      this.isPublishing = true;
       this.participantList = this.forParticipantList;
 
       this.createHappeningService.publishHappening(this.happeningId, this.form.value).pipe(
