@@ -6,9 +6,11 @@
   </div>
   <form [formGroup]="form">
     <h2>stwórz wydarzenie</h2>
-    <input class="lk-input" type="text" id="gForm_1" placeholder="Nazwa wydarzenia..." formControlName="name">
+    <h3>Nazwa wydarzenia</h3>
+    <input class="lk-input" type="text" id="gForm_1" [placeholder]="placeholderTexts.name" formControlName="name">
+    <h3>Opis wydarzenia</h3>
     <textarea class="lk-input" autosize
-              type="text" id="gForm_2" placeholder="Opis wydarzenia..." formControlName="description"></textarea>
+              type="text" id="gForm_2" [placeholder]="placeholderTexts.description" formControlName="description"></textarea>
 
     <div style="display: none" [class]="isSwitched ? 'lk-inline-input-form switch left' : 'lk-inline-input-form switch left hidden'">
       <p>Nie biorę udziału</p>
@@ -23,9 +25,10 @@
     </div>
 
     <h2>zaproś uczestników</h2>
+    <h3>Imię</h3>
     <div class="lk-inline-input-form button">
       <input class="lk-input" type="text"
-             #name placeholder="nazwa...">
+             #name [placeholder]="placeholderTexts.participants">
       <button class="app-icon app-icon-arrow-right"
               (touched)="onClickButton(name)"
               (click)="onClickButton(name)"></button>
