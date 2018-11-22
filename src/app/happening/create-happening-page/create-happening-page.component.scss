@@ -122,7 +122,7 @@ $margin-for-last-block-element: 5px 0 5px $space-for-3-block-element * 2;
 
     button {
       cursor: pointer;
-      padding: $padding-element;
+      padding: 3px 15px;
       padding-right: 30px;
       margin: 5px 0;
       font-size: 20px;
@@ -132,6 +132,31 @@ $margin-for-last-block-element: 5px 0 5px $space-for-3-block-element * 2;
       &:hover {
         opacity: 0.95;
         transform: translateX(5px);
+      }
+    }
+
+    img {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      @include respond-above('large') {
+        display: block;
+        position: absolute;
+        width: 211px;
+        height: auto;
+        right: -190px;
+        top: -50px;
+      }
+
+      @include respond-above('x-large') {
+        display: block;
+        position: absolute;
+        width: 246px;
+        height: auto;
+        right: -220px;
+        top: -70px;
       }
     }
   }
