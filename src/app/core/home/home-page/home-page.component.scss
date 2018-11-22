@@ -152,10 +152,10 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
       height: $height-for-lk-background-bubbles;
 
       .lk-background-bubbles__image {
-        top: 0;
+        top: -1px;
 
         @include respond-above('medium') {
-          top: 0;
+          top: -1px;
         }
 
       }
@@ -259,7 +259,7 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
 
     .lk-background-bubbles-container {
       background-color: color-base('white');
-      height: $lk-background-bubbles-image-height;
+      height: calc(#{$lk-background-bubbles-image-height} + 1px);
       margin-bottom: 45px;
 
       @include respond-above('medium') {
@@ -267,10 +267,10 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
       }
 
       .lk-background-bubbles__image {
-        top: 0;
+        top: -1px;
 
         @include respond-above('medium') {
-          top: 0;
+          top: -1px;
         }
 
       }
@@ -278,23 +278,23 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
 
     .lk-background-bubbles__footer-container {
       background-color: color-base('red');
-      height: calc(#{$lk-background-bubbles-image-height} - 32px + #{$animation-space});
+      height: calc(#{$lk-background-bubbles-image-height} + 1px - 32px + #{$animation-space});
       margin-top: 45px;
 
       @include respond-above('medium') {
-        height: calc(#{$lk-background-bubbles-image-height} - 20px + #{$animation-space});
+        height: calc(#{$lk-background-bubbles-image-height} + 1px - 20px + #{$animation-space});
         margin-top: 100px;
       }
 
       .lk-background-bubbles__image {
         height: calc(75px + #{$animation-space});
         top: initial;
-        bottom: 0;
+        bottom: -1px;
 
         @include respond-above('medium') {
           height: calc(87px + #{$animation-space});
           top: initial;
-          bottom: 0;
+          bottom: -1px;
         }
 
       }
