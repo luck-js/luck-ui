@@ -118,10 +118,7 @@
       &:hover {
         .block-element:nth-child(odd) {
           width: 0;
-          margin-left: 0;
-          margin-right: 0;
-          padding: 0;
-          flex: 1 1 0%;
+          flex: 1 1 50%;
 
           @include respond-above('medium') {
             margin: 5px 10px 5px 0;
