@@ -32,8 +32,8 @@
     </div>
     <div class="block-container">
       <div class="block-element" *ngFor="let participant of forParticipantList.controls; let i = index">
-        {{participant.value.name}}
-        <span (click)="removeParticipant(i)">x</span>
+        <span class="text">{{participant.value.name}}</span>
+        <span class="circle-button" (click)="removeParticipant(i)">x</span>
       </div>
     </div>
   </form>
