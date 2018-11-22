@@ -1,6 +1,17 @@
 @import '../happening.common';
 @import '~src/scss/base';
 
+$space-desktop-between-block-element: 12px;
+$space-for-3-block-element: $space-desktop-between-block-element / 3;
+$margin-desktop-for-first-block-element: 5px $space-for-3-block-element * 2 5px 0;
+$margin-desktop-for-center-block-element: 5px $space-for-3-block-element 5px $space-for-3-block-element;
+$margin-desktop-for-last-block-element: 5px 0 5px $space-for-3-block-element * 2;
+
+$space-between-block-element: 10px;
+$space-for-2-block-element: $space-between-block-element / 2;
+$margin-for-first-block-element: 5px $space-for-3-block-element * 2 5px 0;
+$margin-for-last-block-element: 5px 0 5px $space-for-3-block-element * 2;
+
 :host {
   height: 100%;
   display: block;
@@ -116,7 +127,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: self-start;
     min-height: 40px;
 
@@ -124,7 +135,7 @@
       position: relative;
       text-transform: uppercase;
       display: flex;
-      flex: 0 0 calc(50% - 11.5px);
+      flex: 0 0 calc(50% - 8px);
       border-radius: 8px;
       padding: 8px 10px;
       background-color: color-base('red');
@@ -134,7 +145,41 @@
       //font-weight: 500;
 
       @include respond-above('medium') {
-        flex: 0 0 calc(33% - 11.5px);
+        flex: 0 0 calc(33% - 7px);
+      }
+
+      &:nth-child(odd) {
+        margin: $margin-for-first-block-element;
+      }
+
+      &:nth-child(even) {
+        margin: $margin-for-last-block-element;
+      }
+
+      &:nth-child(3n + 1) {
+        @include respond-above('medium') {
+          margin: $margin-desktop-for-first-block-element;
+        }
+      }
+
+      &:nth-child(3n - 1 ) {
+        @include respond-above('medium') {
+          margin: $margin-desktop-for-center-block-element;
+        }
+      }
+
+      &:nth-child(3n) {
+        @include respond-above('medium') {
+          margin: $margin-desktop-for-last-block-element;
+        }
+      }
+
+      &:last-of-type {
+        margin-bottom: 30px;
+
+        @include respond-above('medium') {
+          //margin-bottom: 70px;
+        }
       }
 
       span {
@@ -153,22 +198,6 @@
         opacity: .54;
         font-size: 10px;
         display: block;
-
-      }
-      &:nth-child(odd) {
-        margin: 5px 0;
-      }
-
-      &:nth-child(even) {
-        margin: 5px 0;
-      }
-
-      &:last-of-type {
-        margin-bottom: 30px;
-
-        @include respond-above('medium') {
-          //margin-bottom: 70px;
-        }
       }
     }
   }
