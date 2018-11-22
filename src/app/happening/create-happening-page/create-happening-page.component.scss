@@ -137,9 +137,10 @@ $margin-for-last-block-element: 5px 0 5px $space-for-3-block-element * 2;
       display: flex;
       flex: 0 0 calc(50% - 8px);
       border-radius: 8px;
-      padding: 8px 10px;
+      padding: 8px 25px 8px 10px;
       background-color: color-base('red');
       color: color-base('white');
+      overflow: hidden;
 
       @include responsive-app-text-size('description');
       //font-weight: 500;
@@ -182,7 +183,14 @@ $margin-for-last-block-element: 5px 0 5px $space-for-3-block-element * 2;
         }
       }
 
-      span {
+      span.text {
+        width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      span.circle-button {
         cursor: pointer;
         position: absolute;
         top: 50%;
