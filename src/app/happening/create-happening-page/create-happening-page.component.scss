@@ -54,12 +54,25 @@ $margin-for-last-block-element: 5px 0 5px $space-for-3-block-element * 2;
     }
   }
 
-  input, textarea {
-    width: 100%;
-    margin: 6px 0;
+  h3 {
+    color: color-base('black');
+    //@include responsive-app-text-size('block-header');
+    font-weight: 700;
+    font-size: 14px;
+    padding: 0px 10px;
+    margin: 6px 0 3px 0;
 
     @include respond-above('x-large') {
-      margin: 8px 0;
+      margin: 8px 0 4px 0;
+    }
+  }
+
+  input, textarea {
+    width: 100%;
+    margin: 0 0 6px 0;
+
+    @include respond-above('x-large') {
+      margin: 0 0 8px 0;
     }
   }
 

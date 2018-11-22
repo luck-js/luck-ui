@@ -9,6 +9,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { CustomValidation } from './custom-validation';
 
+interface PlaceholderTexts {
+  name: string;
+  description: string;
+  participants: string;
+}
+
 @Component({
   selector: 'lk-create-happening-page',
   templateUrl: './create-happening-page.component.html',
@@ -27,6 +33,8 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
 
   public isSwitched = true;
   public isPublishing = false;
+
+  public placeholderTexts: PlaceholderTexts = this.getPlaceholderTexts().mobile;
 
   private max = 2;
 
@@ -48,6 +56,7 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
       .subscribe((params) => this.happeningId = params['id']);
 
     this.initForm({ ...INIT_FORM_HAPPENING, ...{ name: this.appStateService.nameHappening }, ...this.model });
+    this.initPlaceholderTexts();
   }
 
   ngOnDestroy() {
@@ -63,6 +72,37 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
       description: [model.description],
       participantList: this.formBuilder.array([], CustomValidation.checkArrayLimit(3, 40)),
     });
+  }
+
+  private initPlaceholderTexts() {
+    if (this.isMobileWidth()) {
+      this.placeholderTexts = this.getPlaceholderTexts().mobile;
+    } else {
+      this.placeholderTexts = this.getPlaceholderTexts().rest;
+    }
+  }
+
+  private getPlaceholderTexts(): { mobile: PlaceholderTexts; rest: PlaceholderTexts } {
+    return {
+      mobile: {
+        name: 'Np. Mikołajki 2018',
+        description: 'Np. do jakiej kwoty kupujemy prezenty,  do kiedy mamy czas i gdzie się spotykamy na obdarowanie prezentami.',
+        participants: 'Będą dwie Anie? Wyróżnij je!',
+      },
+      rest: {
+        name: 'Np. Mikołajki 2018',
+        description: 'Np. „Cześć, zapraszam Was do mikołajkowego losowania z aplikacją Luck. Prezenty wręczymy sobie 6 grudnia, podczas spotkania w naszej ulubionej restauracji Bajka. Maksymalna kwota, za którą kupujemy prezenty to 100 zł.”',
+        participants: 'Jeżeli wśród znajomych są dwie Anie, może zacznij od nazwiska?',
+      }
+    };
+  }
+
+  private isMobileWidth(): boolean {
+    return this.getStaticWidthForAppContainer() < 500;
+  }
+
+  private getStaticWidthForAppContainer(): number {
+    return Number(window.innerWidth);
   }
 
   private createParticipant(name: string): FormGroup {
@@ -83,7 +123,7 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
   }
 
   public addParticipant(target: HTMLInputElement): void {
-    if(isEmpty(target.value)){
+    if (isEmpty(target.value)) {
       this.appStateService.showModalityText('Wpisz nazwę uczestnika');
 
     } else {
@@ -95,10 +135,10 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
   }
 
   public clickedSave() {
-    if(!this.form.valid){
+    if (!this.form.valid) {
       this.appStateService.showModalityText('Nie odpowiednia liczba uczestników');
 
-    } else if(this.isPublishing){
+    } else if (this.isPublishing) {
       this.appStateService.showModalityText('Poczekaj na przeładowanie strony');
 
     } else {
@@ -119,6 +159,6 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
 
 }
 
-function isEmpty(str){
+function isEmpty(str) {
   return !str.replace(/\s+/, '').length;
 }
