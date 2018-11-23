@@ -152,18 +152,18 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
       height: $height-for-lk-background-bubbles;
 
       .lk-background-bubbles__image.arrow {
-        top: -1px;
-
-        @include respond-above('medium') {
-          top: -1px;
-        }
-      }
-
-      .lk-background-bubbles__image.arrow {
         top: 1px;
 
         @include respond-above('medium') {
           top: 1px;
+        }
+      }
+
+      .lk-background-bubbles__image.arrow {
+        top: -1px;
+
+        @include respond-above('medium') {
+          top: -1px;
         }
 
       }
