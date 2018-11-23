@@ -151,7 +151,7 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
       background-color: color-base('white');
       height: $height-for-lk-background-bubbles;
 
-      .lk-background-bubbles__image.arrow {
+      .lk-background-bubbles__image {
         top: 1px;
 
         @include respond-above('medium') {
