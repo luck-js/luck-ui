@@ -144,19 +144,19 @@ $margin-for-last-block-element: 5px 0 5px $space-for-3-block-element * 2;
       @include respond-above('large') {
         display: block;
         position: absolute;
-        width: 211px;
+        width: 162px;
         height: auto;
-        right: -190px;
-        top: -50px;
+        right: -150px;
+        top: -52px;
       }
 
       @include respond-above('x-large') {
         display: block;
         position: absolute;
-        width: 246px;
+        width: 196px;
         height: auto;
-        right: -220px;
-        top: -70px;
+        right: -180px;
+        top: -72px;
       }
     }
   }
