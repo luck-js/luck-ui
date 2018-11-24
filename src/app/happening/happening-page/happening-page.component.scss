@@ -10,7 +10,7 @@
   .container {
     background-color: color-base('white');
     color: color-base('black');
-    height: calc(100% - #{$space-for-action-button});
+    height: calc(100% - #{$space-for-bubbles});
     margin: 0 auto;
     overflow: auto;
   }
@@ -243,15 +243,15 @@
     &__top {
       pointer-events: none;
       position: absolute;
-      bottom: 67px;
+      bottom: $space-for-bubbles;
 
       @include respond-above('medium') {
-        bottom: 67px;
+        bottom: $space-for-bubbles;
       }
     }
   }
 
   a.lk-button {
-    margin: $margin-top-action-button auto $margin-bottom-action-button auto;
+    //margin: $margin-top-action-button auto $margin-bottom-action-button auto;
   }
 }

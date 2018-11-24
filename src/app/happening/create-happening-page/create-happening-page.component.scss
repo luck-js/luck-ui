@@ -273,10 +273,10 @@ $margin-for-last-block-element: 5px 0 5px $space-for-3-block-element * 2;
       &__top {
         pointer-events: none;
         position: absolute;
-        bottom: 67px;
+        bottom: calc(#{$space-for-action-button} - #{$margin-top-action-button});
 
         @include respond-above('medium') {
-          bottom: 67px;
+          bottom: calc(#{$space-for-action-button} - #{$margin-top-action-button})
         }
       }
     }
