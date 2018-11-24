@@ -49,11 +49,18 @@
   }
 
   h2 {
-    margin: 20px 0;
+    margin: 5px 0 0 0;
     text-transform: uppercase;
     text-align: center;
     color: color-base('black');
     @include responsive-app-text-size('main-header');
+  }
+
+  h3{
+    margin: 0 0 10px 0;
+    text-align: center;
+    color: color-base('black');
+    @include responsive-app-text-size('description');
   }
 
   .block-container {
@@ -63,31 +70,6 @@
     .block-row {
       display: flex;
       flex-flow: row;
-
-      &:first-of-type {
-        .block-element{
-          &:nth-child(odd) {
-            margin: 0 10px 5px 0;
-          }
-
-          &:nth-child(even) {
-            margin: 0 0 5px 10px;
-          }
-        }
-
-        &:hover {
-          .block-element:nth-child(odd) {
-            @include respond-above('medium') {
-              margin: 0 10px 5px 0;
-            }
-          }
-
-          .block-element:nth-child(even) {
-            margin: 0 0 5px 0;
-          }
-        }
-
-      }
 
       &:last-of-type{
         padding-bottom: 40px;
