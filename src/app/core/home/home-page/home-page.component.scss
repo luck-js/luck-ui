@@ -1,16 +1,20 @@
 @import '~src/scss/base';
 
-$main-size-logo: 165px;
+$main-size-logo: 140px;
 $main-medium-size-logo: 143px;
 $main-xLarge-size-logo: 220px;
 
-$main-padding-top-logo: 50px;
-$main-medium-padding-top-logo: 70px;
-$main-xLarge-padding-top-logo: 80px;
+$main-padding-top-logo: 40px;
+$main-medium-padding-top-logo: 50px;
+$main-xLarge-padding-top-logo: 70px;
 
-$space-needed-for-logo: $main-size-logo + $main-padding-top-logo;
-$space-medium-needed-for-logo: $main-medium-size-logo + $main-medium-padding-top-logo;
-$space-xLarge-needed-for-logo: $main-xLarge-size-logo + $main-xLarge-padding-top-logo;
+$space-after-logo: 15px;
+$space-medium-after-logo: 20px;
+$space-xLarge-after-logo: 30px;
+
+$space-needed-for-logo: $space-after-logo + $main-size-logo + $main-padding-top-logo;
+$space-medium-needed-for-logo: $space-medium-after-logo + $main-medium-size-logo + $main-medium-padding-top-logo;
+$space-xLarge-needed-for-logo: $space-xLarge-after-logo + $main-xLarge-size-logo + $main-xLarge-padding-top-logo;
 
 $bg-bubbles-position-top: -75px;
 
@@ -54,7 +58,7 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
 
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
 
       @include respond-above('medium') {
@@ -134,15 +138,16 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
       }
 
       .lk-button.underline {
-        @include responsive-text-size('sub-description');
+        @include responsive-text-size('small-description');
 
         text-transform: inherit;
-        display: none;
-        //opacity: 0;
+        //display: none;
+        opacity: 0;
 
         @include respond-above('medium') {
-          display: block;
-          //opacity: 1;
+          font-size: 18px;
+          //display: block;
+          opacity: 1;
         }
       }
     }
