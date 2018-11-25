@@ -86,11 +86,12 @@
     border-radius: 20px;
     padding: $padding-button;
     font-weight: 800;
-    transition: border-color .4s, color .4s, background-color .4s,  box-shadow .4s;
+    transition: border-color .4s, color .4s, background-color .4s, box-shadow .4s, transform .4s, scale .4s;
     box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.28);
 
     &:hover {
       box-shadow: none;
+      transform: scale(0.95);
     }
 
     @include respond-above('medium') {
@@ -103,11 +104,14 @@
     }
 
     @include respond-above('x-large') {
-      margin-left: -75px;
-      margin-top: calc(-75px - 30px);
+      font-size: 48px;
+      margin-left: -90px;
+      margin-top: calc(-90px - 30px);
 
-      width: 150px;
-      height: 150px;;
+      border-radius: 34px;
+
+      width: 180px;
+      height: 180px;
     }
   }
 
@@ -134,6 +138,14 @@
     height: calc(70px);
 
     background-color: color-base('white');
+
+    @include respond-above('medium') {
+      height: calc(75px);
+    }
+
+    @include respond-above('x-large') {
+      height: calc(120px);
+    }
 
     &__image {
       position: absolute;

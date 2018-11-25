@@ -20,6 +20,11 @@ a.lk-button, button.lk-button{
   transition: border-color 0.5s, color 0.5s, background-color 0.5s, text-decoration-color 0.5s, box-shadow 0.5s;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.13);
 
+  @include respond-above('x-large') {
+    max-width: 340px;
+    padding: $padding-xLarge-button;
+  }
+
   &:hover {
     background-color: color-base('dark-red');
     border: 2px solid color-base('white-2');

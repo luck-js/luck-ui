@@ -1,20 +1,26 @@
 @import '~src/scss/base';
 
-$main-size-logo: 165px;
+$main-size-logo: 140px;
 $main-medium-size-logo: 143px;
 $main-xLarge-size-logo: 220px;
 
-$main-padding-top-logo: 50px;
-$main-medium-padding-top-logo: 70px;
-$main-xLarge-padding-top-logo: 80px;
+$main-padding-top-logo: 40px;
+$main-medium-padding-top-logo: 50px;
+$main-xLarge-padding-top-logo: 70px;
 
-$space-needed-for-logo: $main-size-logo + $main-padding-top-logo;
-$space-medium-needed-for-logo: $main-medium-size-logo + $main-medium-padding-top-logo;
-$space-xLarge-needed-for-logo: $main-xLarge-size-logo + $main-xLarge-padding-top-logo;
+$space-after-logo: 15px;
+$space-medium-after-logo: 20px;
+$space-xLarge-after-logo: 30px;
+
+$space-needed-for-logo: $space-after-logo + $main-size-logo + $main-padding-top-logo;
+$space-medium-needed-for-logo: $space-medium-after-logo + $main-medium-size-logo + $main-medium-padding-top-logo;
+$space-xLarge-needed-for-logo: $space-xLarge-after-logo + $main-xLarge-size-logo + $main-xLarge-padding-top-logo;
 
 $bg-bubbles-position-top: -75px;
 
-$height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
+$height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 10px;
+
+$height-for-xLarge-lk-background-bubbles: $lk-background-xLarge-bubbles-image-height;
 
 :host {
   height: 100%;
@@ -54,7 +60,7 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
 
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
 
       @include respond-above('medium') {
@@ -62,7 +68,9 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
       }
 
       @include respond-above('x-large') {
+        height: calc(100% - #{$height-for-xLarge-lk-background-bubbles});
         padding: $space-xLarge-needed-for-logo 40px 0px 40px;
+        max-width: 1800px;
       }
 
       .header-container {
@@ -84,10 +92,20 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
             max-width: 350px
           }
 
+          @include respond-above('x-large') {
+            min-width: 450px;
+            max-width: 350px;
+          }
+
           a {
             padding: $padding-element;
             padding-top: 9px;
             font-size: 12px;
+
+            @include respond-above('x-large') {
+              padding: $padding-xLarge-element;
+              font-size: 17px;
+            }
           }
         }
       }
@@ -134,15 +152,20 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
       }
 
       .lk-button.underline {
-        @include responsive-text-size('sub-description');
+        @include responsive-text-size('small-description');
 
         text-transform: inherit;
-        display: none;
-        //opacity: 0;
+        //display: none;
+        opacity: 0;
 
         @include respond-above('medium') {
-          display: block;
-          //opacity: 1;
+          font-size: 18px;
+          //display: block;
+          opacity: 1;
+        }
+
+        @include respond-above('x-large') {
+          font-size: 24px;
         }
       }
     }
@@ -150,6 +173,10 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
     .lk-background-bubbles-container {
       background-color: color-base('white');
       height: $height-for-lk-background-bubbles;
+
+      @include respond-above('x-large') {
+        height: $height-for-xLarge-lk-background-bubbles;
+      }
 
       .lk-background-bubbles__image {
         top: 1px;
@@ -193,6 +220,10 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
 
       @include respond-above('medium') {
         flex-direction: row;
+      }
+
+      @include respond-above('x-large') {
+        max-width: 1600px;
       }
     }
 
@@ -274,6 +305,10 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
         margin-bottom: 100px;
       }
 
+      @include respond-above('x-large') {
+        height: calc(#{$height-for-xLarge-lk-background-bubbles} + 1px);
+      }
+
       .lk-background-bubbles__image {
         top: 1px;
 
@@ -315,6 +350,10 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
     max-width: 1000px;
     margin: 0 auto;
 
+    @include respond-above('x-large') {
+      max-width: 1600px;
+    }
+
     .content {
       text-align: center;
       padding: 0 15px;
@@ -343,6 +382,10 @@ $height-for-lk-background-bubbles: $lk-background-bubbles-image-height + 30px;
         max-width: 600px;
         box-shadow: 0px 0px 84px 0px rgba(0, 0, 0, 0.13);
         opacity: 0.9;
+
+        @include respond-above('x-large') {
+          max-width: 1100px;
+        }
       }
     }
   }

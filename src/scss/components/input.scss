@@ -10,6 +10,10 @@ textarea.lk-input, input.lk-input{
 
   font-weight: 700;
 
+  @include respond-above('x-large') {
+    padding: $padding-xLarge-element;
+  }
+
   &::placeholder {
     font-weight: 400;
     color: color-base('dark-gray');
