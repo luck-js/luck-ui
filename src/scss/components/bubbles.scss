@@ -1,3 +1,4 @@
+$lk-background-xLarge-bubbles-image-height: 160px;
 $lk-background-bubbles-image-height: 111px;
 $animation-space: 10px;
 
@@ -24,7 +25,9 @@ $animation-space: 10px;
     background-color: color-base('red');
     backface-visibility: hidden;
 
-    @include respond-above('medium') {
+    @include respond-above('x-large') {
+      height: $lk-background-xLarge-bubbles-image-height;
+      background-size: auto 100%;
     }
 
     &__top {
