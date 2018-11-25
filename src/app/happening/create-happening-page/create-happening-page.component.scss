@@ -25,12 +25,21 @@ $margin-for-last-block-element: 5px 0 5px $space-for-3-block-element * 2;
     margin: 0 auto;
 
     overflow: auto;
+
+    @include respond-above('x-large') {
+      height: calc(100% - #{$space-xLarge-for-action-button});
+    }
   }
 
   form {
     max-width: 550px;
     margin: 0 auto;
     padding: 0 15px 15px 15px;
+
+    @include respond-above('x-large') {
+      max-width: 800px;
+      padding: 0 20px 20px 20px;
+    }
   }
 
   h2 {
@@ -63,21 +72,26 @@ $margin-for-last-block-element: 5px 0 5px $space-for-3-block-element * 2;
     margin: 6px 0 3px 0;
 
     @include respond-above('x-large') {
+      font-size: 16px;
       margin: 8px 0 4px 0;
     }
   }
 
   input, textarea {
     width: 100%;
-    margin: 0 0 6px 0;
+    margin: 0 0 $padding-top-vertical 0;
 
     @include respond-above('x-large') {
-      margin: 0 0 8px 0;
+      margin: 0 0 $padding-xLarge-top-vertical 0;
     }
   }
 
   textarea {
     min-height: 72px;
+
+    @include respond-above('x-large') {
+      min-height: 87px;
+    }
   }
 
   .lk-inline-input-form.switch {
@@ -123,11 +137,16 @@ $margin-for-last-block-element: 5px 0 5px $space-for-3-block-element * 2;
     button {
       cursor: pointer;
       padding: 3px 15px;
-      padding-right: 30px;
+      padding-right: 20px;
       margin: 5px 0;
       font-size: 20px;
       color: color-base('black');
       transition: transform .5s ;
+
+      @include respond-above('x-large') {
+        margin: 9px 0;
+        font-size: 28px;
+      }
 
       &:hover {
         opacity: 0.95;
@@ -144,19 +163,19 @@ $margin-for-last-block-element: 5px 0 5px $space-for-3-block-element * 2;
       @include respond-above('large') {
         display: block;
         position: absolute;
-        width: 211px;
+        width: 162px;
         height: auto;
-        right: -190px;
-        top: -50px;
+        right: -150px;
+        top: -52px;
       }
 
       @include respond-above('x-large') {
         display: block;
         position: absolute;
-        width: 246px;
+        width: 196px;
         height: auto;
-        right: -220px;
-        top: -70px;
+        right: -180px;
+        top: -55px;
       }
     }
   }
@@ -267,16 +286,25 @@ $margin-for-last-block-element: 5px 0 5px $space-for-3-block-element * 2;
       height: 100px;
 
       @include respond-above('medium') {
-        height: 110px;
+        height: $lk-background-bubbles-image-height;
+      }
+
+      @include respond-above('x-large') {
+        background-size: auto 100%;
+        height: $lk-background-xLarge-bubbles-image-height;
       }
 
       &__top {
         pointer-events: none;
         position: absolute;
-        bottom: 67px;
+        bottom: calc(#{$space-for-action-button} - #{$margin-top-action-button});
 
         @include respond-above('medium') {
-          bottom: 67px;
+          bottom: calc(#{$space-for-action-button} - #{$margin-top-action-button})
+        }
+
+        @include respond-above('x-large') {
+          bottom: calc(#{$space-xLarge-for-action-button} - #{$margin-top-xLarge-action-button})
         }
       }
     }
@@ -284,5 +312,9 @@ $margin-for-last-block-element: 5px 0 5px $space-for-3-block-element * 2;
 
   a.lk-button {
     margin: $margin-top-action-button auto $margin-bottom-action-button auto;
+
+    @include respond-above('x-large') {
+      margin: $margin-top-xLarge-action-button auto $margin-bottom-xLarge-action-button auto;
+    }
   }
 }

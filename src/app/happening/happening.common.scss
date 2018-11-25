@@ -1,5 +1,13 @@
 $margin-top-action-button: 15px;
-$margin-bottom-action-button: 30px;
+$margin-bottom-action-button: 15px;
 $safe-size-action-button: 35px;
 
 $space-for-action-button: $margin-top-action-button + $margin-bottom-action-button + $safe-size-action-button;
+$space-for-bubbles: 20px;
+
+$margin-top-xLarge-action-button: 20px;
+$margin-bottom-xLarge-action-button: 20px;
+$safe-size-xLarge-action-button: 40px;
+
+$space-xLarge-for-action-button: $margin-top-xLarge-action-button + $margin-bottom-xLarge-action-button + $safe-size-xLarge-action-button;
+$space-xLarge-for-bubbles: 25px;

@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="header-container">
+  <div class="header-container" *ngIf="isDescription">
     <h1>{{participationHappening.happening.name}}</h1>
     <p>{{participationHappening.happening.description}}</p>
   </div>

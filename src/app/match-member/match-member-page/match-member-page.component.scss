@@ -137,6 +137,14 @@ $margin-bottom-action-button: 30px;
 
     background-color: color-base('white');
 
+    @include respond-above('medium') {
+      height: calc(75px);
+    }
+
+    @include respond-above('x-large') {
+      height: calc(120px);
+    }
+
     &__image {
       position: absolute;
       z-index: -1;

@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { filter, takeUntil } from 'rxjs/operators';
+import {filter, takeUntil, tap} from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { ParticipationHappeningService } from './participation-happening.service';
-import { IParticipationHappening, PARTICIPATION_HAPPENING_MOCK } from './participation-happening.model';
+import {IHappeningView, IParticipationHappening, PARTICIPATION_HAPPENING_MOCK} from './participation-happening.model';
 
 @Component({
   selector: 'lk-participation-happening-page',
@@ -13,6 +13,7 @@ import { IParticipationHappening, PARTICIPATION_HAPPENING_MOCK } from './partici
 
 export class ParticipationHappeningPageComponent implements OnInit, OnDestroy {
   public happeningId: string;
+  public isDescription = false;
   public participationHappening: IParticipationHappening = PARTICIPATION_HAPPENING_MOCK;
 
   private ngUnsubscribe: Subject<void> = new Subject<void>();
@@ -29,14 +30,20 @@ export class ParticipationHappeningPageComponent implements OnInit, OnDestroy {
 
     this.participationHappeningService.participationHappeningSubject.pipe(
       takeUntil(this.ngUnsubscribe),
-      filter((data) => data.member !== undefined)
+      filter((data) => data.member !== undefined),
+      tap(participationHappening => this.isDescription = this.checkIsDescriptionEmpty(participationHappening.happening)),
+      tap(participationHappening => this.participationHappening = participationHappening)
     )
-      .subscribe((participationHappening) => this.participationHappening = participationHappening);
+      .subscribe();
   }
 
   ngOnDestroy() {
     this.ngUnsubscribe.next();
     this.ngUnsubscribe.complete();
+  }
+
+  private checkIsDescriptionEmpty(happeningView: IHappeningView) : boolean{
+    return happeningView.name !== '' && happeningView.description !== ''
   }
 
 }

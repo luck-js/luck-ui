@@ -10,7 +10,7 @@
   .container {
     background-color: color-base('white');
     color: color-base('black');
-    height: calc(100% - #{$space-for-action-button});
+    height: calc(100% - #{$space-for-bubbles});
     margin: 0 auto;
     overflow: auto;
   }
@@ -21,6 +21,11 @@
     //height: calc(100% - #{$space-for-action-button});
     overflow: hidden;
     padding: 0 15px 30px 15px;
+
+    @include respond-above('x-large') {
+      max-width: 1000px;
+      padding: 0 20px 35px 20px;
+    }
   }
 
   .header-content {
@@ -49,11 +54,18 @@
   }
 
   h2 {
-    margin: 20px 0;
+    margin: 5px 0 0 0;
     text-transform: uppercase;
     text-align: center;
     color: color-base('black');
     @include responsive-app-text-size('main-header');
+  }
+
+  h3{
+    margin: 0 0 10px 0;
+    text-align: center;
+    color: color-base('black');
+    @include responsive-app-text-size('description');
   }
 
   .block-container {
@@ -63,31 +75,6 @@
     .block-row {
       display: flex;
       flex-flow: row;
-
-      &:first-of-type {
-        .block-element{
-          &:nth-child(odd) {
-            margin: 0 10px 5px 0;
-          }
-
-          &:nth-child(even) {
-            margin: 0 0 5px 10px;
-          }
-        }
-
-        &:hover {
-          .block-element:nth-child(odd) {
-            @include respond-above('medium') {
-              margin: 0 10px 5px 0;
-            }
-          }
-
-          .block-element:nth-child(even) {
-            margin: 0 0 5px 0;
-          }
-        }
-
-      }
 
       &:last-of-type{
         padding-bottom: 40px;
@@ -125,6 +112,12 @@
             padding: 5px 15px;
             flex: 1 1 40%;
           }
+
+          @include respond-above('x-large') {
+            margin: 7px 15px 7px 0;
+            padding: 14px 20px;
+            flex: 1 1 40%;
+          }
         }
 
         .block-element:nth-child(even) {
@@ -133,6 +126,10 @@
 
           @include respond-above('medium') {
             margin: 5px 0 5px 10px;
+          }
+
+          @include respond-above('x-large') {
+            margin: 7px 0 7px 15px;
           }
 
           .app-icon-arrow {
@@ -168,12 +165,23 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+
+        @include respond-above('x-large') {
+          margin: 7px 15px 7px 0;
+          padding: 14px 20px;
+          height: 53px;
+        }
       }
 
       &:nth-child(even) {
         position: relative;
         margin: 5px 0 5px 10px;
         height: 35px;
+
+        @include respond-above('x-large') {
+          margin: 7px 0 7px 15px;
+          height: 53px;
+        }
 
         .app-icon-arrow {
           position: absolute;
@@ -215,6 +223,10 @@
 
           transition: background-color .5s;
 
+          @include respond-above('x-large') {
+            padding: 10px 20px;
+          }
+
           &:focus {
             outline: none;
           }
@@ -234,6 +246,12 @@
 
           box-shadow: -10px 0 20px 0 rgba(0, 0, 0, 0.20);
           transition: color 0.5s, background-color 0.5s, text-decoration-color 0.5s;
+
+
+          @include respond-above('x-large') {
+            padding: 0px 30px;
+            font-size: 28px;
+          }
 
           &:hover {
             background-color: color-base('dark-red');
@@ -255,21 +273,26 @@
     height: 100px;
 
     @include respond-above('medium') {
-      height: 110px;
+      height: $lk-background-bubbles-image-height;
+    }
+
+    @include respond-above('x-large') {
+      background-size: auto 100%;
+      height: $lk-background-xLarge-bubbles-image-height;
     }
 
     &__top {
       pointer-events: none;
       position: absolute;
-      bottom: 67px;
+      bottom: $space-for-bubbles;
 
       @include respond-above('medium') {
-        bottom: 67px;
+        bottom: $space-for-bubbles;
       }
     }
   }
 
   a.lk-button {
-    margin: $margin-top-action-button auto $margin-bottom-action-button auto;
+    //margin: $margin-top-action-button auto $margin-bottom-action-button auto;
   }
 }
