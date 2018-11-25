@@ -1,10 +1,17 @@
 $padding-top-vertical: 8px;
+$padding-top-horizontal: 15px;
 
 $input-radius: 8px;
 $button-radius: 30px;
 $switch-width: 5px;
-$padding-element: 8px 15px;
-$padding-button: $padding-top-vertical 15px;
+$padding-element: $padding-top-vertical $padding-top-vertical;
+$padding-button: $padding-top-vertical $padding-top-horizontal;
+
+$padding-xLarge-top-vertical: 11px;
+$padding-xLarge-top-horizontal: 18px;
+
+$padding-xLarge-element: $padding-xLarge-top-vertical $padding-xLarge-top-vertical;
+$padding-xLarge-button: $padding-xLarge-top-vertical $padding-xLarge-top-horizontal;
 
 
 

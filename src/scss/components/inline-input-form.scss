@@ -1,4 +1,5 @@
 $button-width: 120px;
+$button-xLarge-width: 170px;
 
 .lk-inline-input-form {
   position: relative;
@@ -20,6 +21,11 @@ $button-width: 120px;
     width: $button-width;
 
     border: 2px solid color-base('white');
+
+    @include respond-above('x-large') {
+      width: $button-xLarge-width;
+    }
+
   }
 
   &.switch{
