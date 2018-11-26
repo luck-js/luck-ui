@@ -3,6 +3,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 @Injectable()
 export class AppStateService {
   nameHappening = '';
+  isCreatingProcessFlag = false;
   showModal: EventEmitter<string> = new EventEmitter();
 
   constructor() {
@@ -20,4 +21,7 @@ export class AppStateService {
     this.showModal.emit(null)
   }
 
+  setFlagIsCreatingProcessFlag(flag: boolean) {
+    this.isCreatingProcessFlag = flag;
+  }
 }
