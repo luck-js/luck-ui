@@ -1,0 +1,26 @@
+@import '~src/scss/base';
+
+$spinner-margin: 40px auto !default;
+$size: 40px !default;
+$spinner-color: color-base('red') !default;
+
+:host {
+  display: block;
+
+  width: $size;
+  height: $size;
+  margin: $spinner-margin;
+  background-color: $spinner-color;
+  border-radius: 100%;
+  animation: sk-pulseScaleOut 1.0s infinite ease-in-out;
+
+  @keyframes sk-pulseScaleOut {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1.0);
+      opacity: 0;
+    }
+  }
+}
