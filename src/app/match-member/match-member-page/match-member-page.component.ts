@@ -4,7 +4,7 @@ import {
   IMatchedParticipationData,
   MATCHED_PARTICIPATION_DATA
 } from '../../participation-happening/participation-happening/participation-happening.model';
-import { takeUntil } from 'rxjs/operators';
+import { delay, takeUntil, tap } from 'rxjs/operators';
 import { MatchMemberService } from './match-member.service';
 
 @Component({
@@ -14,7 +14,7 @@ import { MatchMemberService } from './match-member.service';
 })
 
 export class MatchMemberPageComponent implements OnInit, OnDestroy {
-
+  public dataIsLoaded = false;
   public matchedParticipation: IMatchedParticipationData = MATCHED_PARTICIPATION_DATA;
 
   private ngUnsubscribe: Subject<void> = new Subject<void>();
@@ -25,9 +25,12 @@ export class MatchMemberPageComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.matchMemberService.matchedParticipationSubject.pipe(
-      takeUntil(this.ngUnsubscribe)
+      takeUntil(this.ngUnsubscribe),
+      tap(matchedParticipation => this.matchedParticipation = matchedParticipation),
+      delay(1500),
+      tap(matchedParticipation => this.dataIsLoaded = true),
     )
-      .subscribe((matchedParticipation) => this.matchedParticipation = matchedParticipation);
+      .subscribe();
   }
 
   ngOnDestroy() {

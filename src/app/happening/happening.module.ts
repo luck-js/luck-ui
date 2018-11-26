@@ -8,6 +8,7 @@ import { TextareaAutosizeModule } from 'ngx-textarea-autosize';
 import { HappeningPageComponent } from './happening-page/happening-page.component';
 import { NewHappeningPageComponent } from './new-happening-page/new-happening-page.component';
 import { CreateHappeningPageComponent } from './create-happening-page/create-happening-page.component';
+import { SpinnerFadingCircleComponent } from '../core/components/spinner-fading-circle/spinner-fading-circle.component';
 
 import { HappeningService } from './happening-page/happening.service';
 import { NewHappeningPageService } from './new-happening-page/new-happening-page.service';
@@ -44,7 +45,8 @@ import { CreateHappeningServiceGuardService } from './create-happening-page/crea
   declarations: [
     HappeningPageComponent,
     NewHappeningPageComponent,
-    CreateHappeningPageComponent
+    CreateHappeningPageComponent,
+    SpinnerFadingCircleComponent
   ],
   providers: [
     HappeningService,
