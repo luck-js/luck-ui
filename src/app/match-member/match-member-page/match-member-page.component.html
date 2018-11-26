@@ -2,9 +2,10 @@
   <div class="logo__container">
     <img [routerLink]="['/']" src="assets/logo-shadow.png">
   </div>
-  <div class="container">
+  <div class="container" >
     <h1>{{matchedParticipation.me.name}}, Twój los to:</h1>
-    <p>{{matchedParticipation.matchedMember.name}}</p>
+    <p [class]="dataIsLoaded ? '' : 'hidden'">{{matchedParticipation.matchedMember.name}}</p>
+    <lk-spinner *ngIf="!dataIsLoaded"></lk-spinner>
   </div>
 </div>
 <div class="bg-bubbles">
