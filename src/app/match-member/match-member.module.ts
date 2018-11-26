@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { MatchMemberPageComponent } from './match-member-page/match-member-page.component';
+import { SpinnerComponent } from '../core/components/spinner/spinner.component';
 
 import { MatchMemberService } from './match-member-page/match-member.service';
 import { MatchMemberGuardService } from './match-member-page/match-member-guard.service';
@@ -19,7 +20,7 @@ import { MatchMemberGuardService } from './match-member-page/match-member-guard.
       }
     ]),
   ],
-  declarations: [MatchMemberPageComponent],
+  declarations: [MatchMemberPageComponent, SpinnerComponent],
   providers: [
     MatchMemberService,
     MatchMemberGuardService

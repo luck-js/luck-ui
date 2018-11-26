@@ -1,9 +1,9 @@
-a.lk-button{
+a.lk-button {
   text-decoration: none;
   display: block;
 }
 
-a.lk-button, button.lk-button{
+a.lk-button, button.lk-button {
   width: 100%;
   max-width: 240px;
   cursor: pointer;
@@ -34,7 +34,7 @@ a.lk-button, button.lk-button{
 }
 
 a.lk-button, button.lk-button {
-  &.outline{
+  &.outline {
     background-color: transparent;
     border: 2px solid color-base('red');
     color: color-base('red');
@@ -46,7 +46,7 @@ a.lk-button, button.lk-button {
     }
   }
 
-  &.underline{
+  &.underline {
     box-shadow: none;
     text-decoration: underline;
     text-decoration-color: transparent;
@@ -76,7 +76,7 @@ a.lk-button.disabled, button.lk-button.disabled {
     color: color-shade('white', -30);
   }
 
-  &.outline{
+  &.outline {
     background-color: transparent;
     border: 2px solid color-shade('red', - 30);
     color: color-shade('red', - 30);
@@ -85,6 +85,41 @@ a.lk-button.disabled, button.lk-button.disabled {
       background-color: transparent;
       border: 2px solid color-shade('red', - 30);
       color: color-shade('red', - 30);
+    }
+  }
+}
+
+a.lk-button.spinner, button.lk-button.spinner {
+  position: relative;
+  content: '';
+
+  .spinner__element {
+    display: none;
+
+    margin: 0;
+    margin-left: -10px;
+    margin-top: -10px;
+    width: 20px;
+    height: 20px;
+
+    position: absolute;
+    top: 50%;
+    left: auto;
+    right: 10px;
+  }
+
+  &.loading {
+    .spinner__element {
+      display: block;
+    }
+  }
+
+
+  &:hover {
+    .spinner__element {
+      .dk-circle:before {
+        background-color: color-base('white');
+      }
     }
   }
 }

@@ -1,4 +1,5 @@
 @import '~src/scss/base';
+@import '../../participation-happening/participation-happening/participation-happening-page.component';
 $margin-top-action-button: 15px;
 $margin-bottom-action-button: 30px;
 
@@ -79,6 +80,9 @@ $margin-bottom-action-button: 30px;
     margin: 0 auto;
     padding: 15px;
     align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     h1, p {
       text-align: center;
@@ -93,12 +97,33 @@ $margin-bottom-action-button: 30px;
       }
     }
     p {
+      opacity: 1;
+      transition: opacity 0.2s;
       @include responsive-app-text-size('sub-description');
       font-size: 31px;
 
       @include respond-above('medium') {
         font-size: 54px;
       }
+
+      &.hidden{
+        opacity: 0;
+      }
+    }
+
+    lk-spinner {
+      $spinner-size: $square-size / 2;
+      $margin-spinner-size: $spinner-size / 2;
+
+      position: absolute;
+      top: auto;
+      left: 50%;
+      background-color: color-base('white');
+      width: $spinner-size;
+      height: $spinner-size;
+
+
+      margin-left: -$margin-spinner-size;
     }
   }
 

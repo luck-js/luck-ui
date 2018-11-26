@@ -157,6 +157,19 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
     this.isSwitched = target.checked;
   };
 
+  public getButtonClass(): string {
+    let init = 'lk-button outline spinner';
+
+    if (!this.form.valid && !this.isPublishing) {
+      init += ' disabled';
+
+    } else if (this.isPublishing) {
+      init += ' loading';
+    }
+
+    return init;
+  }
+
 }
 
 function isEmpty(str) {
