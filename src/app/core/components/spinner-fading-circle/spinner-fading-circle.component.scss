@@ -1,0 +1,57 @@
+@import '~src/scss/base';
+
+$spinner-margin: 40px auto !default;
+$size: 40px !default;
+$spinner-color: color-base('red') !default;
+
+:host {
+  display: block;
+
+  $circleCount: 12;
+  $animationDuration: 1.2s;
+
+  margin: $spinner-margin;
+  width: $size;
+  height: $size;
+  position: relative;
+
+  .dk-circle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .dk-circle:before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 15%;
+    height: 15%;
+    background-color: $spinner-color;
+    border-radius: 100%;
+    animation: dk-circleFadeDelay $animationDuration infinite ease-in-out both;
+  }
+
+  @for $i from 2 through $circleCount {
+    .dk-circle#{$i} {
+      transform: rotate(360deg / $circleCount * ($i - 1));
+    }
+  }
+
+  @for $i from 2 through $circleCount {
+    .dk-circle#{$i}:before {
+      animation-delay: - $animationDuration + $animationDuration / $circleCount * ($i - 1);
+    }
+  }
+
+  @keyframes dk-circleFadeDelay {
+    0%, 39%, 100% {
+      opacity: 0
+    }
+    40% {
+      opacity: 1
+    }
+  }
+}
