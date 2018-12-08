@@ -203,7 +203,7 @@ $height-for-xLarge-lk-background-bubbles: $lk-background-xLarge-bubbles-image-he
     color: color-base('black');
     padding: 25px 0 25px 0;
 
-    p {
+    h1, h2, h3, p, a, span {
       color: color-base('black');
       &.color-font.red {
         color: color-base('red');
