@@ -28,7 +28,6 @@ h1, h2, h3 {
   @include responsive-text-size('main-header');
 }
 
-
 h1, h2, h3, p, a, textarea {
   color: color-base('white');
 }
@@ -44,7 +43,7 @@ p {
 
 a {
   color: inherit;
-  text-decoration:none;
+  text-decoration: none;
 }
 
 button {
@@ -54,14 +53,6 @@ button {
   background: none;
   color: color-base('white');
 }
-
-
-.color-font {
-  &.red {
-    color: color-base('red');
-  }
-}
-
 
 input, textarea, select, button {
   font-family: $ft_main, Arial, Helvetica, sans-serif;

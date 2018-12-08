@@ -205,10 +205,8 @@ $height-for-xLarge-lk-background-bubbles: $lk-background-xLarge-bubbles-image-he
 
     p {
       color: color-base('black');
-      &.color-font {
-        &.red {
-          color: color-base('red');
-        }
+      &.color-font.red {
+        color: color-base('red');
       }
     }
 
@@ -458,20 +456,16 @@ $height-for-xLarge-lk-background-bubbles: $lk-background-xLarge-bubbles-image-he
   }
 
   section.join-us {
-    h2, p {
-      color: color-base('black');
-      &.color-font {
-        &.red {
-          color: color-base('red');
-        }
-      }
-    }
     text-align: center;
     background-color: color-base('white');
     color: color-base('black');
     padding: 0 0 0 0;
 
     max-width: 800px;
+
+    h2, p {
+      color: color-base('black');
+    }
 
     h2 {
       @include responsive-text-size('sub-header');
