@@ -35,7 +35,7 @@
       <img src="assets/arrow.png">
     </div>
     <div class="block-container">
-      <div class="block-element" *ngFor="let participant of forParticipantList.controls; let i = index">
+      <div class="block-element" *ngFor="let participant of forParticipants.controls; let i = index">
         <span class="text">{{participant.value.name}}</span>
         <span class="circle-button" (click)="removeParticipant(i)">x</span>
       </div>
