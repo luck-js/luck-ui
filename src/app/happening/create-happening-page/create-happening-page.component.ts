@@ -26,7 +26,7 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
 
   public model: Happening;
   public form: FormGroup;
-  public participantList: FormArray;
+  public participants: FormArray;
 
   public name = '';
   public description = '';
@@ -70,7 +70,7 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
       name: [model.name],
       organiserName: [model.organiserName],
       description: [model.description],
-      participantList: this.formBuilder.array([], CustomValidation.checkArrayLimit(3, 40)),
+      participants: this.formBuilder.array([], CustomValidation.checkArrayLimit(3, 40)),
     });
   }
 
@@ -109,12 +109,12 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
     return this.formBuilder.group({ name });
   }
 
-  public get forParticipantList() {
-    return this.form.get('participantList') as FormArray;
+  public get forParticipants() {
+    return this.form.get('participants') as FormArray;
   }
 
   public removeParticipant(index: number) {
-    this.participantList.removeAt(index);
+    this.participants.removeAt(index);
   }
 
   public onClickButton(target: HTMLInputElement): void {
@@ -128,8 +128,8 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
 
     } else {
 
-      this.participantList = this.forParticipantList;
-      this.participantList.insert(0, this.createParticipant(target.value));
+      this.participants = this.forParticipants;
+      this.participants.insert(0, this.createParticipant(target.value));
       target.value = '';
     }
   }
@@ -143,7 +143,7 @@ export class CreateHappeningPageComponent implements OnInit, OnDestroy {
 
     } else {
       this.isPublishing = true;
-      this.participantList = this.forParticipantList;
+      this.participants = this.forParticipants;
 
       this.createHappeningService.publishHappening(this.happeningId, this.form.value).pipe(
         tap((data) => this.router.navigate([`/happening/view/${this.happeningId}`])),
