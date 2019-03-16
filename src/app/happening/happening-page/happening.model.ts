@@ -2,7 +2,7 @@ export interface Happening {
   name: string;
   organiserName: string;
   description: string;
-  participantList: IParticipantView[];
+  participants: IParticipantView[];
 }
 
 export interface IParticipantView {
@@ -15,13 +15,13 @@ export const INIT_FORM_HAPPENING: Happening = {
   name: '',
   organiserName: '',
   description: '',
-  participantList: INIT_FORM_NEW_PARTICIPANT,
+  participants: INIT_FORM_NEW_PARTICIPANT,
 };
 
 export interface CreatedHappening {
   name: string;
   description: string;
-  participantList: ParticipantUniqueLinkData[];
+  participants: ParticipantUniqueLinkData[];
 }
 
 export interface ParticipantUniqueLinkData {
