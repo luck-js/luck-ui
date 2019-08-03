@@ -17,7 +17,7 @@ export class HappeningService {
     this.appStateService.setFlagIsCreatingProcessFlag(false);
 
     return this.httpClient
-      .get<CreatedHappening>(`happening/generate-detailed-participant-list-information/${id}`)
+      .get<CreatedHappening>(`published-happening/${id}`)
       .pipe(
         tap((data) => this.createdHappeningSubject.next(data)),
         tap((data) => console.log('HappeningService.getCreatedHappening -> CreatedHappening: ', data)
