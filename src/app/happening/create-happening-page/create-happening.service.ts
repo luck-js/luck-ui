@@ -11,6 +11,6 @@ export class CreateHappeningService {
 
   public publishHappening(id: string, happening: Happening): Observable<CreatedHappening> {
     return this.httpClient
-      .post<CreatedHappening>(`happening/generate-detailed-participant-list-information/${id}`, {happening})
+      .post<CreatedHappening>(`published-happening/${id}`, {happening})
   }
 }
