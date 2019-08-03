@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 })
 
 export class HomePageComponent {
-  @ViewChild('philosophy') public philosophy:ElementRef;
-  @ViewChild('home') public home:ElementRef;
+  @ViewChild('philosophy', {static: false}) public philosophy:ElementRef;
+  @ViewChild('home', {static: false}) public home:ElementRef;
 
   constructor(private router: Router,
               private appStateService: AppStateService) {
