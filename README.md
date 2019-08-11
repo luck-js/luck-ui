@@ -1,4 +1,6 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+![GitHub contributors](https://img.shields.io/github/contributors/luck-js/luck-api)
+
 
 # LuckUi
 
