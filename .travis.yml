@@ -34,17 +34,6 @@ deploy: &deploy
     - chmod 700 ~/.ssh
     - ssh-keyscan $HOST_IP > ~/.ssh/known_hosts
   script: skip
-  deploy:
-   - provider: script
-     skip_cleanup: true
-     script: bash .travis/deploy.sh $HOST_IP $DOCKER_PASSWORD $DOCKER_USERNAME $IMAGE_NAME $CONTAINER_NAME
-     on:
-       branch: develop
-   - provider: script
-     skip_cleanup: true
-     script: bash .travis/deploy.sh $HOST_IP $DOCKER_PASSWORD $DOCKER_USERNAME $IMAGE_NAME $CONTAINER_NAME
-     on:
-       branch: master
 
 stages:
   - build
@@ -69,6 +58,12 @@ jobs:
         - IMAGE_NAME=$DEV_IMAGE_NAME
         - CONTAINER_NAME=$DEV_CONTAINER_NAME
         - VIRTUAL_HOST=$DEV_VIRTUAL_HOST
+      deploy:
+        - provider: script
+          skip_cleanup: true
+          script: bash .travis/deploy.sh $HOST_IP $DOCKER_PASSWORD $DOCKER_USERNAME $IMAGE_NAME $CONTAINER_NAME
+          on:
+            branch: develop
 
     - <<: *deploy
       name: 'prod deploy'
@@ -77,3 +72,9 @@ jobs:
         - IMAGE_NAME=$PROD_IMAGE_NAME
         - CONTAINER_NAME=$PROD_CONTAINER_NAME
         - VIRTUAL_HOST=$PROD_VIRTUAL_HOST
+      deploy:
+        - provider: script
+          skip_cleanup: true
+          script: bash .travis/deploy.sh $HOST_IP $DOCKER_PASSWORD $DOCKER_USERNAME $IMAGE_NAME $CONTAINER_NAME
+          on:
+            branch: master
