@@ -32,7 +32,7 @@ export class HappeningPageComponent implements OnInit, OnDestroy {
       takeUntil(this.ngUnsubscribe),
     )
       .subscribe((created) => {
-        this.participantsUniqueLink = created ? mapToViewModel(created.participantList) : [];
+        this.participantsUniqueLink = created ? mapToViewModel(created.participants) : [];
         this.name = created ? created.name : '';
         this.description = created ? created.description : '';
 

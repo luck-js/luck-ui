@@ -1,18 +1,20 @@
-FROM node:9.11.2 as builder
+FROM node:10.15.3 as builder
 
-MAINTAINER Karski Daniel
+WORKDIR /usr/src/luck-ui
 
-COPY . /var/luck-ui
-
-WORKDIR /var/luck-ui
+COPY package.json package.json
+COPY package-lock.json package-lock.json
 
 RUN npm install
-RUN npm run build-prod
+
+COPY . .
+
+RUN npm run-script build-prod
 
 FROM nginx:latest
 
 ENV PORT=80
 
-COPY --from=builder /var/luck-ui/dist/* /usr/share/nginx/html
+COPY --from=builder /usr/src/luck-ui/dist/* /usr/share/nginx/html
 
 EXPOSE $PORT
