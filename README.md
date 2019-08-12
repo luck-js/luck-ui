@@ -1,32 +1,48 @@
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-![GitHub contributors](https://img.shields.io/github/contributors/luck-js/luck-api)
+<p align="center">
+  <a href="https://luck.org.pl">
+    <img src="https://i.ibb.co/nmcQB3X/UI-1.png" width="318px" alt="Luck logo" />
+  </a>
+</p>
+<h3 align="center">See the applications that will help you organize draws.</h3>
+<p align="center">This is client interface. It's written in <b>Angular</b> and comunicate with <b><a href="https://github.com/luck-js/luck-api">Luck API</a></b></p>
+<br />
+<p align="center">
 
+  <a href="https://github.com/luck-js/luck-ui/contributors">
+    <img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen">
+  </a>
 
-# LuckUi
+  <a href="https://github.com/luck-js/luck-ui/contributors">
+    <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/luck-js/luck-ui">
+  </a>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+  <a href="https://luck.org.pl">
+    <img alt="Luck Website" src="https://img.shields.io/website/https/luck.org.pl">
+  </a>
 
-## Development server
+  <a href="https://github.com/luck-js/luck-ui/releases">
+    <img alt="GitHub release" src="https://img.shields.io/github/release/luck-js/luck-ui">
+  </a>
+  
+</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<br>
 
-## Code scaffolding
+<p align="center">
+  <a href="https://luck.org.pl">
+    <img src="https://i.ibb.co/ZS4hZBx/Screenshot-2019-08-12-at-19-37-55.png" />
+  </a>
+</p>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<br>
 
-## Build
+## Authors and License
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+**Luck** was created by [Daniel Karski](https://github.com/dkarski). Desig nand mocks of the application are by [Mateusz Karski](https://www.behance.net/user/?username=MateuszKarski).
 
-## Running unit tests
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4d0551b7c8fd4cb09133f9e518707030)](https://www.codacy.com/app/dkarski/luck-ui?utm_source=github.com&utm_medium=referral&utm_content=luck-js/luck-ui&utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/luck-js/luck-ui.svg?branch=master)](https://travis-ci.org/luck-js/luck-ui)
+[![GitHub issues](https://img.shields.io/github/issues/luck-js/luck-ui)](https://github.com/luck-js/luck-ui/issues)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
