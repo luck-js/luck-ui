@@ -26,6 +26,8 @@ jobs:
       env: IMAGE_NAME=$DEV_IMAGE_NAME
 
     - <<: *build
+      before_script:
+        - mv src/index.prod.html src/index.html
       if: branch = master
       env: IMAGE_NAME=$PROD_IMAGE_NAME
 
