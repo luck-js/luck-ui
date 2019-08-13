@@ -9,28 +9,29 @@ import { Router } from '@angular/router';
 })
 
 export class HomePageComponent {
-  @ViewChild('philosophy', {static: false}) public philosophy:ElementRef;
-  @ViewChild('home', {static: false}) public home:ElementRef;
+  @ViewChild('philosophy', {static: false}) public philosophy: ElementRef;
+  @ViewChild('home', {static: false}) public home: ElementRef;
+  year = new Date().getFullYear()
 
   constructor(private router: Router,
               private appStateService: AppStateService) {
 
   }
 
-  public moveToStructure():void {
+  public moveToStructure(): void {
     this.philosophy.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
   }
 
-  public moveToUp():void {
+  public moveToUp(): void {
     this.home.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
   }
 
-  public moveToCreateHappeningPage(name: string){
+  public moveToCreateHappeningPage(name: string) {
     this.updateNameHappening(name);
     this.router.navigate([`/happening`]);
   }
 
-  private updateNameHappening(name: string){
+  private updateNameHappening(name: string) {
     this.appStateService.setNameHappening(name);
   }
 
