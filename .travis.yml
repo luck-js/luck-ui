@@ -28,7 +28,7 @@ jobs:
     - <<: *build
       before_script:
         - mv src/index.prod.html src/index.html
-      if: branch = master
+      if: branch = master OR tag =~ ^v.*$
       env: IMAGE_NAME=$PROD_IMAGE_NAME
 
     - &deploy
@@ -56,7 +56,7 @@ jobs:
             branch: develop
 
     - <<: *deploy
-      if: branch = master
+      if: branch = master OR tag =~ ^v.*$
       env:
         - IMAGE_NAME=$PROD_IMAGE_NAME
         - CONTAINER_NAME=$PROD_CONTAINER_NAME
