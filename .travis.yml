@@ -6,11 +6,11 @@ env:
   global:
     - DEV_IMAGE_NAME=luckjs/ts-luck-ui
     - DEV_CONTAINER_NAME=luck-ui_develop
-    - DEV_VIRTUAL_HOST=testdevelop.luck.org.pl
+    - DEV_VIRTUAL_HOST=app.testdevelop.luck.org.pl
 
     - PROD_IMAGE_NAME=luckjs/luck-ui
     - PROD_CONTAINER_NAME=luck-ui_master
-    - PROD_VIRTUAL_HOST=luck.org.pl
+    - PROD_VIRTUAL_HOST=app.luck.org.pl
 
 jobs:
   include:
