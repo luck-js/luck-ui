@@ -16,7 +16,7 @@ export class NewHappeningPageGuardService implements CanActivate {
       .createNewHappening().pipe(
         map(() => true),
         catchError((error) => {
-          this.router.navigate(['/']);
+          window.location.href = 'https://luck.org.pl/';
           return of(false);
         })
       );
