@@ -16,7 +16,8 @@ import { FooterComponent } from './dashboard-page/footer/footer.component';
       children: [
         {
           path: '',
-          loadChildren: '../core/home/home.module#HomeModule',
+          redirectTo: '/happening',
+          pathMatch: 'full'
         },
         {
           path: 'participation',
