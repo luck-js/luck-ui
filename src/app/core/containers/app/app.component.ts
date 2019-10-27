@@ -2,6 +2,8 @@ import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subject } from 'rxjs';
 
+declare const ga: any;
+
 @Component({
   selector: 'lk-app-root',
   templateUrl: './app.component.html',
@@ -14,11 +16,11 @@ export class AppComponent implements OnInit, OnDestroy {
   private ngUnsubscribe: Subject<void> = new Subject<void>();
 
   constructor(private router: Router) {
-    if ((<any>window).ga) {
+    if (ga) {
       this.router.events.subscribe(event => {
         if (event instanceof NavigationEnd) {
-          (<any>window).ga('set', 'page', event.urlAfterRedirects);
-          (<any>window).ga('send', 'pageview');
+          ga('set', 'page', event.urlAfterRedirects);
+          ga('send', 'pageview');
         }
       });
     }
