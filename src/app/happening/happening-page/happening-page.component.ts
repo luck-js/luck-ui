@@ -6,6 +6,8 @@ import { ParticipantUniqueLinkData, ParticipantUniqueLinkDataView} from './happe
 import { HappeningService } from './happening.service';
 import { AppStateService } from '../../core/app-state.service';
 
+declare const ga: any;
+
 @Component({
   selector: 'lk-happening-page',
   templateUrl: './happening-page.component.html',
@@ -28,6 +30,10 @@ export class HappeningPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    ga(() => {
+      ga('send', 'event', 'Application', 'display happening', (<any>window).location.href);
+    });
+
     this.happeningService.createdHappeningSubject.pipe(
       takeUntil(this.ngUnsubscribe),
     )
